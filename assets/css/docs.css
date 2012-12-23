@@ -17,7 +17,7 @@ body {
 .gray_bg { background-color:#f8f8f8; border-top:1px solid #efefef; border-bottom:1px solid #efefef;}
 .header_social {float:right; margin-right:20px; margin-top:5px; font-size:11px;}
 ::selection {
-	background:#7daf27;
+	background:#509ADF;
 	color:#fff;
 }
 ::-moz-selection {
@@ -33,8 +33,8 @@ img::-moz-selection {
 img {  max-width:100%;}
 h1, h2, h3, h4, h5, h6 { text-transform:uppercase; color:#444;}
 p{ margin-bottom:20px; font-size:12px;}
-a { color:#7daf27;}
-a:hover { color:#7daf27; text-decoration:underline;}
+a { color:#999;}
+a:hover { color:#509ADF; text-decoration:underline;}
 a:focus { outline:none !important;}
 .header_social .badge, .comment .badge{
 	background-color:#f5f5f5;
@@ -1208,7 +1208,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flex-control-nav li a {width: 27px; height: 13px; display: block; background: url('../img/bullet.png') no-repeat 0 0; cursor: pointer; text-indent: -9999px;}
 .flex-control-nav li a:hover {width: 27px; height: 13px; display: block; background: url('../img/bullet-hover.png')}
 .flex-control-nav li a.active {width: 27px; height: 13px; display: block; background: url('../img/bullet-hover.png')}
-.colored { color:#7daf27; }
+.colored { color:#509ADF; }
 .slider-title { padding:10px; background:#000; color:#FFF !important;}
 .slider-title h3 { text-transform:uppercase;  color:#FFF !important;}
 
@@ -1227,7 +1227,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 
 header { /*background: #fff;*/ padding-bottom:30px; background: rgba(255, 255, 255, 0);}
 .twitter-block { padding:20px 0px; background:#3a3a3a; color:#FFF;}
-.bottom-block { padding:10px 0px; background:#3a3a3a; color:#999; font-size:11px; border-bottom:5px solid #000;}
+.bottom-block { padding:10px 0px; background:#3a3a3a; color:#999; font-size:11px; border-bottom:5px solid transparent;}
 .twitter-block h4 { color:#FFF;}
 footer { padding:30px 0px;  background:#303030; color:#cacaca; border-top:1px solid #444; border-bottom:1px solid #444;}
 .flip:hover {cursor:pointer !important;}
