@@ -1,0 +1,288 @@
+ <!--FOOTER-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <img src="{base}assets/theme_assets/img/logo-footer.png" alt="logo" style="margin-bottom:7px; margin-top:7px;" />
+                <hr class="visible-phone">
+                </div>
+                <div class="span3">
+                    <h5><span class="colored"></span> expublic</h5>
+                    <p>şirket hakkımızda örnek metni, şirket faaliyetleri ile ilgili seo için anahtar kelimeler</p>
+                    <hr class="visible-phone">
+                </div>
+                <div class="span3 flickr">
+                    <h5><span class="colored"></span> İLETİŞİM</h5>
+                    <span><strong class="colored"> Adress:</strong> sokak cadde</span>
+                    <hr class=" hidden-phone"><br class="visible-phone">
+                    <span><strong class="colored">Telefon:</strong> (312) 312-3032</span>
+                    <hr class="visible-phone">
+                </div>
+                <div class="span3 soc_icons">
+                    <h5><span class="colored"></span> SOSYAL MEDYADA BİZ</h5>
+                    <span>sosyal medya adreslerimiz:</span>
+                    <hr>
+                    <a href="#"><div class="icon_t"></div></a>
+                    <a href="#"><div class="icon_facebook"></div></a>
+                    <a href="#"><div class="icon_google"></div></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/FOOTER-->
+    <!--BOTTOM LINE-->
+    <div class="bottom-block">
+        <div class="container">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="span6">
+                            <span>EXPUBLIC 2012 Copyright <span class="undercolored"></span></span>
+                        </div>
+                        <div class="span6">
+                            <span class="pull-right visible-desktop"><a href="anasayfa">Anasayfa</a> <a href="expublic">Expublic</a> <a href="referanslar">Works</a> <a href="iletisim">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/BOTTOM LINE-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+
+        
+        <!-- jQuery easing plugin - VERY IMPORTANT -->
+        <script type="text/javascript" src="{base}assets/theme_assets/slider_assets/js/jquery.easing.1.3.js"></script>
+        
+        <!-- DDSlider jQuery Plugin - VERY IMPORTANT -->
+        <script type="text/javascript" src="{base}assets/theme_assets/slider_assets/js/jquery.DDSlider.min.js"></script>	
+
+
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="{base}assets/theme_assets/js/jquery.js"></script>
+    <script src="{base}assets/theme_assets/js/google-code-prettify/prettify.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-transition.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-alert.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-modal.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-dropdown.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-scrollspy.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-tab.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-tooltip.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-popover.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-button.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-collapse.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-carousel.js"></script>
+    <script src="{base}assets/theme_assets/js/bootstrap-typeahead.js"></script>
+    <script src="{base}assets/theme_assets/js/jquery.easing.1.3.js"></script>
+    <script src="{base}assets/theme_assets/js/jquery.waitforimages.js"></script>
+    <script src="{base}assets/theme_assets/js/jquery.slabtext.min.js"></script>
+    <script src="{base}assets/theme_assets/js/jquery.flexslider-min.js"></script>
+    <script src="{base}assets/theme_assets/js/superfish-menu/superfish.js"></script>
+    <script src="{base}assets/theme_assets/js/plugin.js"></script>
+    <script src="{base}assets/theme_assets/js/jquery.prettyPhoto.js"></script>
+    <script src="{base}assets/theme_assets/js/twitter.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="{base}assets/theme_assets/js/jquery.gmap.min.js"></script>
+    <script src="{base}assets/theme_assets/js/jquery.preloader.js"></script>
+    <script src="{base}assets/theme_assets/js/jquery.isotope.min.js"></script>
+    <script src="{base}assets/theme_assets/js/custom.js"></script>
+    <script type="text/javascript" src="{base}assets/theme_assets/js/contact.js"></script>
+
+
+	<!--[if IE]>
+    <script type="text/javascript">
+        runFancy = false;
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+		if (runFancy) {
+			jQuery.noConflict()(function($){
+			$(".view").preloader();
+			$(".flexslider").preloader();
+			});
+		}
+    </script>
+
+
+        <!-- Let's start the slider -->
+        <script type="text/javascript">
+        
+        //triggers the slider
+        $(document).ready(function() {
+            
+            $('#yourSliderId').DDSlider({
+                
+                nextSlide: '.slider_arrow_right',
+                prevSlide: '.slider_arrow_left',
+                selector: '.slider_selector',
+                trans: 'random',
+                delay: 50,
+                ease: 'swing',
+                waitTime: 5000,
+                duration: 500,
+                stopSlide: 1,
+                bars: 15,
+                columns: 9,
+                rows: 3,
+                arrowNext: null,
+                arrowPrev: null
+                
+                });
+            
+        });
+        
+        
+        </script>
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
+
+<!-- buda yukardakinin sol versiyonu
+
+                  <div class="content">
+            <div class="shuffle"></div>
+            <div class="hover"></div>
+        </div>
+
+        <div id="rp_list" class="rp_list">
+            <ul>
+                <li>
+                    <div>
+                        <img src="images/1.jpg" alt=""/>
+                        <span class="rp_title">Beautiful Background Image Navigation</span>
+                        <span class="rp_links">
+                            <a target="_blank" href="http://tympanus.net/codrops/2010/05/05/beautiful-background-image-navigation-with-jquery/">Article</a>
+                            <a target="_blank" href="http://tympanus.net/Tutorials/BeautifulBackgroundImageNavigation/BeautifulBackgroundImageNavigation.zip">Demo</a>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="images/2.jpg" alt=""/>
+                        <span class="rp_title">Awesome Bubble Navigation with jQuery</span>
+                        <span class="rp_links">
+                            <a target="_blank" href="http://tympanus.net/codrops/2010/04/29/awesome-bubble-navigation-with-jquery/">Article</a>
+                            <a target="_blank" href="http://tympanus.net/Tutorials/BubbleNavigation/">Demo</a>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="images/3.jpg" alt=""/>
+                        <span class="rp_title">Stunning Circular Motion Effect with jQuery</span>
+                        <span class="rp_links">
+                            <a target="_blank" href="http://tympanus.net/codrops/2010/05/07/stunning-circular-motion-effect/">Article</a>
+                            <a target="_blank" href="http://tympanus.net/Tutorials/CircularPortfolio/">Demo</a>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="images/4.jpg" alt=""/>
+                        <span class="rp_title">Fresh Set of CSS-only Menus</span>
+                        <span class="rp_links">
+                            <a target="_blank" href="http://tympanus.net/codrops/2010/01/31/fresh-set-of-css-only-menus/">Article</a>
+                            <a target="_blank" href="http://www.tympanus.net/Tutorials/CSSonlyMenus/">Demo</a>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="images/5.jpg" alt=""/>
+                        <span class="rp_title">Fresh Sliding Thumbnails Gallery</span>
+                        <span class="rp_links">
+                            <a target="_blank" href="http://tympanus.net/codrops/2010/05/23/fresh-sliding-thumbnails-gallery-with-jquery-php/">Article</a>
+                            <a target="_blank" href="http://tympanus.net/Tutorials/FreshSlidingThumbnailsGallery/">Demo</a>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+
+            <span id="rp_shuffle" class="rp_shuffle">
+            </span>
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script>
+			$(function() {
+				/**
+				* the list of posts
+				*/
+				var $list 		= $('#rp_list ul');
+				/**
+				* number of related posts
+				*/
+				var elems_cnt 		= $list.children().length;
+				
+				/**
+				* show the first set of posts.
+				* 200 is the initial left margin for the list elements
+				*/
+				load(200);
+				
+				function load(initial){
+					$list.find('li').hide().andSelf().find('div').css('margin-right',-initial+'px');
+					var loaded	= 0;
+					//show 5 random posts from all the ones in the list. 
+					//Make sure not to repeat
+					while(loaded < 5){
+						var r 		= Math.floor(Math.random()*elems_cnt);
+						var $elem	= $list.find('li:nth-child('+ (r+1) +')');
+						if($elem.is(':visible'))
+							continue;
+						else
+							$elem.show();
+						++loaded;
+					}
+					//animate them
+					var d = 200;
+					$list.find('li:visible div').each(function(){
+						$(this).stop().animate({
+							'marginLeft':'-82px'
+						},d += 100);
+					});
+				}
+					
+				/**
+				* hovering over the list elements makes them slide out
+				*/	
+				$list.find('li:visible').live('mouseenter',function () {
+					$(this).find('div').stop().animate({
+						'marginLeft':'77px'
+					},200);
+				}).live('mouseleave',function () {
+					$(this).find('div').stop().animate({
+						'marginLeft':'-82px'
+					},200);
+				});
+				
+				/**
+				* when clicking the shuffle button,
+				* show 5 random posts
+				*/
+				$('#rp_shuffle').unbind('click')
+								.bind('click',shuffle)
+								.stop()
+								.animate({'margin-left':'18px'},700);
+								
+				function shuffle(){
+					$list.find('li:visible div').stop().animate({
+						'marginLeft':'60px'
+					},200,function(){
+						load(60);
+					});
+				}
+            });
+		</script>
+
+		-->

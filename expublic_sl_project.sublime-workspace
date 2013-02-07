@@ -1,0 +1,659 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"inse",
+				"insert_data"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"erro",
+				"errorMessage"
+			],
+			[
+				"er",
+				"errorMessage"
+			],
+			[
+				"base",
+				"base_url"
+			],
+			[
+				"su",
+				"successMessage"
+			],
+			[
+				"parse",
+				"parser_data"
+			],
+			[
+				"the",
+				"theme_data"
+			],
+			[
+				"requ",
+				"require_data"
+			],
+			[
+				"hea",
+				"header_theme"
+			],
+			[
+				"re",
+				"require_data"
+			],
+			[
+				"err",
+				"errorPass"
+			],
+			[
+				"new",
+				"new_pass_field"
+			],
+			[
+				"pass",
+				"pass_model"
+			],
+			[
+				"pas",
+				"pass_now"
+			],
+			[
+				"pri",
+				"private"
+			],
+			[
+				"ad",
+				"affected_rows"
+			],
+			[
+				"afe",
+				"affected_rows"
+			],
+			[
+				"news",
+				"news_model"
+			],
+			[
+				"dele",
+				"delete_rows"
+			],
+			[
+				"guncelle",
+				"guncellendi"
+			],
+			[
+				"test",
+				"test_delete_before"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"ro",
+				"rows"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"w",
+				"where"
+			],
+			[
+				"upda",
+				"update_data"
+			],
+			[
+				"ne",
+				"news_date"
+			],
+			[
+				"news_",
+				"news_date"
+			],
+			[
+				"ba",
+				"base"
+			],
+			[
+				"num",
+				"num_rows"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"par",
+				"parser_data"
+			],
+			[
+				"row",
+				"row_data"
+			],
+			[
+				"resul",
+				"result_as_array"
+			],
+			[
+				"about",
+				"about_us_view_alias"
+			],
+			[
+				"bas",
+				"base_data"
+			],
+			[
+				"ha",
+				"hakkimizda"
+			],
+			[
+				"ka",
+				"kayit_getir"
+			],
+			[
+				"abo",
+				"about_model"
+			],
+			[
+				"t",
+				"this"
+			],
+			[
+				"mysql_re",
+				"mysql_real_escape_string"
+			],
+			[
+				"ob_en",
+				"ob_end_flush"
+			],
+			[
+				"mysql_er",
+				"mysql_error"
+			],
+			[
+				"cofi",
+				"Config"
+			],
+			[
+				"de",
+				"deger"
+			],
+			[
+				"load",
+				"com_load"
+			],
+			[
+				"if",
+				"if	if …"
+			],
+			[
+				"fon",
+				"font	font-weight: weight"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"dos",
+				"dosya_adi_2"
+			],
+			[
+				"dosya",
+				"dosya_adi"
+			],
+			[
+				"BE",
+				"belge_adi"
+			],
+			[
+				"mysql",
+				"mysql_query"
+			],
+			[
+				"do",
+				"dosya_kaydet"
+			],
+			[
+				"belge",
+				"belge_kayit_hedef"
+			],
+			[
+				"be",
+				"belgelerimiz"
+			],
+			[
+				"bel",
+				"belge_tmp_name"
+			],
+			[
+				"mo",
+				"move_uploaded_file"
+			],
+			[
+				"yazi",
+				"yazilim_icerik"
+			],
+			[
+				"we",
+				"web_tasarim_icerik"
+			],
+			[
+				"danis",
+				"danismanlik_icerik"
+			],
+			[
+				"insa",
+				"insaat_icerik"
+			],
+			[
+				"reklam",
+				"reklam_icerik"
+			],
+			[
+				"rek",
+				"reklam_ozet"
+			],
+			[
+				"hi",
+				"hizmetGuncellemeOnay"
+			],
+			[
+				"int",
+				"into"
+			],
+			[
+				"da",
+				"danismanlik_ozet"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"ya",
+				"yazilim_ozet"
+			],
+			[
+				"dani",
+				"danismanlik_icerik"
+			],
+			[
+				"rekl",
+				"reklam_icerik"
+			],
+			[
+				"web",
+				"web_tasarim_icerik"
+			],
+			[
+				"dan",
+				"danismanlik_ozet"
+			],
+			[
+				"mysql_fet",
+				"mysql_fetch_array"
+			],
+			[
+				"is",
+				"islem"
+			],
+			[
+				"e",
+				"elseif	elseif …"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Set Syntax: PHP"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 99.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
+		"/C/xampp/htdocs/www/expublic/application/models/news_model.php",
+		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/pagenotfound.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
+		"/C/xampp/htdocs/www/expublic/application/config/database.php",
+		"/C/xampp/htdocs/www/expublic/css/style.css",
+		"/C/xampp/htdocs/www/expublic/application/config/doctypes.php",
+		"/C/xampp/htdocs/www/expublic/application/models/reference_model.php",
+		"/C/xampp/htdocs/www/expublic/application/models/about_model.php",
+		"/C/xampp/htdocs/www/expublic/application/views/404/404_view.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/about.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/home.php",
+		"/C/xampp/htdocs/www/expublic/assets/backend_assets/lightbox_css/jquery.lightbox-0.5.css",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_header_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/contact_view.php",
+		"/C/xampp/htdocs/www/expublic/assets/backend_assets/lightbox_js/jquery.lightbox-0.5.js",
+		"/C/Documents and Settings/ynsekiz/Desktop/jquery-lightbox-0.5/css/jquery.lightbox-0.5.css",
+		"/C/xampp/htdocs/www/jquery-lightbox-0.5/index.html",
+		"/C/xampp/htdocs/www/son_raven_son/admin/admin_plugins/galleriffic/galleriffic-2.0.php",
+		"/C/xampp/htdocs/www/son_raven_son/cf.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/footer.html",
+		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.html",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/docs.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/custom.js",
+		"/C/xampp/htdocs/www/expublic/application/config/config.php",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/prettyPhoto.css",
+		"/C/xampp/htdocs/www/expublic/application/config/smileys.php",
+		"/C/xampp/htdocs/www/expublic/application/config/constants.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/anasayfa.php",
+		"/C/xampp/htdocs/www/expublic/application/config/routes.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/tr/anasayfa.php",
+		"/C/xampp/htdocs/www/expublic/application/config/migration.php",
+		"/C/Documents and Settings/ynsekiz/Desktop/database.php",
+		"/C/xampp/htdocs/www/expublic/db_backup/codeigniter_test.sql",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/pass.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/contact.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/news.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/footer_2.html",
+		"/C/xampp/htdocs/www/expublic/theme/tr/about.html",
+		"/C/xampp/htdocs/www/expublic/application/controllers/tr/referanslar.php",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/referanslar_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/iletisim_view.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/tr/iletisim.php",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/footer_2_view.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/4columns_portfolio.html",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/footer_view.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/thm/4columns_portfolio.html",
+		"/C/xampp/htdocs/www/expublic/theme/tr/4columns_portfolio.html.html",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/hakkimizda_view.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/Yeni Metin Belgesi.html",
+		"/C/xampp/htdocs/www/expublic/application/controllers/tr/referanslar",
+		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/slider_assets/js/jquery.DDSlider.js",
+		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/slider_assets/DDSlider.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/style.css",
+		"/C/xampp/htdocs/www/expublic/application/controllers/tr/hakkimizda.php",
+		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/index.html",
+		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/js/jquery.DDSlider.js",
+		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/js/jquery.easing.1.3.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/bootstrap-responsive.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/bootstrap.css",
+		"/C/Documents and Settings/ynsekiz/Desktop/custom.js",
+		"/C/xampp/htdocs/www/expublic/application/controllers/tr/giris.php",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/anasayfa_view.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/thm/about.html",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/header_view.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/header.html",
+		"/C/xampp/htdocs/www/expublic/theme/tr/header.php",
+		"/C/xampp/htdocs/www/expublic/application/cache/033c0f2ca10a02fb7706d4cf0e6bf527",
+		"/C/xampp/htdocs/www/son_raven_son/cache_killer/index.php",
+		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-01-26.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/index.html",
+		"/C/xampp/htdocs/www/expublic/index.html",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/header_view",
+		"/C/xampp/htdocs/www/expublic/assets/css/docs.css",
+		"/C/xampp/htdocs/www/codeigniter_test/assets/css/styles.css",
+		"/C/xampp/htdocs/www/expublic/assets/css/bootstrap.css",
+		"/C/xampp/htdocs/www/expublic/about.html",
+		"/C/xampp/htdocs/www/expublic/code_canyon/js/jquery.DDSlider.min.js",
+		"/C/xampp/htdocs/www/expublic/contact-us.html",
+		"/C/xampp/htdocs/www/expublic/4columns_portfolio.html",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/news.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/contact.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/reference.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/pass.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/pass_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/models/pass_model.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/success_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/error_view.php",
+		"/C/Documents and Settings/ynsekiz/Desktop/jquery_notification/css/jquery_notification.css",
+		"/C/xampp/htdocs/www/son_raven_son/giris/notification_css/jquery_notification.css",
+		"/C/Documents and Settings/ynsekiz/Desktop/jquery_notification/js/jquery_notification_v.1.js",
+		"/C/xampp/htdocs/www/son_raven_son/giris/index.php",
+		"/C/xampp/htdocs/www/son_raven_son/giris/kontrol.php",
+		"/C/xampp/htdocs/www/son_raven_son/giris/notification_js/jquery_notification_v.1.js",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/succes_view",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/action.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/login_views/login_header.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/admin_header_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/sasa",
+		"/C/xampp/htdocs/www/codeigniter_test/application/models/news_model.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/models/login_model.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/admin_main_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/contact_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/pass_view",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/about_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/frontend_views/tr/news_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/about.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/home.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/frontend_views/tr/anasayfa_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/config/database.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/models/about_model.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/models/contact_model.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/models/reference_model.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/news",
+		"/C/xampp/htdocs/www/codeigniter_test/application/models/news_model",
+		"/C/xampp/htdocs/www/codeigniter_test/codeigniter_test_project.sublime-project",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/giris.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/tr/giris.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/frontend_views/tr/hakkimizda_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/tr/anasayfa.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/datee.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/views/frontend_views/tr/iletisim_view.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/tr/iletisim.php",
+		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/tr/hakkimizda.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"backend_assets",
+			"gal",
+			"HABERLER",
+			"src",
+			"prev.png",
+			"blogslider",
+			"icon-calendar",
+			"Firmamız resmi olarak faaliyete geçti",
+			"glyphicons-halflings",
+			"glyphicons-halflings-white",
+			"Image",
+			">\n",
+			"wrapper",
+			"container",
+			"container_slider",
+			"container",
+			"play-hover",
+			"img",
+			"play-hover",
+			"play",
+			"img",
+			"imd",
+			"prev",
+			"expublic",
+			"down",
+			"main",
+			"oturumu",
+			"alias",
+			"Alias",
+			"LoadModule",
+			"<?",
+			"name",
+			" Resim Yüklemeyi Bitir ve Galeriye Git ",
+			"max_file_size",
+			"max",
+			"raven",
+			"edit_gallery",
+			"galeriye_resim_ekle",
+			"raven",
+			"title",
+			"Örnek Fidan Sitesi",
+			"main_box_wrapper",
+			"deveci",
+			"Hakkımızda örnek metni",
+			"Downloads/Manuals",
+			"ımage",
+			"deveci",
+			"001",
+			"hurma",
+			"kayısı_fide",
+			"sasa",
+			"screenshot1.jpg",
+			"papaz",
+			"Armut",
+			"Şekerpare",
+			"Eşme",
+			"armut",
+			"Ceviz",
+			"                               ",
+			">                                  ",
+			"Ürün_1",
+			"galeriye_resim_bul",
+			"	\n",
+			"security",
+			"session",
+			"log_message",
+			"_enable_csrf",
+			"logo",
+			"buy_book.",
+			"mail(",
+			"mail"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 199.0,
+	"status_bar_visible": true
+}
