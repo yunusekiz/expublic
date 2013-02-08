@@ -19,92 +19,100 @@ class up extends CI_Controller {
 		$this->load->view('up_view');
 	}
 
-	public function imageUp()
+	public function imageUpAndResize($image_form_field, $upload_path, $image_name, $display_errors = TRUE)
 	{
-		$upload_path;
+		$this->imageUpload($image_form_field, $upload_path, $image_name, $display_errors = TRUE);
 
-		$upload_config['upload_path'] = './assets/theme_assets/slider_assets/photo/'; 
+	}
+
+	public function imageUpload($image_form_field, $upload_path, $image_name, $display_errors = TRUE)
+	{
+
+		$upload_config['upload_path'] = $upload_path;//'./assets/theme_assets/slider_assets/photo/'; 
 		$upload_config['allowed_types'] = 'gif|jpg|png';
-		$upload_config['max_size']	= '1000000';
+		$upload_config['max_size']	= '1000000000';
 		$upload_config['max_width'] = '10240';
 		$upload_config['max_height'] = '7680';
-		$upload_config['file_name'] = 'yeni_isim';
+		$upload_config['file_name'] = $image_name;
 
 		$this->load->library('upload',$upload_config);
 
-		$do_upload = $this->upload->do_upload('image_form_field');
+		$do_upload = $this->upload->do_upload($image_form_field);
 
 		if ($do_upload)
 		{
-			echo 'resim başarıyla yüklendi : </br>';
 			$this->data_after_upload = $this->upload->data();
-
-			$this->data_after_upload['file_type'];
-			$this->data_after_upload['file_path'];
-			$this->data_after_upload['full_path'];
-			echo 'dosya raw name i :'.$data_after_upload['raw_name'].'</br>';
-			echo 'dosya orig name i : '.$data_after_upload['orig_name'].'</br>';
-			$this->data_after_upload['client_name'].'</br>';
-			$this->data_after_upload['file_ext'].'</br>';
-			$this->data_after_upload['file_size'].'</br>';
-			
-
-			$resize_config['image_library'] = 'gd2';
-			$resize_config['source_image'] = $upload_data['full_path'];
-			$resize_config['create_thumb'] = TRUE;
-			$resize_config['maintain_ratio'] = FALSE;
-			$resize_config['width'] = 960;
-			$resize_config['height'] = 300;
-			
-
-			$this->image_lib->initialize($resize_config);
-			$do_resize = $this->image_lib->resize();
-
-			if ($do_resize)
-			{
-				echo 'resim resize edildi : </br>';
-			}
-			else
-			{
-				echo $this->image_lib->display_errors();
-			}
+			return TRUE;
 		}
 		else
 		{
-			echo 'resim yükleme başarısız oldu : </br>';
-			echo '<center><h3>'.$this->upload->display_errors('<p>', '</p>').'</h3></center>';
+			if ($display_errors == TRUE)
+			{
+				echo '<center><h3>'.$this->upload->display_errors('<p>', '</p>').'</h3></center>';
+				return FALSE;
+			}
+			else
+			{
+				return FALSE;
+			}
 
 		}
 	}
 
-	public function resize()
+	public function imageResize($source_original_img = NULL, $big_img_width, $big_img_height, $thumb_img_width, $thumb_img_height )
 	{
-		$thumbing_config['image_library'] = 'gd2';
-		$thumbing_config['source_image'] = 'C:/xampp/htdocs/www/expublic_codelobster/assets/fuck/yeni_isim.jpg';
-		$thumbing_config['create_thumb'] = TRUE;
-		$thumbing_config['maintain_ratio'] = FALSE;
-		$thumbing_config['width'] = 90;
-		$thumbing_config['height'] = 90;
-		$thumbing_config['new_image']	= 'C:/xampp/htdocs/www/expublic_codelobster/assets/fuck/thumb'; 
 
-		$this->image_lib->initialize($thumbing_config);
+		if ($source_original_img == NULL)
+		{
+			$source_original_img = $this->getUploadedFileFullPath();
+		}
+
+		if ($thumb_img_width == NULL)
+		{
+			 $thumb_img_width = 90;
+		}
+
+		if ($thumb_img_height == NULL)
+		{
+			$thumb_img_height = 90;
+		}
+
+		$resize_thumb_img_config['image_library'] = 'gd2';
+		$resize_thumb_img_config['source_image'] = $source_original_img;
+		$resize_thumb_img_config['create_thumb'] = TRUE;
+		$resize_thumb_img_config['maintain_ratio'] = FALSE;
+		$resize_thumb_img_config['width'] = $thumb_img_width;
+		$resize_thumb_img_config['height'] = $thumb_img_height;
+
+		$img_sourge_parent_directory = dirname($source_original_img);
+
+		$resize_thumb_img_config['new_image']	= $img_sourge_parent_directory.'/thumb'; 
+
+		$this->image_lib->initialize($resize_thumb_img_config);
 		
-		$create_thumb = $this->image_lib->resize();
+		$create_thumb_image = $this->image_lib->resize();
 
 		$this->image_lib->clear();
 
-		if ($create_thumb)
+		if ($create_thumb_image)
 		{
-			echo 'resmin thumb i olusturuldu : </br>';
-			$resize_config['image_library'] = 'gd2';	
-			$resize_config['source_image'] = 'C:/xampp/htdocs/www/expublic_codelobster/assets/fuck/yeni_isim.jpg';
-			$resize_config['create_thumb'] = FALSE;
-			$resize_config['maintain_ratio'] = FALSE;
-			$resize_config['width'] = 960;
-			$resize_config['height'] = 300; 
+			if ($big_img_width == NULL)
+			{
+				$big_img_width = 960;
+			}
+			if ($big_img_height == NULL)
+			{
+				$big_img_height = 300;
+			}
 
-			//$this->load->library('image_lib',$resize_config);
-			$this->image_lib->initialize($resize_config);
+			$resize_big_img_config['image_library'] = 'gd2';	
+			$resize_big_img_config['source_image'] = $source_original_img;
+			$resize_big_img_config['create_thumb'] = FALSE;
+			$resize_big_img_config['maintain_ratio'] = FALSE;
+			$resize_big_img_config['width'] = $big_img_width;
+			$resize_big_img_config['height'] = $big_img_height; 
+
+			$this->image_lib->initialize($resize_big_img_config);
 			$create_big_image = $this->image_lib->resize();
 
 			if ($create_big_image)
@@ -138,14 +146,54 @@ class up extends CI_Controller {
 
 	}
 
-	public function getUploadData()
+
+	public function getUploadedFileFullData()
 	{
 		return $this->data_after_upload;
 	}
 
-	public function getResizeData()
+	public function getUploadedFileFullPath()
 	{
-		$this->data_after_resize;
+		return $this->data_after_upload['full_path'];
+	}
+
+	public function getUploadedFilePath()
+	{
+		return $this->data_after_upload['file_path'];
+	}
+
+	public function getUploadedFileSize()
+	{
+		return $this->data_after_upload['file_size'];
+	}
+
+	public function getUploadedFileExtension()
+	{
+		return $this->data_after_upload['file_ext'];
+	}
+
+	public function getUploadedFileType()
+	{
+		return $this->data_after_upload['file_type'];
+	}
+
+	public function getUploadedFileClientName()
+	{
+		return $this->data_after_upload['client_name'];
+	}
+
+	public function getSizedBigImgName()
+	{
+
+	}
+
+	public function anan()
+	{
+		$path = "C:/xampp/htdocs/www/expublic_codelobster/assets/fuck/yeni_isim.jpg";
+		$file = dirname($path); 
+		echo $path;
+		echo('</br>');
+		echo $file;
 	}
 
 }

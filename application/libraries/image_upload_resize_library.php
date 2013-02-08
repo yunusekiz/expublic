@@ -5,7 +5,7 @@
 class image_upload_resize_library {
 	
 	// codeigniter ın orijinal class larına ulaşmak için bu değişken kullanılacak
-	public $CI;
+	private $CI;
 	
 	// resim upload edildikten sonraki gerekli dataların tutulduğu değişken
 	public $imageDataAfterUpload;
