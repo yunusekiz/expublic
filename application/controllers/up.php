@@ -6,12 +6,35 @@ class up extends CI_Controller {
 	private $data_after_upload;
 
 	//  resize işlemlerinden sonra veritabanına kaydedilecek olan resim dosya yollarını tutar
-	private $data_after_resize; 
+	private $data_after_resize;
+
+	// bu class ı kullanırken gerekli olan image detaylarını tutan array
+	private $bootstrap_data = array();
+
+	// class run edildiğinde eğer bi hata oluşursa, hatanın ekrana basılıp basılmayacağını belirler
+	private $display_errors;
+
+	public $root;
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->library('image_lib');
+		
+		$array = array(
+						'image_form_field'	=>	'image_form_field',
+						'upload_path'		=>	'assets/theme_assets/slider_assets/photo',
+						'image_name'		=>	'merhaba_harun_abi',
+						'big_img_width'		=>	960,
+						'big_img_height'	=>	300,
+						'thumb_img_width'	=>	100,
+						'thumb_img_height'	=>	100
+					  );
+
+		$this->root = strstr(dirname(__FILE__),'\application\controllers',TRUE);
+
+		$this->setBootstrapData($array);
+		$this->controlBootstrapData();
 	}
 
 	public function index()
@@ -19,21 +42,79 @@ class up extends CI_Controller {
 		$this->load->view('up_view');
 	}
 
-	public function imageUpAndResize($image_form_field, $upload_path, $image_name, $display_errors = TRUE)
+	public function setBootstrapData(array $data)
 	{
-		$this->imageUpload($image_form_field, $upload_path, $image_name, $display_errors = TRUE);
+		$this->bootstrap_data = $data;
+	}
+
+	// class ı n çalışabilmesi için gerekli olan bootstrap datalar eksikmi değilmi diye control eder, eksikse gerekli işlemleri yapar
+	private function controlBootstrapData()
+	{
+
+		if ($this->bootstrap_data['image_form_field'] == NULL)
+		{
+			echo '</br></br><center> <h3> HATA:: Dosya Yukleme Formundaki Ilgili Field i, class a tanitmadiniz </h3></center>';
+			die();
+		}
+
+
+		if ($this->bootstrap_data['upload_path'] == NULL)
+		{
+			$this->bootstrap_data['upload_path'] = $this->root.'/assets/image_upload_lib_assets';
+		}
+		else
+		{
+			$this->bootstrap_data['upload_path'] = $this->root.'/'.$this->bootstrap_data['upload_path'];
+		}
+
+
+		if ($this->bootstrap_data['thumb_img_width'] == NULL)
+		{
+			$this->bootstrap_data['thumb_img_width'] = 90;
+		}
+		if ($this->bootstrap_data['thumb_img_height'] == NULL)
+		{
+			$this->bootstrap_data['thumb_img_height'] = 90;
+		}
+
 
 	}
 
-	public function imageUpload($image_form_field, $upload_path, $image_name, $display_errors = TRUE)
+	public function imageUpAndResize()
+	{
+		$image_upload = $this->imageUpload();
+		
+		if ($image_upload == FALSE)
+		{
+			echo '</br> <center> <h3> HATA:: Resim Yukleme FALSE Dondu </h3> </center></br>';
+			echo '</br> upload path i :';
+			var_dump($this->bootstrap_data['upload_path']);
+			die();
+		}
+
+		$this->imageResize();
+
+		echo $this->getSizedBigImgNameForDB();
+		echo '</br>';
+		echo $this->getSizedThumbImgNameForDB();
+	}
+
+
+	public function imageUpload($display_errors = TRUE)
 	{
 
-		$upload_config['upload_path'] = $upload_path;//'./assets/theme_assets/slider_assets/photo/'; 
+		$upload_config['upload_path'] = $this->bootstrap_data['upload_path'];
 		$upload_config['allowed_types'] = 'gif|jpg|png';
-		$upload_config['max_size']	= '1000000000';
+		$upload_config['max_size']	= '20000';
 		$upload_config['max_width'] = '10240';
 		$upload_config['max_height'] = '7680';
-		$upload_config['file_name'] = $image_name;
+		
+		if ($this->bootstrap_data['image_name'] != NULL)
+		{
+			$upload_config['file_name'] = $this->bootstrap_data['image_name'] ;
+		}
+
+		$image_form_field = $this->bootstrap_data['image_form_field'];
 
 		$this->load->library('upload',$upload_config);
 
@@ -59,54 +140,79 @@ class up extends CI_Controller {
 		}
 	}
 
-	public function imageResize($source_original_img = NULL, $big_img_width, $big_img_height, $thumb_img_width, $thumb_img_height )
+
+	public function imageResize($source_of_img = NULL)
 	{
 
-		if ($source_original_img == NULL)
+		if ($this->getUploadedFileFullPath() == NULL)
 		{
-			$source_original_img = $this->getUploadedFileFullPath();
+			$source_of_img = $this->root.$source_of_img;
+		}
+		else
+		{
+			$source_of_img = $this->getUploadedFileFullPath();
 		}
 
-		if ($thumb_img_width == NULL)
-		{
-			 $thumb_img_width = 90;
-		}
-
-		if ($thumb_img_height == NULL)
-		{
-			$thumb_img_height = 90;
-		}
 
 		$resize_thumb_img_config['image_library'] = 'gd2';
-		$resize_thumb_img_config['source_image'] = $source_original_img;
+		$resize_thumb_img_config['source_image'] = $source_of_img;
 		$resize_thumb_img_config['create_thumb'] = TRUE;
 		$resize_thumb_img_config['maintain_ratio'] = FALSE;
-		$resize_thumb_img_config['width'] = $thumb_img_width;
-		$resize_thumb_img_config['height'] = $thumb_img_height;
+		$resize_thumb_img_config['width'] = $this->bootstrap_data['thumb_img_width'];
+		$resize_thumb_img_config['height'] = $this->bootstrap_data['thumb_img_height'];
 
-		$img_sourge_parent_directory = dirname($source_original_img);
+		$img_sourge_parent_directory = dirname($source_of_img);
 
 		$resize_thumb_img_config['new_image']	= $img_sourge_parent_directory.'/thumb'; 
 
 		$this->image_lib->initialize($resize_thumb_img_config);
-		
 		$create_thumb_image = $this->image_lib->resize();
 
 		$this->image_lib->clear();
 
 		if ($create_thumb_image)
 		{
-			if ($big_img_width == NULL)
+			if ($this->bootstrap_data['big_img_width'] == NULL)
 			{
-				$big_img_width = 960;
+				if ($this->getUploadedFileWidth() == NULL)
+				{
+					echo '</br><center> <h3> HATA:: Buyuk Resim Icın Hic Bir Width Degeri Belirtilmedi </h3> </center>';
+					die();	# code...
+				}
+				else
+				{
+					$big_img_width = $this->getUploadedFileWidth();
+				}
+				
 			}
-			if ($big_img_height == NULL)
+			else
 			{
-				$big_img_height = 300;
+				$big_img_width = $this->bootstrap_data['big_img_width'];
 			}
 
+
+
+			if ($this->bootstrap_data['big_img_height'] == NULL)
+			{
+				if ($this->getUploadedFileHeight() == NULL)
+				{
+					echo '</br><center> <h3> HATA:: Buyuk Resim Icın Hic Bir Height Degeri Belirtilmedi </h3> </center>';
+					die();
+				}
+				else
+				{
+					$big_img_height = $this->getUploadedFileHeight();
+				}				
+			}
+			else
+			{
+				$big_img_height = $this->bootstrap_data['big_img_height'];
+			}
+
+
+
 			$resize_big_img_config['image_library'] = 'gd2';	
-			$resize_big_img_config['source_image'] = $source_original_img;
+			$resize_big_img_config['source_image'] = $source_of_img;
 			$resize_big_img_config['create_thumb'] = FALSE;
 			$resize_big_img_config['maintain_ratio'] = FALSE;
 			$resize_big_img_config['width'] = $big_img_width;
@@ -117,36 +223,39 @@ class up extends CI_Controller {
 
 			if ($create_big_image)
 			{
-				echo '</br> resmin buyuk hali olusturuldu </br>';
+				//echo '<br/> resmin buyuk hali olusturuldu </br>';
+				//echo '<br/> gecmis olsun : <br/>';
+				//echo 'veritabanina kaydedilmesi gerekenler : ';
+				//echo '<br/>';
+				$this->data_after_resize['db_big_image'] = strstr($source_of_img, 'assets');
+				
+				$path_parts = pathinfo($this->data_after_resize['db_big_image']);
+				$thumb_fullpath = $resize_thumb_img_config['new_image'].'/'.$path_parts['filename'].'_thumb'.$this->getUploadedFileExtension();
+
+				$this->data_after_resize['db_thumb_image'] = strstr($thumb_fullpath, 'assets');
+
+				return TRUE;
+
 			}
 			else
 			{
 				echo '</br> HATA:: resmin buyuk hali olusturulamadi :  </br>';
 				echo $this->image_lib->display_errors();
+				return FALSE;
 			}
 		}
 		else
 		{
 			echo '</br> HATA:: resmin thumb i olusturulamadi </br>';
 			echo $this->image_lib->display_errors();
+			return FALSE;
 		}
 
 	}
 
-	public function dell()
-	{
-		$victim_1 = base_url('assets/fuck/yeni_isim.jpg');
-
-		$victim_2 = $_SERVER['DOCUMENT_ROOT'].'/resim.jpg';
-		
-
-	 $kelime = strstr('C:/xampp/htdocs/www/expublic_codelobster/assets/theme_assets/slider_assets/photo/yeni_isim.jpg','assets');
-
-	 echo $kelime;
-
-	}
 
 
+///////////////////// upload dan sonraki gerekli dataları alan metodlar başlangıç ///////////////////
 	public function getUploadedFileFullData()
 	{
 		return $this->data_after_upload;
@@ -182,18 +291,48 @@ class up extends CI_Controller {
 		return $this->data_after_upload['client_name'];
 	}
 
-	public function getSizedBigImgName()
+	public function getUploadedFileWidth()
 	{
+		list($width,$height) = getimagesize($this->getUploadedFileFullPath());
+		return $width;
+	}
+
+	public function getUploadedFileHeight()
+	{
+		list($width,$height) = getimagesize($this->getUploadedFileFullPath());
+		return $height;
+	}
+///////////////////// upload dan sonraki gerekli dataları alan metodlar bitiş ///////////////////
+
+
+
+//////////////////// resize işleminden sonra gerekli dataları alan metodlar başlangıç //////////////
+	public function getSizedBigImgNameForDB()
+	{
+		return $this->data_after_resize['db_big_image'];
+	}
+
+	public function getSizedThumbImgNameForDB()
+	{
+		return $this->data_after_resize['db_thumb_image'];
+	}
+////////////////// resize işleminden sonra gerekli dataları alan metodlar bitiş //////////////
+
+
+
+	public function dell()
+	{
+		$victim_1 = base_url('assets/fuck/yeni_isim.jpg');
+
+		$victim_2 = dirname(__FILE__);
+		
+
+	 $kelime = strstr($victim_2,'application\controllers',TRUE);
+
+	 echo $kelime;
 
 	}
 
-	public function anan()
-	{
-		$path = "C:/xampp/htdocs/www/expublic_codelobster/assets/fuck/yeni_isim.jpg";
-		$file = dirname($path); 
-		echo $path;
-		echo('</br>');
-		echo $file;
-	}
+
 
 }

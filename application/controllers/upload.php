@@ -6,40 +6,36 @@ class Upload extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->helper(array('form', 'url'));
-		$this->base = base_url();
+		$this->load->view('upload_form');
 	}
 
 	function index()
 	{
-		$this->load->view('upload_form', array('error' => ' ' ));
+		return NULL;
 	}
 
-	function do_upload()
+	public function upandresize()
 	{
-		$config['upload_path'] = './assets/images';
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']	= '100';
-		$config['max_width']  = '1024';
-		$config['max_height']  = '768';
 
-		$this->load->library('upload', $config);
+		$array = array(
+							'image_form_field'	=>	'big_slider_image_form_field',
+							'upload_path'		=>	'assets/theme_assets/slider_assets/photo',
+							'image_name'		=>	NULL,
+							'big_img_width'		=>	960,
+							'big_img_height'	=>	300,
+							'thumb_img_width'	=>	20,
+							'thumb_img_height'	=>	20
+					  );
 
-		if ( ! $this->upload->do_upload())
-		{
-			$error = array('error' => $this->upload->display_errors());
-			echo 'upload gerceklesmedi : <br>';
-			$this->load->view('upload_form', $error);
-			echo '<br> upload path is : '.$config['upload_path'];
-		}
-		else
-		{
-			echo 'upload gerceklesti : <br>';
-			$data = array('upload_data' => $this->upload->data());
-			
-			$this->load->view('upload_success', $data);
-		}
+		$this->load->library('image_upload_resize_library');
+		$this->image_upload_resize_library->setBootstrapData($array);
+		$this->image_upload_resize_library->imageUpAndResize();
+
+/*		echo $this->image_upload_resize_library->getSizedBigImgNameForDB();
+		echo '</br>';
+		echo $this->image_upload_resize_library->getSizedThumbImgNameForDB();*/
 	}
+
 }
 
 

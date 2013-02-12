@@ -15,25 +15,9 @@
 							<fieldset> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->											
 
 								<p>
-									<label> Slider' ın mevcut resimleri </label>
+									<label> Slider' da hiç resim yok :((  </label>
 								</p>
-								<div class="anadiv_cerceve_dis">
-                 
-                  				{buyuk_slider_detaylari}
-									<div class="anadiv_cerceve_ic">
-         								<div class="cocukdiv_image">
-            								<a href="{base}{big_image_path}" title="{image_title}">
-                								<img src="{base}{thumb_image_path}" width="80" height="80" alt="" />
-            								</a>
-          								</div>
-          							<a href="deleteBigSlider/{id}">
-          								<div class="cocukdiv_icon"><img src="{base}assets/backend_assets/lightbox_images/delete.png" title="Resmi Sil" /></div>
-          								<div class="cocukdiv_icon_text"> Resmi Sil</div>  
-          							</a>
-									</div>
-                  				{/buyuk_slider_detaylari}
-                                          
-								</div>
+
 							</fieldset>
               <div class="clear"></div><!-- End .clear -->        
                     

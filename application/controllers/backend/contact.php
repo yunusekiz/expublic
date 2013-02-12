@@ -103,7 +103,7 @@ class contact extends CI_Controller {
 		$this->parser->parse('backend_views/error_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"3; url=editContact\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"3; url=../contact/editContact\">";	
 
 	}
 
@@ -119,7 +119,7 @@ class contact extends CI_Controller {
 		$this->parser->parse('backend_views/success_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"4; url=../home\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"4; url=../contact/editContact\">";	
 
 	}
 

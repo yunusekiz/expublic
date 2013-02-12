@@ -8,16 +8,13 @@
 <body>
 
 
-<?php echo $error;?>
-<?php $base = base_url();?>
+<form action = "upload/upandresize" method="post" enctype="multipart/form-data">
 
-<form action = "<?php echo $base;?>pupload/do_upload" method="post" enctype="multipart/form-data">
-
-<input type="file" name="userfile" size="20" />
+<input type="file" name="userfile" size="20"  accept="image/*"/>
 
 <br /><br />
 
-<input type="submit" value="upload" />
+<input type="submit" value="Gönder" />
 
 </form>
 

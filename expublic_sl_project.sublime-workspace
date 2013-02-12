@@ -4,6 +4,162 @@
 		"selected_items":
 		[
 			[
+				"slide",
+				"slider_resimleri"
+			],
+			[
+				"REtu",
+				"return_path"
+			],
+			[
+				"return",
+				"return_path"
+			],
+			[
+				"row",
+				"row"
+			],
+			[
+				"unlink",
+				"unlink_thumg_image"
+			],
+			[
+				"thum",
+				"thumb_img_row"
+			],
+			[
+				"unli",
+				"unlink_big_image"
+			],
+			[
+				"big",
+				"big_img_row"
+			],
+			[
+				"dele",
+				"delete_row_from_db"
+			],
+			[
+				"thumb_im",
+				"thumb_img_data_for_db"
+			],
+			[
+				"big_img",
+				"big_img_data_for_db"
+			],
+			[
+				"big_slider",
+				"big_slider_title_form_field"
+			],
+			[
+				"slider_",
+				"slider_model"
+			],
+			[
+				"image",
+				"image_up_and_resize"
+			],
+			[
+				"ima",
+				"image_resize"
+			],
+			[
+				"getSize",
+				"getSizedThumbImgNameForDB"
+			],
+			[
+				"getUp",
+				"getUploadedFileExtension"
+			],
+			[
+				"data",
+				"data_after_resize"
+			],
+			[
+				"asse",
+				"assets"
+			],
+			[
+				"strs",
+				"strstr"
+			],
+			[
+				"ro",
+				"root"
+			],
+			[
+				"control",
+				"controlBootstrapData"
+			],
+			[
+				"getUplo",
+				"getUploadedFileHeight"
+			],
+			[
+				"big_",
+				"big_img_width"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"ime",
+				"image_upload"
+			],
+			[
+				"imd",
+				"image_form_field"
+			],
+			[
+				"ce",
+				"center"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"sou",
+				"source_original_img"
+			],
+			[
+				"SOUR",
+				"source_original_img"
+			],
+			[
+				"upload",
+				"upload_path"
+			],
+			[
+				"boo",
+				"bootstrap_data"
+			],
+			[
+				"thumb",
+				"thumb_img_height"
+			],
+			[
+				"big_im",
+				"big_img_height"
+			],
+			[
+				"dis",
+				"display_errors"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"getuplo",
+				"getUploadedFileWidth"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
 				"inse",
 				"insert_data"
 			],
@@ -80,24 +236,12 @@
 				"news_model"
 			],
 			[
-				"dele",
-				"delete_rows"
-			],
-			[
 				"guncelle",
 				"guncellendi"
 			],
 			[
 				"test",
 				"test_delete_before"
-			],
-			[
-				"el",
-				"else"
-			],
-			[
-				"ro",
-				"rows"
 			],
 			[
 				"print",
@@ -142,10 +286,6 @@
 			[
 				"par",
 				"parser_data"
-			],
-			[
-				"row",
-				"row_data"
 			],
 			[
 				"resul",
@@ -280,10 +420,6 @@
 				"into"
 			],
 			[
-				"da",
-				"danismanlik_ozet"
-			],
-			[
 				"fun",
 				"function"
 			],
@@ -356,20 +492,47 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
-		"/C/xampp/htdocs/www/expublic/application/models/news_model.php",
+		"/C/xampp/htdocs/www/expublic/application/config/config.php",
+		"/C/xampp/htdocs/www/expublic/application/config/database.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
 		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/tr/anasayfa.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view.php",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/DDSlider.css",
+		"/C/xampp/htdocs/www/expublic/theme/tr/footer.html",
+		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.html",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/bootstrap-responsive.css",
+		"/C/xampp/htdocs/www/expublic/css/style.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/superfish-menu/superfish.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/application.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/jquery.flexslider-min.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/plugin.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/custom.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/docs.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/prettyPhoto.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/bootstrap.css",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/contact.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/about.php",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/footer_view.php",
+		"/C/xampp/htdocs/www/expublic/application/models/news_model.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/news.php",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/anasayfa_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view_empty.php",
+		"/C/xampp/htdocs/www/expublic/application/libraries/image_upload_resize_library.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/up.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/upload.php",
+		"/C/xampp/htdocs/www/expublic/application/views/upload_form.php",
+		"/C/xampp/htdocs/www/expublic/application/views/up_view.php",
+		"/C/Documents and Settings/ynsekiz/Desktop/hh.php",
+		"/C/xampp/php/php.ini",
+		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-02-07.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/pagenotfound.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
-		"/C/xampp/htdocs/www/expublic/application/config/database.php",
-		"/C/xampp/htdocs/www/expublic/css/style.css",
 		"/C/xampp/htdocs/www/expublic/application/config/doctypes.php",
 		"/C/xampp/htdocs/www/expublic/application/models/reference_model.php",
 		"/C/xampp/htdocs/www/expublic/application/models/about_model.php",
 		"/C/xampp/htdocs/www/expublic/application/views/404/404_view.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/about.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/home.php",
 		"/C/xampp/htdocs/www/expublic/assets/backend_assets/lightbox_css/jquery.lightbox-0.5.css",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_header_view.php",
@@ -379,23 +542,14 @@
 		"/C/xampp/htdocs/www/jquery-lightbox-0.5/index.html",
 		"/C/xampp/htdocs/www/son_raven_son/admin/admin_plugins/galleriffic/galleriffic-2.0.php",
 		"/C/xampp/htdocs/www/son_raven_son/cf.php",
-		"/C/xampp/htdocs/www/expublic/theme/tr/footer.html",
-		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.html",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/docs.css",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/custom.js",
-		"/C/xampp/htdocs/www/expublic/application/config/config.php",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/prettyPhoto.css",
 		"/C/xampp/htdocs/www/expublic/application/config/smileys.php",
 		"/C/xampp/htdocs/www/expublic/application/config/constants.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/anasayfa.php",
 		"/C/xampp/htdocs/www/expublic/application/config/routes.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/tr/anasayfa.php",
 		"/C/xampp/htdocs/www/expublic/application/config/migration.php",
 		"/C/Documents and Settings/ynsekiz/Desktop/database.php",
 		"/C/xampp/htdocs/www/expublic/db_backup/codeigniter_test.sql",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/pass.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/contact.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/news.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/footer_2.html",
 		"/C/xampp/htdocs/www/expublic/theme/tr/about.html",
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/referanslar.php",
@@ -404,7 +558,6 @@
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/iletisim.php",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/footer_2_view.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/4columns_portfolio.html",
-		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/footer_view.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/thm/4columns_portfolio.html",
 		"/C/xampp/htdocs/www/expublic/theme/tr/4columns_portfolio.html.html",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/hakkimizda_view.php",
@@ -417,11 +570,8 @@
 		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/index.html",
 		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/js/jquery.DDSlider.js",
 		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/js/jquery.easing.1.3.js",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/bootstrap-responsive.css",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/bootstrap.css",
 		"/C/Documents and Settings/ynsekiz/Desktop/custom.js",
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/giris.php",
-		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/anasayfa_view.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/thm/about.html",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/header_view.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/header.html",
@@ -469,21 +619,7 @@
 		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/about.php",
 		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/home.php",
 		"/C/xampp/htdocs/www/codeigniter_test/application/views/frontend_views/tr/anasayfa_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/config/database.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/models/about_model.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/models/contact_model.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/models/reference_model.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/news",
-		"/C/xampp/htdocs/www/codeigniter_test/application/models/news_model",
-		"/C/xampp/htdocs/www/codeigniter_test/codeigniter_test_project.sublime-project",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/giris.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/tr/giris.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/frontend_views/tr/hakkimizda_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/tr/anasayfa.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/datee.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/frontend_views/tr/iletisim_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/tr/iletisim.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/tr/hakkimizda.php"
+		"/C/xampp/htdocs/www/codeigniter_test/application/config/database.php"
 	],
 	"find":
 	{
@@ -501,6 +637,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"testimonialslider",
+			"clone",
+			"li class=\"clone\"",
+			"home",
+			"homeLating",
+			"yourSliderIdhome",
+			"yourSliderId",
+			"editBigSlider",
+			"big_slider_image_form_field",
+			"HATA:: Resim Yukleme FALSE Dondu",
+			"load->library",
+			"$this->lo",
+			"$this->CI",
+			"$this->load",
+			"load",
+			" $",
+			"}\n",
+			"DOCUMENT_ROOT",
+			"();\n",
+			"up load edilen resmin genisligi",
+			"upload_max_filesize",
+			"dizin_data",
 			"backend_assets",
 			"gal",
 			"HABERLER",
@@ -654,6 +812,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 199.0,
+	"side_bar_width": 255.0,
 	"status_bar_visible": true
 }

@@ -758,7 +758,7 @@ form.well {
 	height: 20px;
 	text-indent: -999em;
 	overflow: hidden;
-	background: url('{base}assets/theme_assets/images/arrows.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+	background: url('http://localhost/www/expublic/assets/theme_assets/images/arrows.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
 }
 a > .sf-sub-indicator {  /* give all except IE6 the correct values */
 	top: 10px;
@@ -1791,21 +1791,21 @@ ul.unstyled li { margin-bottom:5px;}
 .flickr img { width:25%; margin-right:15px !important;}
 .form-inline { margin:0}
 .soc_icons a{ float:left; margin-right:10px; margin-top:5px;}
-.icon_t { width:24px; height:24px; background:url('../img/icons_twitter.png')}
-.icon_t:hover {background:url('../img/icons_twitter_hover.png')}
+.icon_t { width:24px; height:24px; background:url('http://localhost/www/expublic/assets/theme_assets/img/icons_twitter.png')}
+.icon_t:hover {background:url('http://localhost/www/expublic/assets/theme_assets/img/icons_twitter_hover.png')}
 .icon_facebook { width:24px; height:24px; background:url('../img/icons_facebook.png')}
-.icon_facebook:hover {background:url('../img/icons_facebook_hover.png')}
+.icon_facebook:hover {background:url('http://localhost/www/expublic/assets/theme_assets/img/icons_facebook_hover.png')}
 .icon_dribbble { width:24px; height:24px; background:url('../img/icons_dribbble.png')}
-.icon_dribbble:hover {background:url('../img/icons_dribbble_hover.png')}
+.icon_dribbble:hover {background:url('http://localhost/www/expublic/assets/theme_assets/img/icons_dribbble_hover.png')}
 .icon_google { width:24px; height:24px; background:url('../img/icons_google.png')}
-.icon_google:hover {background:url('../img/icons_google_hover.png')}
+.icon_google:hover {background:url('http://localhost/www/expublic/assets/theme_assets/img/icons_google_hover.png')}
 .icon_in { width:24px; height:24px; background:url('../img/icons_in.png')}
-.icon_in:hover {background:url('../img/icons_in_hover.png')}
+.icon_in:hover {background:url('http://localhost/www/expublic/assets/theme_assets/img/icons_in_hover.png')}
 .icon_flickr { width:24px; height:24px; background:url('../img/icons_flickr.png')}
-.icon_flickr:hover {background:url('../img/icons_flickr_hover.png')}
+.icon_flickr:hover {background:url('http://localhost/www/expublic/assets/theme_assets/img/icons_flickr_hover.png')}
 
-.preloader { background:url('../img/spinner.gif') center center no-repeat #ffffff;  }
-.view {background:url('../img/spinner.gif') center center no-repeat #f5f5f5;}
+.preloader { background:url('http://localhost/www/expublic/assets/theme_assets/img/spinner.gif') center center no-repeat #ffffff;  }
+.view {background:url('http://localhost/www/expublic/assets/theme_assets/img/spinner.gif') center center no-repeat #f5f5f5;}
 
 /* Responsive table
 ------------------------- */

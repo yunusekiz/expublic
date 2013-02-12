@@ -59,7 +59,7 @@ class about extends CI_Controller {
 		
 		if($update == TRUE)
 		{
-			$message = 'Hakkımızda Metni Başarıyla Güncellendi';
+			$message = 'Hakkımızda Metni Başarıyla Güncellendi. Yönlendiriliyorsunuz...';
 			$this->successMessage($message);
 		}
 		else
@@ -82,7 +82,7 @@ class about extends CI_Controller {
 		$this->parser->parse('backend_views/error_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"3; url=editAboutUs\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"3; url=../about/editAboutUs\">";	
 
 	}
 
@@ -98,7 +98,7 @@ class about extends CI_Controller {
 		$this->parser->parse('backend_views/success_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"4; url=../home\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"3; url=../about/editAboutUs\">";	
 
 	}
 	

@@ -37,7 +37,13 @@
         
         <!-- Slider Configurations - VERY IMPORTANT -->
         <link href="{base}assets/theme_assets/slider_assets/DDSlider.css" rel="stylesheet" type="text/css" />
-        
+
+
+ <link href="{base}assets/theme_assets/lightbox_2.5.1_assets/css/lightbox.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <!-- Arquivos utilizados pelo jQuery lightBox plugin -->
+<script src="{base}assets/theme_assets/lightbox_2.5.1_assets/js/lightbox.js"></script>
 
 
 </head>
@@ -104,49 +110,72 @@
     <!--/SLIDER AREA-->
 
 <!--SLIDER AREA-->
-        <div class="wrapper_slider">
-        
+<div class="row visible-desktop" style="width:auto; margin-left:21px;">
+<div class="slider_area">
+    <div class="container">
+        <div class="row">
             
-              <ul id="yourSliderId">
-
-                  <li class="squareOut"><img src="{base}assets/theme_assets/slider_assets/assets/slider_001.jpg" alt="" /></li>
-                  <li class="squareOut"><img src="{base}assets/theme_assets/slider_assets/assets/slider_002.jpg" alt="" /></li>
-                  <li class="squareOut"><img src="{base}assets/theme_assets/slider_assets/assets/slider_004.jpg" alt="" /></li>
-                  <li class="squareOut"><img src="{base}assets/theme_assets/slider_assets/assets/slider_005.jpg" alt="" /></li>
-                  <li class="squareOut"><img src="{base}assets/theme_assets/slider_assets/assets/slider_006.jpg" alt="" /></li>
-                  <li class="squareOut"><img src="{base}assets/theme_assets/slider_assets/assets/slider_007.jpg" alt="" /></li>
-                  <li class="squareOut"><img src="{base}assets/theme_assets/slider_assets/assets/slider_008.jpg" alt="" /></li>
-                  <li class="squareOut"><img src="{base}assets/theme_assets/slider_assets/assets/slider_009.jpg" alt="" /></li>
-                  <li class="squareOut"><img src="{base}assets/theme_assets/slider_assets/assets/slider_010.png" alt="" /></li>
-
-              </ul>
+            <div class="wrapper_slider">
+                <ul id="yourSliderId">
+                {buyuk_slider_resimleri_dizisi}
+                    <!--<li class="squareOut">
+                        <img src="{base}assets/theme_assets/slider_assets/assets/slider_001.jpg" alt="" />
+                    </li>-->
+                    <li class="squareOut">
+                        <img src="{base}{big_image_path}" alt="" title="{image_title}"/>
+                    </li>
+                {/buyuk_slider_resimleri_dizisi}
+                </ul>
               <!-- END OF SLIDER -->
-              
-              <div class="container_slider">
-                  
-                  <div class="slider_arrow_left"></div>
-                  <div class="slider_arrow_right"></div>
-                  
-                  <ul class="slider_selector"></ul>
-                  
-              </div>
-              
-        
+                <div class="container_slider">
+                    <!--<div class="slider_arrow_left"></div>
+                    <div class="slider_arrow_right"></div>-->
+                    <ul class="slider_selector"></ul>               
+                </div>
+            </div>
+
         </div>
+    </div>
+</div>            
+</div>
+
+<!--<div class="container">
+    <div class="row">
+        <hr>
+    </div>
+</div>
+
+<div class="anadiv_cerceve_dis">
+    <div class="anadiv_cerceve_ic">
+
+    <div class="cocukdiv_image">
+        <a href="{base}assets/theme_assets/img/gal/expo1.jpg" rel="lightbox">
+            <img src="{base}assets/theme_assets/img/gal/expo1.jpg" width="50" height="50"/>
+        </a>
+    </div>
+
+    </div>
+</div>-->
+
+
+
 
  <!--SLIDER AREA-->
 
     <!--FEATURES AREA-->
     <!--FEATURES AREA-->
     <!--MAIN CONTENT AREA-->
-    <div class="container portfolio" style="padding-top:50px;">
-        <div style="margin-top:25px;">
+    <div class="container portfolio" style="margin-top:-45px;">
+        <div style="margin-top:25px; width:980px;">
             <div class="row">
             	<div class="span4 block">
                     <div class="view view-first">
                         <img src="{base}assets/theme_assets/img/gal/expo1.jpg" alt="" />
                     </div>
-                    <h5><i class="icon-picture"></i> <a href="#">Expo Image And Expo Image</a></h5>
+                    <h5>
+                        <i class="icon-picture"></i>
+                        <a href="http://localhost/www/expublic/assets/theme_assets/img/gal/expo1.jpg">Expo Image And Expo Image</a>
+                    </h5>
                     <div class="description">
                         <p class="clo">ex Expo Detail </p>
                     </div>
@@ -172,23 +201,23 @@
             </div>
             <hr>
             <div class="row" style="margin-top:45px; margin-bottom:45px;">
-                <div class="span6">
+                <div class="span6" style="width:460px;">
                     <div class="row">
                     <div class="span6">
                        
                         <div class="clearfix"></div>
                         </div>
                     </div>
-                    <div class="row visible-desktop" style="width:auto;">
+                    <div class="row visible-desktop" style="width:460px;">
                         <div class="span6">
                             <!--<hr class="dash">-->
                             <h3><span class="colored"><strong>BİZDEN HABERLER</strong></span></h3>
-                                <div class="row">
+                                <div class="row" style="width:460px;">
                                 <div class="span6">
                                     <div class="well">
 
                                         <div class="testimonialslider">
-                                            <ul class="slides" style="margin-left:-10px;">
+                                            <ul class="slides" style="margin-left:-20px;">
                                                 <li>
                                                     <blockquote>
                                                         <p>Firmamız resmi olarak faaliyete geçti.</p>
@@ -213,6 +242,7 @@
                                                         <small>Tarih : 18-12-2012</small>
                                                     </blockquote>
                                                 </li>
+
                                             </ul>
                                         </div>
 
@@ -224,9 +254,9 @@
                 </div>
                 <div class="span6">
                     <h3><span class="colored"><strong> ORADAYDIK </strong></span></h3>
-                    <hr class="dash">
+                    
                 </div>
-                <div class="span6">
+               <div class="span6">
                     <div class="row">
                         <div class="blogslider span6 clearfix">
                             <ul class="slides">
@@ -298,6 +328,8 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>

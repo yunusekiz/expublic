@@ -102,7 +102,7 @@ class news_model extends CI_Model {
 		}
 		else
 		{
-			die('boyle bir kayit olmadigindan silme islemi basarisiz');
+			return FALSE;
 		}
 
 

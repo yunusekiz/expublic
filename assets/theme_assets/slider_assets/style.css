@@ -11,6 +11,13 @@
 	
 }
 
+.wrapper_slider_2 {
+	
+	margin: 0 auto;
+	width: 460px;
+	
+}
+
 
 .last {
 	
@@ -128,6 +135,16 @@
 		position: relative;
 		width: 100%;
 		z-index: 15;
+		
+		
+	}
+
+	.container_slider_2 {
+		
+		float: left;
+		position: relative;
+		z-index: 15;
+		width: 460px;
 		
 	}
 	

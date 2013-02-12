@@ -7,7 +7,7 @@
 
 <body>
 
-	<form action="up/imageUp" method="post" enctype="multipart/form-data">
+	<form action="up/imageUpAndResize" method="post" enctype="multipart/form-data">
 		
 		<p> Bir Resim Yükleyin : </p>
 

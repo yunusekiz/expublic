@@ -79,7 +79,7 @@
     <script src="{base}assets/theme_assets/js/jquery.easing.1.3.js"></script>
     <script src="{base}assets/theme_assets/js/jquery.waitforimages.js"></script>
     <script src="{base}assets/theme_assets/js/jquery.slabtext.min.js"></script>
-    <script src="{base}assets/theme_assets/js/jquery.flexslider-min.js"></script>
+    <script src="{base}assets/theme_assets/js/jquery.flexslider-min.js"></script> 
     <script src="{base}assets/theme_assets/js/superfish-menu/superfish.js"></script>
     <script src="{base}assets/theme_assets/js/plugin.js"></script>
     <script src="{base}assets/theme_assets/js/jquery.prettyPhoto.js"></script>
@@ -119,6 +119,35 @@
                 prevSlide: '.slider_arrow_left',
                 selector: '.slider_selector',
                 trans: 'random',
+                delay: 40,
+                ease: 'swing',
+                waitTime: 4000,
+                duration: 400,
+                stopSlide: 1,
+                bars: 15,
+                columns: 9,
+                rows: 3,
+                arrowNext: null,
+                arrowPrev: null
+                
+                });
+            
+        });
+        </script>
+
+
+        <!-- Let's start the slider -->
+        <!--<script type="text/javascript">
+        
+        //triggers the slider
+        $(document).ready(function() {
+            
+            $('#home_slider_little').DDSlider({
+                
+                nextSlide: '.slider_arrow_right',
+                prevSlide: '.slider_arrow_left',
+                selector: '.slider_selector',
+                trans: 'random',
                 delay: 50,
                 ease: 'swing',
                 waitTime: 5000,
@@ -133,17 +162,7 @@
                 });
             
         });
-        
-        
-        </script>
-
-
-
-
-
-
-
-
+        </script>-->
 
     </body>
 </html>

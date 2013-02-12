@@ -2,7 +2,7 @@
 
 
 	/*------------------------
-	---------------- CONTENT
+	---------------- CONTENT 1. Slider
 	------------------------*/
 	
 	/* You might want to change these options for the main container */
@@ -59,3 +59,71 @@
 			position: relative !important;
 			
 		}
+
+
+
+
+
+
+
+
+
+	/*------------------------
+	---------------- CONTENT 2. Slider
+	------------------------*/
+	
+	/* You might want to change these options for the main container */
+	#home_slider_little, #home_slider_little li {
+		
+		height: 300px;
+		width: 460px;
+		
+	}
+	
+	/* images container - This is the most important container - Don't change important properties */
+	#home_slider_little {
+		
+		list-style: none !important;
+		float: left;
+		margin: 0 !important;
+		padding: 0 !important;
+		overflow: hidden !important;
+		position: relative !important;
+		
+	}
+
+		/* each slider item - Nothing to change here */
+		#home_slider_little li {
+		
+			display: none;
+			float: left;
+			margin: 0;
+			position: absolute;
+			width: 100%;
+			
+		}
+		
+		/* Don't edit this part */
+		#home_slider_little li.current {
+			
+			display: block;
+			z-index: 2 !important;
+			
+		}
+		
+		/* Don't edit this part */
+		#home_slider_little li.next {
+			
+			display: block;
+			z-index: 1 !important;
+			
+		}
+		
+		/* Don't edit this part - prevents inline lists from being hidden */
+		#home_slider_little li ul li {
+			
+			display: block !important;
+			position: relative !important;
+			
+		}
+
