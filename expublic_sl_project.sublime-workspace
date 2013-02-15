@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"add",
+				"add_new_news"
+			],
+			[
+				"new",
+				"news_detail_field"
+			],
+			[
+				"ne",
+				"news_date_field"
+			],
+			[
 				"dipls",
 				"display_errors"
 			],
@@ -292,10 +304,6 @@
 				"require_data"
 			],
 			[
-				"new",
-				"new_pass_field"
-			],
-			[
 				"pass",
 				"pass_model"
 			],
@@ -342,10 +350,6 @@
 			[
 				"upda",
 				"update_data"
-			],
-			[
-				"ne",
-				"news_date"
 			],
 			[
 				"news_",
@@ -510,60 +514,56 @@
 			[
 				"ya",
 				"yazilim_ozet"
-			],
-			[
-				"dani",
-				"danismanlik_icerik"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "application/views/backend_views/reference_view.php",
+			"file": "application/models/news_model.php",
 			"settings":
 			{
-				"buffer_size": 3792,
+				"buffer_size": 1825,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/controllers/backend/slider.php",
+			"file": "application/controllers/backend/news.php",
 			"settings":
 			{
-				"buffer_size": 7561,
+				"buffer_size": 4186,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/models/reference_model.php",
+			"file": "application/views/backend_views/admin_main_view.php",
 			"settings":
 			{
-				"buffer_size": 4986,
+				"buffer_size": 6047,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/controllers/backend/reference.php",
+			"file": "/C/xampp/htdocs/www/Simpla Admin/index.html",
 			"settings":
 			{
-				"buffer_size": 12295,
+				"buffer_size": 21017,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/libraries/image_upload_resize_library.php",
+			"file": "application/views/backend_views/all_news_view.php",
 			"settings":
 			{
-				"buffer_size": 9041,
+				"buffer_size": 3885,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/models/slider_model.php",
+			"file": "application/views/backend_views/news_view.php",
 			"settings":
 			{
-				"buffer_size": 1982,
+				"buffer_size": 1375,
 				"line_ending": "Windows"
 			}
 		}
@@ -600,18 +600,32 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/news_view.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/home.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/contact.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/about.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/pass.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference_1a.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/action.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_header_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_footer_view.php",
+		"/C/xampp/htdocs/www/expublic/assets/backend_assets/jquery_datepicker_assets/css/ui-lightness/jquery-ui-1.10.0.custom.css",
+		"/C/xampp/htdocs/www/expublic/assets/backend_assets/jquery_datepicker_assets/js/jquery-ui-1.10.0.custom.js",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/about_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/contact_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/reference_view.php",
+		"/C/xampp/htdocs/www/expublic/application/models/reference_model.php",
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/news_view.php",
+		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
 		"/C/xampp/htdocs/www/expublic/application/libraries/image_upload_resize_library.php",
+		"/C/xampp/htdocs/www/expublic/assets/backend_assets/scripts/facebox.js",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference_1a.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/footer.html",
 		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.html",
 		"/C/xampp/htdocs/www/valera/index.html",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_header_view.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_footer_view.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/pass.php",
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/js/jquery.DDSlider.js",
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/prettyPhoto.css",
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/docs.css",
@@ -631,12 +645,9 @@
 		"/C/xampp/htdocs/www/expublic/application/config/database.php",
 		"/C/xampp/htdocs/www/expublic/application/config/config.php",
 		"/C/xampp/htdocs/www/expublic/system/libraries/Upload.php",
-		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/anasayfa.php",
 		"/C/xampp/htdocs/www/expublic/css/style.css",
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/application.js",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/contact.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/about.php",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/footer_view.php",
 		"/C/xampp/htdocs/www/expublic/application/models/news_model.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/news.php",
@@ -651,12 +662,9 @@
 		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-02-07.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/pagenotfound.php",
 		"/C/xampp/htdocs/www/expublic/application/config/doctypes.php",
-		"/C/xampp/htdocs/www/expublic/application/models/reference_model.php",
 		"/C/xampp/htdocs/www/expublic/application/models/about_model.php",
 		"/C/xampp/htdocs/www/expublic/application/views/404/404_view.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/home.php",
 		"/C/xampp/htdocs/www/expublic/assets/backend_assets/lightbox_css/jquery.lightbox-0.5.css",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/contact_view.php",
 		"/C/Documents and Settings/ynsekiz/Desktop/jquery-lightbox-0.5/css/jquery.lightbox-0.5.css",
 		"/C/xampp/htdocs/www/jquery-lightbox-0.5/index.html",
 		"/C/xampp/htdocs/www/son_raven_son/admin/admin_plugins/galleriffic/galleriffic-2.0.php",
@@ -719,15 +727,7 @@
 		"/C/xampp/htdocs/www/son_raven_son/giris/notification_css/jquery_notification.css",
 		"/C/Documents and Settings/ynsekiz/Desktop/jquery_notification/js/jquery_notification_v.1.js",
 		"/C/xampp/htdocs/www/son_raven_son/giris/index.php",
-		"/C/xampp/htdocs/www/son_raven_son/giris/kontrol.php",
-		"/C/xampp/htdocs/www/son_raven_son/giris/notification_js/jquery_notification_v.1.js",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/succes_view",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/action.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/login_views/login_header.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/admin_header_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/sasa",
-		"/C/xampp/htdocs/www/codeigniter_test/application/models/news_model.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/models/login_model.php"
+		"/C/xampp/htdocs/www/son_raven_son/giris/kontrol.php"
 	],
 	"find":
 	{
@@ -745,6 +745,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"resources/images",
+			"reveal",
+			"myModal",
+			"cocuk",
 			"display_errors",
 			"last_reference_id",
 			"last",
@@ -868,11 +872,7 @@
 			"                               ",
 			">                                  ",
 			"Ürün_1",
-			"galeriye_resim_bul",
-			"	\n",
-			"security",
-			"session",
-			"log_message"
+			"galeriye_resim_bul"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -880,6 +880,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"{base}assets/backend_assets/images",
 			"protected function",
 			"http://localhost/www/expublic/assets/theme_assets/images",
 			"{base}assets/theme_assets/images"
@@ -893,50 +894,23 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/views/backend_views/reference_view.php",
+					"file": "application/models/news_model.php",
 					"settings":
 					{
-						"buffer_size": 3792,
+						"buffer_size": 1825,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2725,
-								2751
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 146.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "application/controllers/backend/slider.php",
-					"settings":
-					{
-						"buffer_size": 7561,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2468,
-								2480
+								1796,
+								1796
 							]
 						],
 						"settings":
@@ -945,25 +919,52 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 495.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "application/models/reference_model.php",
+					"buffer": 1,
+					"file": "application/controllers/backend/news.php",
 					"settings":
 					{
-						"buffer_size": 4986,
+						"buffer_size": 4186,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1933,
-								1933
+								2297,
+								2308
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 675.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/views/backend_views/admin_main_view.php",
+					"settings":
+					{
+						"buffer_size": 6047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1801,
+								1808
 							]
 						],
 						"settings":
@@ -979,22 +980,50 @@
 				},
 				{
 					"buffer": 3,
-					"file": "application/controllers/backend/reference.php",
+					"file": "/C/xampp/htdocs/www/Simpla Admin/index.html",
 					"settings":
 					{
-						"buffer_size": 12295,
+						"buffer_size": 21017,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								376,
-								376
+								10086,
+								9073
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4095.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/views/backend_views/all_news_view.php",
+					"settings":
+					{
+						"buffer_size": 3885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3655,
+								3655
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1005,46 +1034,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "application/libraries/image_upload_resize_library.php",
-					"settings":
-					{
-						"buffer_size": 9041,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								693,
-								693
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 5,
-					"file": "application/models/slider_model.php",
+					"file": "application/views/backend_views/news_view.php",
 					"settings":
 					{
-						"buffer_size": 1982,
+						"buffer_size": 1375,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								562,
-								434
+								363,
+								423
 							]
 						],
 						"settings":
@@ -1121,6 +1123,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 217.0,
+	"side_bar_width": 50.0,
 	"status_bar_visible": true
 }
