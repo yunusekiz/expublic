@@ -2,7 +2,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Harkut-CMS</title>
+<title>JeeMasters-Admin</title>
+
+			
+		<!--  Google Hosted Libraries Jquery 1.9  -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+		<!--/ Google Hosted Libraries Jquery 1.9  -->
+
+		<!--  Without-CDN Jquery 1.9 -->
+		<script src="{base}assets/backend_assets/js/jquery-1.9.0.js"></script>
+		<script src="{base}assets/backend_assets/js/jquery-migrate-1.1.0.min.js"></script>
+		<!--/ Without-CDN Jquery 1.9 -->
+
+
+
+		<!--  				jQuery Datepicker Assets 			-->
+		<link href="{base}assets/backend_assets/jquery_datepicker_assets/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+		<script src="{base}assets/backend_assets/jquery_datepicker_assets/js/jquery-ui-1.10.0.custom.js"></script>
+		<!--/ 				jQuery Datepicker Assets 			-->
+
+
+
 <!--                       CSS                       -->
 	  
 		<!-- Reset Stylesheet -->
@@ -18,13 +39,12 @@
         <!--                       Reveal Modal Popup Assets                      -->
         
         <!-- Reveal Modal Popup CSS -->
-	  	<link rel="stylesheet" href="{base}assets/backend_assets/reveal_css/reveal.css">	
-        
+	  	<link rel="stylesheet" href="{base}assets/backend_assets/reveal_css/reveal.css">
 		<!-- Reveal Modal Popup Scripts -->
 		<!-- <script type="text/javascript" src="jquery-1.4.4.min.js"></script> -->
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+		<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script> -->
+		<!--<script type="text/javascript" src="{base}assets/backend_assets/reveal_script/jquery-1.6.min.js"></script>-->
 		<script type="text/javascript" src="{base}assets/backend_assets/reveal_script/jquery.reveal.js"></script>
-        
         <!--/                      Reveal Modal Popup Assets                      /-->
         
 		
@@ -40,11 +60,11 @@
         <!--<script src="jquery_multifile/jquery.js" type="text/javascript" language="javascript"></script>
 		<script src="jquery_multifile/jquery.MultiFile.js"type="text/javascript" language="javascript"></script>-->
            
-        <script type="text/javascript" src="{base}assets/backend_assets/jquery_multifile_assets/jquery.js" language="javascript"></script>
+        <!--<script type="text/javascript" src="{base}assets/backend_assets/jquery_multifile_assets/jquery.js" language="javascript"></script>-->
 		<script type="text/javascript" src="{base}assets/backend_assets/jquery_multifile_assets/jquery.MultiFile.js" language="javascript"></script>
            
 		<!-- jQuery -->
-		<script type="text/javascript" src="{base}assets/backend_assets/scripts/jquery-1.3.2.min.js"></script>
+		<!--<script type="text/javascript" src="{base}assets/backend_assets/scripts/jquery-1.3.2.min.js"></script>-->
 		
 		<!-- jQuery Configuration -->
 		<script type="text/javascript" src="{base}assets/backend_assets/scripts/simpla.jquery.configuration.js" ></script>
@@ -54,11 +74,6 @@
 		
 		<!-- jQuery WYSIWYG Plugin -->
 		<script type="text/javascript" src="{base}assets/backend_assets/scripts/jquery.wysiwyg.js" ></script>
-		
-		<!-- jQuery Datepicker Plugin -->
-		<script type="text/javascript" src="{base}assets/backend_assets/scripts/jquery.datePicker.js"></script>
-		<script type="text/javascript" src="{base}assets/backend_assets/scripts/jquery.date.js"></script>
-		<!--[if IE]><script type="text/javascript" src="{base}assets/backend_assets/scripts/jquery.bgiframe.js"></script><![endif]-->
 
 		
 		<!-- Internet Explorer .png-fix -->
@@ -74,7 +89,7 @@
 		 <!--                       Jquery Notification Assets               -->
 		<link rel="stylesheet" type="text/css" href="{base}assets/login_assets/notification_css/jquery_notification.css" />
 
-		<script type="text/javascript" src="{base}assets/login_assets/notification_js/jquery_v_1.4.js"></script>
+		<!--<script type="text/javascript" src="{base}assets/login_assets/notification_js/jquery_v_1.4.js"></script>-->
 		<script type="text/javascript" src="{base}assets/login_assets/notification_js/jquery_notification_v.1.js"></script>
 
 		<script type="text/javascript">
@@ -82,8 +97,6 @@
        			 });
 		</script>
 		<!--                       Jquery Notification Assets               /-->
-
-
 
     <!-- Arquivos utilizados pelo jQuery lightBox plugin -->
     <script type="text/javascript" src="{base}assets/backend_assets/lightbox_js/jquery.lightbox-0.5.js"></script>
@@ -98,5 +111,23 @@
     </script>
 	<!-- Arquivos utilizados pelo jQuery lightBox plugin /-->
 
+<!--  DatePicker BootStrap  -->
+	<script>
+	$(function() {
+		$( "#datepicker" ).datepicker({
+			inline: true
+		});
+		// Hover states on the static widgets
+/*		$( "#dialog-link, #icons li" ).hover(
+			function() {
+				$( this ).addClass( "ui-state-hover" );
+			},
+			function() {
+				$( this ).removeClass( "ui-state-hover" );
+			}
+		);*/
+	});
+	</script>
+<!--/ DatePicker BootStrap  -->	
 </head>
 <body>

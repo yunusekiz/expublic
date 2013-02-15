@@ -4,6 +4,114 @@
 		"selected_items":
 		[
 			[
+				"dipls",
+				"display_errors"
+			],
+			[
+				"REFEREN",
+				"reference_title"
+			],
+			[
+				"referen",
+				"reference_model"
+			],
+			[
+				"Ka",
+				"Kategori"
+			],
+			[
+				"ref_ca",
+				"ref_category_id"
+			],
+			[
+				"els",
+				"elseif	elseif …"
+			],
+			[
+				"categor",
+				"ref_category_id"
+			],
+			[
+				"path_thum",
+				"path_thumb_image"
+			],
+			[
+				"path_bi",
+				"path_big_image"
+			],
+			[
+				"image_lib",
+				"image_lib_array"
+			],
+			[
+				"me",
+				"message"
+			],
+			[
+				"err",
+				"errorMessage"
+			],
+			[
+				"mess",
+				"message_1"
+			],
+			[
+				"refe",
+				"reference_category"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"refere",
+				"reference_title"
+			],
+			[
+				"reference",
+				"reference_day"
+			],
+			[
+				"THUM",
+				"thumb_path"
+			],
+			[
+				"error",
+				"errorMessage"
+			],
+			[
+				"CATEGOR",
+				"category_row"
+			],
+			[
+				"result",
+				"result_array"
+			],
+			[
+				"base",
+				"base_data"
+			],
+			[
+				"parse",
+				"parser"
+			],
+			[
+				"curren",
+				"current"
+			],
+			[
+				"curen",
+				"current"
+			],
+			[
+				"big_",
+				"big_slider_current"
+			],
+			[
+				"big_slider",
+				"big_slider_current"
+			],
+			[
 				"slide",
 				"slider_resimleri"
 			],
@@ -46,10 +154,6 @@
 			[
 				"big_img",
 				"big_img_data_for_db"
-			],
-			[
-				"big_slider",
-				"big_slider_title_form_field"
 			],
 			[
 				"slider_",
@@ -96,10 +200,6 @@
 				"getUploadedFileHeight"
 			],
 			[
-				"big_",
-				"big_img_width"
-			],
-			[
 				"el",
 				"else"
 			],
@@ -114,10 +214,6 @@
 			[
 				"ce",
 				"center"
-			],
-			[
-				"els",
-				"else"
 			],
 			[
 				"sou",
@@ -176,16 +272,8 @@
 				"errorMessage"
 			],
 			[
-				"base",
-				"base_url"
-			],
-			[
 				"su",
 				"successMessage"
-			],
-			[
-				"parse",
-				"parser_data"
 			],
 			[
 				"the",
@@ -202,10 +290,6 @@
 			[
 				"re",
 				"require_data"
-			],
-			[
-				"err",
-				"errorPass"
 			],
 			[
 				"new",
@@ -430,35 +514,59 @@
 			[
 				"dani",
 				"danismanlik_icerik"
-			],
-			[
-				"rekl",
-				"reklam_icerik"
-			],
-			[
-				"web",
-				"web_tasarim_icerik"
-			],
-			[
-				"dan",
-				"danismanlik_ozet"
-			],
-			[
-				"mysql_fet",
-				"mysql_fetch_array"
-			],
-			[
-				"is",
-				"islem"
-			],
-			[
-				"e",
-				"elseif	elseif …"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "application/views/backend_views/reference_view.php",
+			"settings":
+			{
+				"buffer_size": 3792,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/backend/slider.php",
+			"settings":
+			{
+				"buffer_size": 7561,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/models/reference_model.php",
+			"settings":
+			{
+				"buffer_size": 4986,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/backend/reference.php",
+			"settings":
+			{
+				"buffer_size": 12295,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/libraries/image_upload_resize_library.php",
+			"settings":
+			{
+				"buffer_size": 9041,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/models/slider_model.php",
+			"settings":
+			{
+				"buffer_size": 1982,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -492,25 +600,41 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/www/expublic/application/config/config.php",
-		"/C/xampp/htdocs/www/expublic/application/config/database.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
-		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/tr/anasayfa.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view.php",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/DDSlider.css",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference_1a.php",
+		"/C/xampp/htdocs/www/expublic/application/libraries/image_upload_resize_library.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/footer.html",
 		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.html",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/bootstrap-responsive.css",
-		"/C/xampp/htdocs/www/expublic/css/style.css",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/superfish-menu/superfish.js",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/application.js",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/jquery.flexslider-min.js",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/plugin.js",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/custom.js",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/docs.css",
+		"/C/xampp/htdocs/www/valera/index.html",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_header_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_footer_view.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/pass.php",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/js/jquery.DDSlider.js",
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/prettyPhoto.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/docs.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/custom.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/jquery.flexslider-min.js",
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/bootstrap.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/bootstrap-responsive.css",
+		"/C/xampp/htdocs/www/expublic/assets/backend_assets/lightbox_js/jquery.lightbox-0.5.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/jquery.gmap.min.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/jquery.preloader.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/plugin.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/superfish-menu/superfish.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/js/jquery.easing.1.3.js",
+		"/C/xampp/htdocs/www/valera/assets/js/custom.js",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/DDSlider.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/style.css",
+		"/C/xampp/htdocs/www/expublic/application/config/database.php",
+		"/C/xampp/htdocs/www/expublic/application/config/config.php",
+		"/C/xampp/htdocs/www/expublic/system/libraries/Upload.php",
+		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/tr/anasayfa.php",
+		"/C/xampp/htdocs/www/expublic/css/style.css",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/application.js",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/contact.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/about.php",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/footer_view.php",
@@ -518,7 +642,6 @@
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/news.php",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/anasayfa_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view_empty.php",
-		"/C/xampp/htdocs/www/expublic/application/libraries/image_upload_resize_library.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/up.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/upload.php",
 		"/C/xampp/htdocs/www/expublic/application/views/upload_form.php",
@@ -526,18 +649,14 @@
 		"/C/Documents and Settings/ynsekiz/Desktop/hh.php",
 		"/C/xampp/php/php.ini",
 		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-02-07.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/pagenotfound.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
 		"/C/xampp/htdocs/www/expublic/application/config/doctypes.php",
 		"/C/xampp/htdocs/www/expublic/application/models/reference_model.php",
 		"/C/xampp/htdocs/www/expublic/application/models/about_model.php",
 		"/C/xampp/htdocs/www/expublic/application/views/404/404_view.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/home.php",
 		"/C/xampp/htdocs/www/expublic/assets/backend_assets/lightbox_css/jquery.lightbox-0.5.css",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_header_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/contact_view.php",
-		"/C/xampp/htdocs/www/expublic/assets/backend_assets/lightbox_js/jquery.lightbox-0.5.js",
 		"/C/Documents and Settings/ynsekiz/Desktop/jquery-lightbox-0.5/css/jquery.lightbox-0.5.css",
 		"/C/xampp/htdocs/www/jquery-lightbox-0.5/index.html",
 		"/C/xampp/htdocs/www/son_raven_son/admin/admin_plugins/galleriffic/galleriffic-2.0.php",
@@ -549,7 +668,6 @@
 		"/C/xampp/htdocs/www/expublic/application/config/migration.php",
 		"/C/Documents and Settings/ynsekiz/Desktop/database.php",
 		"/C/xampp/htdocs/www/expublic/db_backup/codeigniter_test.sql",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/pass.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/footer_2.html",
 		"/C/xampp/htdocs/www/expublic/theme/tr/about.html",
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/referanslar.php",
@@ -565,7 +683,6 @@
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/referanslar",
 		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/slider_assets/js/jquery.DDSlider.js",
 		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/slider_assets/DDSlider.css",
-		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/style.css",
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/hakkimizda.php",
 		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/index.html",
 		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/js/jquery.DDSlider.js",
@@ -610,20 +727,11 @@
 		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/admin_header_view.php",
 		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/sasa",
 		"/C/xampp/htdocs/www/codeigniter_test/application/models/news_model.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/models/login_model.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/admin_main_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/contact_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/pass_view",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/about_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/frontend_views/tr/news_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/about.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/home.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/frontend_views/tr/anasayfa_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/config/database.php"
+		"/C/xampp/htdocs/www/codeigniter_test/application/models/login_model.php"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -637,6 +745,46 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"display_errors",
+			"last_reference_id",
+			"last",
+			"last_category_id",
+			"{\n",
+			"input",
+			"parser_data",
+			"public function",
+			"mask",
+			" style=\"margin-top:45px; margin-bottom:45px;",
+			"blogslider span6 clearfix",
+			"testimonialslider",
+			";\">",
+			"well",
+			"row visible-desktop",
+			"center",
+			"%",
+			"{base}",
+			"{base}assets/theme_assets/images",
+			"glyphicons-halflings",
+			"Ple",
+			"ple",
+			"Please",
+			"please",
+			"view",
+			"flexslider",
+			"rel",
+			"lightboxTop",
+			"var lightboxTop",
+			"arrayPageScroll",
+			"DDSlider",
+			"../images",
+			"ABOUT VALERA",
+			"about valera",
+			"ABOUT VALERA",
+			" ABOUT VALERA",
+			"testimonialslider",
+			"ul",
+			"yourSliderId",
+			"-->",
 			"testimonialslider",
 			"clone",
 			"li class=\"clone\"",
@@ -724,12 +872,7 @@
 			"	\n",
 			"security",
 			"session",
-			"log_message",
-			"_enable_csrf",
-			"logo",
-			"buy_book.",
-			"mail(",
-			"mail"
+			"log_message"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -737,6 +880,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"protected function",
+			"http://localhost/www/expublic/assets/theme_assets/images",
+			"{base}assets/theme_assets/images"
 		],
 		"reverse": true,
 		"show_context": true,
@@ -747,8 +893,171 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "application/views/backend_views/reference_view.php",
+					"settings":
+					{
+						"buffer_size": 3792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2725,
+								2751
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 146.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/controllers/backend/slider.php",
+					"settings":
+					{
+						"buffer_size": 7561,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2468,
+								2480
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/models/reference_model.php",
+					"settings":
+					{
+						"buffer_size": 4986,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1933,
+								1933
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "application/controllers/backend/reference.php",
+					"settings":
+					{
+						"buffer_size": 12295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								376,
+								376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/libraries/image_upload_resize_library.php",
+					"settings":
+					{
+						"buffer_size": 9041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								693,
+								693
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "application/models/slider_model.php",
+					"settings":
+					{
+						"buffer_size": 1982,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								562,
+								434
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -789,7 +1098,7 @@
 	},
 	"replace":
 	{
-		"height": 0.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -812,6 +1121,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 255.0,
+	"side_bar_width": 217.0,
 	"status_bar_visible": true
 }

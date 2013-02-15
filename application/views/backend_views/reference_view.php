@@ -16,13 +16,10 @@
 								<p>
 									<label>Kayıtlı Kategorilerden Birini Seçin  </label>              
 									<select name="reference_dropdown_category" class="small-input" style="color:#000;">
-									<option value="0"> Kategori Seçiniz</option>
-										<option value="kategori dropdown 1">kategori 1</option>
-										<option value="kategori dropdown 2">kategori 2</option>
-                                        <option value="kategori dropdown 3">kategori 3</option>
-                                        <option value="kategori dropdown 4">kategori 4</option>
-                                        <option value="kategori dropdown 5">kategori 5</option>
-                                        <option value="kategori dropdown 6">kategori 6</option>	
+										<option value="0"> Kategori Seçiniz</option>
+										{referans_kategorileri}
+										<option value="{ref_category_name}">{ref_category_name}</option>
+										{/referans_kategorileri}
 									</select> 
 								</p><br /><br />
 								
@@ -30,7 +27,7 @@
 									<label>Veya Yeni Bir Kategori Ekleyin  </label>
 									<input class="text-input large-input" type="text"
 									style="color:#000;" id="large-input" name="reference_text_category" 
-									value="" />
+									/>
 								</p><hr width="100%" style="margin-top:10px;" />
 							
 						<p><br />
@@ -53,7 +50,7 @@
 								
 								<p><label><b style="font-size:16px;">Referans Resmi</b> </label>
 								<!--<input type="file" name="resimler[]" class="multi" accept="gif|jpg|png" /><br />-->
-                                <input type="file" name="reference_image" accept="image/*" />
+                                <input type="file" name="reference_image_form_field" accept="image/*" />
                                 </p>
 								
 								<hr>
@@ -66,9 +63,10 @@
 								</p><br /><br />
 								
 								<p>
-									<label style="font-size:16px;"><b>Referans Detayı :</b></label>
-									<textarea class="text-input textarea wysiwyg" id="textarea" name="reference_detail" cols="5"
-									rows="5" style="height:300px;"></textarea>
+									<label style="font-size:16px;"><b>Referans Açıklaması :</b></label>
+									<input class="text-input large-input" type="text"
+									style="color:#000; font-size:9px;" id="large-input" name="reference_detail" 
+									value="" />
 								</p>
 								
 								<p>

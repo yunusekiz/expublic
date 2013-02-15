@@ -9,6 +9,12 @@ class slider extends CI_Controller {
 	protected $row_data;
 
 	protected $is_there_any_row;
+
+	protected $display_image_up_resize_errors;
+
+	public $current_nav;
+	public $big_slider_current;
+	public $little_slider_current;
 	
 	public function index()
 	{
@@ -18,10 +24,23 @@ class slider extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+
+		$this->load->library('session');// session ın nimetlerinden faydalanabilmek için 'session' isimli library yi yükler.
+		$admin = $this->session->userdata('admin_session'); // $admin diye bi değişken set edilir, değer olarak ise
+															// şu aşamada olup olmadığı bilinmeyen admin_session değişkeni atanır
+		if( empty($admin) ) // eğer $admin değişkenini değeri boş ise, kullanıcı login formuna geri gönderilir
+		{
+			echo "<meta http-equiv=\"refresh\" content=\"0; url=../../login\">";
+			die();
+		}
 		
 		$this->load->model('slider_model');
 
 		$this->base_data = base_url();
+
+		$this->current_nav = 'current';
+		$this->big_slider_current = 'current';
+		$this->little_slider_current = 'current';
 
 		$this->row_data = $this->slider_model->getBigSliderRowForAdminPanel();
 
@@ -32,6 +51,7 @@ class slider extends CI_Controller {
 		{
 			$this->parser_data = array(
 										'base' 	=> $this->base_data,
+										'slider_current_nav'	=>	$this->current_nav,
 										'buyuk_slider_detaylari' => $this->row_data
 								  	  );			
 		}
@@ -39,6 +59,7 @@ class slider extends CI_Controller {
 		{
 			$this->parser_data = array(
 										'base' 	=> $this->base_data,
+										'slider_current_nav'	=>	$this->current_nav,
 										'buyuk_slider_detaylari' => $this->row_data
 								  	  );			
 		}
@@ -48,9 +69,11 @@ class slider extends CI_Controller {
 	
 	public function editBigSlider()
 	{
+		$this->parser_data['big_slider_current'] = $this->big_slider_current;
+
 		if ($this->is_there_any_row == TRUE)
 		{
-
+			
 			// admin panelinin ilgili view lerini yükler
 			$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
 			$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
@@ -95,6 +118,8 @@ class slider extends CI_Controller {
 				
 		$this->image_upload_resize_library->setBootstrapData($array);
 		
+		$this->image_upload_resize_library->display_errors = TRUE;
+
 		$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize();
 
 		if($image_up_and_resize == TRUE)
@@ -108,7 +133,6 @@ class slider extends CI_Controller {
 															$big_img_data_for_db,
 															$thumb_img_data_for_db
 														  );
-
 
 			if($insert_data_to_db == TRUE)
 			{
@@ -166,6 +190,31 @@ class slider extends CI_Controller {
 			$return_path = '../editBigSlider';
 			$this->errorMessage($message,$return_path);
 		}
+	}
+
+
+	public function editLittleSlider()
+	{
+		$this->parser_data['little_slider_current'] = $this->little_slider_current;
+
+		if ($this->is_there_any_row == TRUE)
+		{
+			
+			// admin panelinin ilgili view lerini yükler
+			$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+			$this->parser->parse('backend_views/big_slider_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);		
+		}
+		else
+		{
+			// admin panelinin ilgili view lerini yükler
+			$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+			$this->parser->parse('backend_views/big_slider_view_empty',$this->parser_data);
+			$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);	
+		}
+
 	}
 
 

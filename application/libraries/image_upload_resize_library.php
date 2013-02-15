@@ -15,7 +15,7 @@ class image_upload_resize_library extends CI_Controller {
 	private $bootstrap_data = array();
 
 	// class run edildiğinde eğer bi hata oluşursa, hatanın ekrana basılıp basılmayacağını belirler
-	private $display_errors;
+	public $display_errors = FALSE;
 
 	// class ın çağrıldığı controller ın root adresini alır
 	public $root;
@@ -84,32 +84,54 @@ class image_upload_resize_library extends CI_Controller {
 
 	public function imageUpAndResize()
 	{
-		$image_upload = $this->imageUpload();
-		
-		if ($image_upload == FALSE)
-		{
-			echo '</br> <center> <h3> HATA:: Resim Yukleme FALSE Dondu </h3> </center></br>';
-			echo '</br><center> <h3>  upload path i : </h3> </center>';
-			var_dump($this->bootstrap_data['upload_path']);
-			die();
-		}
-		
-		$image_resize = $this->imageResize();
 
-		if ($image_resize == FALSE)
+		if ($this->display_errors == TRUE) 
 		{
-			echo '</br> <center> <h3> HATA:: Resim Resize FALSE Dondu </h3> </center></br>';
-			die();
+			if ($this->imageUpload() == TRUE)
+			{
+				if ($this->imageResize() == TRUE) 
+				{
+					return TRUE;
+				}
+				else
+				{
+					echo '</br> <center> <h3> HATA:: Resim Resize FALSE Dondu </h3> </center></br>';
+					die();
+				}
+			}
+			else
+			{
+				echo '</br> <center> <h3> HATA:: Resim Yukleme FALSE Dondu </h3> </center></br>';
+				echo '</br><center> <h3>  upload path i : </h3> </center>';
+				var_dump($this->bootstrap_data['upload_path']);
+				die();
+			}
+
 		}
 		else
 		{
-			return TRUE;
+			if ($this->imageUpload() == TRUE)
+			{
+				if ($this->imageResize() == TRUE) 
+				{
+					return TRUE;
+				}
+				else
+				{
+					return FALSE;
+				}
+			}
+			else
+			{
+				return FALSE;
+			}	
 		}
+	
 
 	}
 
 
-	public function imageUpload($display_errors = TRUE)
+	public function imageUpload()
 	{
 
 		$upload_config['upload_path'] = $this->bootstrap_data['upload_path'];
@@ -136,10 +158,10 @@ class image_upload_resize_library extends CI_Controller {
 		}
 		else
 		{
-			if ($display_errors == TRUE)
+			if ($this->display_errors == TRUE)
 			{
 				echo '<center><h3>'.$this->upload->display_errors('<p>', '</p>').'</h3></center>';
-				return FALSE;
+				//return FALSE;
 			}
 			else
 			{
@@ -247,17 +269,34 @@ class image_upload_resize_library extends CI_Controller {
 			}
 			else
 			{
-				echo '</br> HATA:: resmin buyuk hali olusturulamadi :  </br>';
-				echo $this->image_lib->display_errors();
-				return FALSE;
+				if ($this->display_errors == TRUE) 
+				{
+					echo '</br> HATA:: resmin buyuk hali olusturulamadi :  </br>';
+					echo $this->image_lib->display_errors();
+					return FALSE;
+				}
+				else
+				{
+					return FALSE;
+				}
+				
 			}
 		}
 		else
 		{
-			echo '</br> HATA:: resmin thumb i olusturulamadi </br>';
-			echo $this->image_lib->display_errors();
-			return FALSE;
+			if ($this->display_errors == TRUE) 
+			{
+				echo '</br> HATA:: resmin thumb i olusturulamadi </br>';
+				echo $this->image_lib->display_errors();
+				return FALSE;
+			}
+			else
+			{
+				return FALSE;
+			}
+
 		}
+			
 
 	}
 

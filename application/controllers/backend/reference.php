@@ -2,13 +2,13 @@
 
 class reference extends CI_Controller {
 	
-	protected $data;
-	protected $base;
-	
+	protected $parser_data;
+	protected $base_data;
+
 	protected $imageDataAfterUpload;
 	
-	protected $path_big_full;
-	protected $path_thumb_full;
+	protected $path_big_image;
+	protected $path_thumb_image;
 	
 	protected $ref_category_id = NULL;
 	
@@ -20,31 +20,64 @@ class reference extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+
+		$this->load->library('session');// session ın nimetlerinden faydalanabilmek için 'session' isimli library yi yükler.
+		$admin = $this->session->userdata('admin_session'); // $admin diye bi değişken set edilir, değer olarak ise
+															// şu aşamada olup olmadığı bilinmeyen admin_session değişkeni atanır
+		if( empty($admin) ) // eğer $admin değişkenini değeri boş ise, kullanıcı login formuna geri gönderilir
+		{
+			echo "<meta http-equiv=\"refresh\" content=\"0; url=../../login\">";
+			die();
+		}
 		
 		$this->load->model('reference_model');
+
+		$category_row = $this->reference_model->getRefCategoryRows();
+
+		if ($category_row == NULL)
+		{
+			$category_row = array();
+		}
 		
-		$this->base = base_url();
+		$this->base_data = base_url();
 		$day = date('d');
 		$month = date('m');
 		$year = date('Y');
 		
 		$base = base_url();
 		
-		$this->data = array('base' => $base,'day'=>$day,'month'=>$month,'year'=>$year);
+		$this->parser_data = array(
+									'base'	=>	$this->base_data,
+									'day'	=>	$day,
+									'month'	=>	$month,
+									'year'	=>	$year,
+									'referans_kategorileri'	=> $category_row
+								  );
 	}
 	
 	
 	public function addReference()
 	{	
 		// admin panelinin ilgili view lerini yükler
-		$this->parser->parse('backend_views/admin_header_view',$this->data);
-		$this->parser->parse('backend_views/admin_main_view',$this->data);
-		$this->parser->parse('backend_views/reference_view',$this->data);
-		$this->parser->parse('backend_views/admin_footer_view',$this->data);
+		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+		$this->parser->parse('backend_views/reference_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
 	}
 	
+	## //**\\***//**\\***//**\\***//**\\//**\\***//**\\***//**\\***//**\\//**\\***//**\\
+	## +++ controlReference metodu başlangıç +++
 	public function controlReference()
 	{
+		$image_lib_array = array(
+						'image_form_field'	=>	'reference_image_form_field',
+						'upload_path'		=>	'assets/images/reference_images',
+						'big_img_width'		=>	NULL,
+						'big_img_height'	=>	NULL,
+						'thumb_img_width'	=>	220,
+						'thumb_img_height'	=>	110
+					  );
+	
 		$reference_dropdown_category = $this->input->post('reference_dropdown_category');
 		$reference_text_category	 = $this->input->post('reference_text_category');
 		$reference_day			 	 = $this->input->post('reference_day');
@@ -52,234 +85,201 @@ class reference extends CI_Controller {
 		$reference_year			 	 = $this->input->post('reference_year');
 		$reference_title		 	 = $this->input->post('reference_title');
 		$reference_detail		 	 = $this->input->post('reference_detail');
-		
+
 		$reference_date = $reference_day.'-'.$reference_month.'-'.$reference_year;
-	
-		$reference_category = NULL; 
-		
-		if($reference_dropdown_category != '0') // dropdowndan gelen category value si sıfır(0) değil ise
+		#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#		
+		#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#		
+		#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
+		if(($reference_title != '') || ($reference_detail != '')) // referans basligi ve  referans aciklamsi bos degil ise
 		{
-			$reference_category = $reference_dropdown_category; // dropdowndan gelen value reference_category değişkenine atansın
-			// test : echo 'dropdowndan gelen category value si sifir (0) degil : ';
-			// test : echo $reference_category;
-		}
-		else  // dropdowndan gelen category value si sıfır(0) ise
-		{
-			if($reference_text_category != NULL) // bununla birlikte yine formdan gelen reference_text_category field ı boş değil ise
+			if($reference_dropdown_category != '0') // dropdowndan gelen category value si sıfır(0) değil ise
 			{
-				$reference_category = $reference_text_category;	// formdan gelen reference_text_category value su  reference_category değişkenine atansın
-				// test : echo 'formdan gelen reference_text_category field i bos degil : ';
-				// test : echo $reference_category;
-			}
-			else
-			{
-				echo 'kategoriyi bos biraktiniz : '; // bununla birlikte yine formdan gelen reference_text_category field ı  da boş ise artık hata bassın
-				// test : var_dump($reference_category);
-				die();
-			}
-		}
-		
-		if(($reference_title != NULL) && ($reference_detail != NULL))
-		{
-			//echo 'referans basligini ve detayini bos birakmayiniz';
-			//die();
-			
-/*			echo 'formdan gelen referans title ve referans detail bos degil : ';
-			echo $reference_title;
-			echo '<br>';
-			echo $reference_detail;*/
-			
-		}		
-		else
-		{
-			echo 'formdan gelen referans title ve referans detail bos bom boss : ';
-/*			$config['upload_path'] = './assets/images/reference_images/';
-			$config['allowed_types'] = 'gif|jpg|png';
-			$config['max_size']	= '1000000';
-			$config['max_width'] = '10240';
-			$config['max_height'] = '7680';
-		
-			$this->load->library('upload', $config);
-		
-			if( ! $this->upload->do_upload("reference_image"))// yeni referans ekleme formundaki <input name="reference_image"> isimli field
-			{
-				echo 'resim yuklenemedi : <br>';
-				echo $this->upload->display_errors();
-			}
-			else
-			{
-				echo 'resim basariyla yuklendi : <br>';
-				$data = $this->upload->data();
-				$full_path = strstr($data['full_path'],'assets');
-				$thumb_path = $data['file_path'].'thumb/';
-				
-				$resize_config['image_library']	= 'gd2';
-				$resize_config['source_image']	= $full_path;
-				$resize_config['new_image']	= $thumb_path;
-				$resize_config['create_thumb']	= TRUE;
-				$resize_config['maintain_ratio'] = FALSE;
-				$resize_config['width']	= 75;
-				$resize_config['height'] = 75;
-				
-				$this->load->library('image_lib',$resize_config);
-				$this->image_lib->resize() or die($this->image_lib->display_errors());
-				
-				
-			}*/
-	
-		}
-		
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		$conditon_ref_text_field = $this->reference_model->isThereAnyRefTextFieldRowLikeIt($reference_title);
-		
-		if($conditon_ref_text_field == TRUE) // eğer form field larından gelen "referans basligi", veritabanındaki ref_text_field tablosunda daha önceden kayıtlı ise
-		{
-			echo '<h1> daha once bu kayit varmis lutfen baska kayit ekleyiniz </h1>';
-			die();
-		}
-		
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		$conditon_ref_category = $this->reference_model->isThereAnyRefCategoryRowLikeIt($reference_category);
-		
-		if($conditon_ref_category == TRUE) // eğer form field larından gelen "referans kategori", veritabanındaki "ref_category" tablosunda daha önceden kayıtlı ise
-		{
-			$this->ref_category_id = $this->reference_model->getRefCategoryId($reference_category);
-		}
-		
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		########### referansın kaydedilecek büyük resminin config bilgileri ###########
-		$upload_config['upload_path'] = './assets/images/reference_images/'; 
-		$upload_config['allowed_types'] = 'gif|jpg|png';
-		$upload_config['max_size']	= '1000000';
-		$upload_config['max_width'] = '10240';
-		$upload_config['max_height'] = '7680';
-			
-			$imageUpload = $this->imageUpload('reference_image',$upload_config); // bu class içindeki imageUpload() metodunu çağırır, resim upload işlemini başlatır
-		
-		if( $imageUpload != FALSE ) // upload işlemi başarısız değil ise, kaydedilen resmin bilgilerini alır	
-		{
-			$full_path	= $this->imageDataAfterUpload['full_path']; // upload edilen resmin full_path i 
-			$thumb_path = $this->imageDataAfterUpload['file_path'].'thumb/'; // resize işlemi sonrası yeni oluşturulacak thumb resmin kaydedileceği dizin		
-		}
-	
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		########### referansın resize işleminden geçecek küçük resminin config bilgileri ###########
-		$resize_config['image_library']	= 'gd2';
-		$resize_config['source_image']	= $full_path;
-		$resize_config['new_image']	= $thumb_path;
-		$resize_config['create_thumb']	= TRUE;
-		$resize_config['maintain_ratio'] = FALSE;
-		$resize_config['width']	= 270;
-		$resize_config['height'] = 135;
-		
-		$thumb_image_name = strstr($this->imageDataAfterUpload['file_name'],'.',TRUE).'_thumb'.$this->imageDataAfterUpload['file_ext']; // thumb resmin adı 
-		
-		$do_resize = $this->imageResize($resize_config); // resmi resize işleminden geçirmek için "imageResize()" metodunu çağır, resmi resize eder
-		if($do_resize == TRUE) // "imageResize()" metodundan eğer TRUE dönmüş ise büyük ve küçük resmin kayıt bilgilerini tut
-		{
-			/*echo '<br>resim kaydetme islemi basarili : bilgiler : <br>';*/
-			 $this->path_big_full	=  $resize_config['source_image'];
-			 $this->path_thumb_full =  $resize_config['new_image'].$thumb_image_name;
-		}
-		
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		if($this->ref_category_id == NULL) // eğer yeni referans kategorisi eklenecekse, ilk önce yeni referans kategorisi ekle :)
-		{
-			$add_ref_category = $this->reference_model->add_Ref_Category($reference_category); // yeni referans kategorisi ekler
-			if($add_ref_category == FALSE) // eğer yeni kategori ekleme başarılı değil ise hata bas
-			{
-				echo '<br>yeni referans kategorisi ekleme islemi basarisiz oldu<br>';
-				
-			}
-			
-			// reference_text_field tablosuna yeni kayıt ekler
-			$add_tef_text_field = $this->reference_model->add_Ref_TextField($reference_title, $reference_date, $reference_title, $reference_detail);
-			if($add_tef_text_field == FALSE) // eğer yeni referans text field  ekleme başarılı değil ise hata bas
-			{
-				echo '<br>yeni referans text field ekleme islemi basarisiz oldu<br>';
-			}
-			
-			// yukarıdaki islemler basarili ise, "reference_image" tablosuna yeni kayıt gir
-			$add_ref_image = $this->reference_model->add_Ref_Image($this->path_big_full, $this->path_thumb_full);	
-			if($add_ref_image)
-			{
-				echo '<center><h1>::::TEBRIKLER:::: yeni referans kategorisi text field i ve referans resmi ekleme, resize etme islemi basarili oldu </h1></center>';
-			}
+				$reference_category = $reference_dropdown_category; // dropdowndan gelen value reference_category değişkenine atansın
+
+				$conditon_ref_text_field = $this->reference_model->isThereAnyRefTextFieldRowLikeIt($reference_title);
+				if ($conditon_ref_text_field == FALSE) // formdan gelen referans başlığı daha önceden kayıtlı değil ise 
+				{
+					$image_lib_array['image_name'] = $reference_title;
+
+					$this->load->library('image_upload_resize_library'); // resim upload ve resize eden library yi çağır
+					$this->image_upload_resize_library->setBootstrapData($image_lib_array);
+					########################################################################################
+					$this->image_upload_resize_library->display_errors = TRUE; // image_upload_resize_library sınıfının hata gösterme/saklama seçeneğini ayarlar
+					$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize(); // resmi yükle ve yeniden boyutlandır
 					
-		}
-		else // eğer çok daha önceden referans kategorisi eklenmişse, "id" sini al, referans text field larını ekle
-		{
-			$add_tef_text_field = $this->reference_model->add_Ref_TextField($reference_title, $reference_date, $reference_title,
-																			$reference_detail, TRUE, $this->ref_category_id);
-			if(!$add_tef_text_field) // eğer yeni referans text field  ekleme başarılı değil ise hata bas
-			{
-				echo '<br>yeni referans text field ekleme islemi basarisiz oldu<br>';
+					if($image_up_and_resize == TRUE) // eğer image upload ve resize işlemleri başarılı ise, resmin kayıt bilgilerini al
+					{
+						$this->path_big_image	= $this->image_upload_resize_library->getSizedBigImgNameForDB();
+						$this->path_thumb_image	= $this->image_upload_resize_library->getSizedThumbImgNameForDB();
+
+						// dropdowndaki kategorinin id sini al
+						$this->ref_category_id = $this->reference_model->getRefCategoryId($reference_category);
+						##########################################################
+						// reference_text_field tablosuna yeni kayıt ekle
+						$add_tef_text_field = $this->reference_model->add_Ref_TextField($reference_date, $reference_title, $reference_detail, TRUE, $this->ref_category_id);
+						if($add_tef_text_field == FALSE) // eğer yeni referans text field  ekleme başarılı değil ise hata bas
+						{
+							$message = 'HATA:: Referans Detayları Veritabanına Kaydedilemedi...';
+							$this->errorMessage($message);
+						}
+						elseif($this->reference_model->add_Ref_Image($this->path_big_image, $this->path_thumb_image) == FALSE)
+						{
+							$message = 'HATA:: Resim Bilgileri Veritabanına Kaydedilemedi...';
+							$this->errorMessage($message);
+
+						}
+						else
+						{	// Referans, tüm detayları ve resimleriyle başarılıbirlikte veritabanına kaydedilince
+							$message = 'Yeni Referans Eklendi';
+							$this->successMessage($message);
+						}
+						##########################################################
+					}
+					else // eğer image upload ve resize işlemleri başarısız ise hata bas 
+					{
+						$message =  'Resim Upload Ve Resize Edilirken Bi Sorunla Karşılaşıldı...';
+						$this->errorMessage($message);
+					}
+					########################################################################################	
+				}
+				else
+				{	// formdan gelen referans başlığı daha önceden kayıtlı ise
+					$message = 'HATA:: Bu Referans Başlığına Ait Bir Kayıt Var. Lütfen Yeni Bir Başlık Girin';
+					$this->errorMessage($message);
+				}
+
 			}
-			
-			// yukarıdaki islemler basarili ise, "reference_image" tablosuna yeni kayıt gir
-			$add_ref_image = $this->reference_model->add_Ref_Image($this->path_big_full, $this->path_thumb_full);	
-			if($add_ref_image == TRUE)
+			elseif($reference_text_category != '')  // formdan gelen reference_text_category field ı boş değil ise
 			{
-				echo '<center><h1>::::TEBRIKLER:::: yeni referans kategorisi text field i ve referans resmi ekleme, resize etme islemi basarili oldu </h1></center>';
+				// veritabanındaki referans kategorisi tablosunda, formdan gelen reference_text_category field ile eşleşen bir kayıt olup olmadığına bakar, varsa hata basar
+				$conditon_ref_category = $this->reference_model->isThereAnyRefCategoryRowLikeIt($reference_text_category);
+				//////////////***********//////////////***********//////////////***********//////////////***********//////////////
+				//////////////***********//////////////***********//////////////***********//////////////***********//////////////
+				if ($conditon_ref_category == TRUE)
+				{
+					$message = 'HATA:: Bu Kategori Kayıtlı. Lütfen Yeni Bir Kategori Ekleyin, Veya Kayıtlı Kategorilerden Birini Seçin';
+					$this->errorMessage($message);
+				}
+				elseif($this->reference_model->isThereAnyRefTextFieldRowLikeIt($reference_title) == FALSE) // daha önce böyle bir kategori  ve reference title kayitli değil ise
+				{
+					$reference_category = $reference_text_category;
+
+					$image_lib_array['image_name'] = $reference_title;
+
+					$this->load->library('image_upload_resize_library'); // resim upload ve resize eden library yi çağır
+					$this->image_upload_resize_library->display_errors = FALSE; // image_upload_resize_library sınıfının hata gösterme/saklama seçeneğini ayarlar
+					$this->image_upload_resize_library->setBootstrapData($image_lib_array); // resim upload ve resize librarysine gerekli verileri set et
+					#####################################################################################
+					$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize(); // resmi yükle ve yeniden boyutlandır
+					if($image_up_and_resize == TRUE) // eğer image upload ve resize işlemleri başarılı ise, resmin kayıt bilgilerini al
+					{
+						$this->path_big_image	= $this->image_upload_resize_library->getSizedBigImgNameForDB();
+						$this->path_thumb_image	= $this->image_upload_resize_library->getSizedThumbImgNameForDB();
+
+						$add_ref_category = $this->reference_model->add_Ref_Category($reference_category); // bu ketegori daha önceden kayıtlı olmadığı için yeni kategori ekler
+						if ($add_ref_category != TRUE) // eğer yeni kategori ekleme başarısız olmuşsa hata bas
+						{
+							$message = 'HATA:: Yeni Kategori Eklenirken Bir Hatayla Karşılaşıldı';
+							$this->errorMessage($message);
+						}
+						elseif ($this->reference_model->add_Ref_TextField($reference_date, $reference_title, $reference_detail, $isThereAnyCategoryLikeIt = FALSE, $ref_category_id = NULL) != TRUE) // yeni kategori eklenmişse, daha sonra  referans detayı ekle, başarısız olmuş ise hata bas
+						{
+							$message = 'HATA:: Referans Detayları Veritabanına Kaydedilemedi...';
+						}
+						elseif ($this->reference_model->add_Ref_Image($this->path_big_image, $this->path_thumb_image) != TRUE)
+						{
+							$message = 'HATA:: Resim Bilgileri Veritabanına Kaydedilemedi...';
+						}
+						else
+						{// Referans, tüm detayları ve resimleriyle başarılı şekilde veritabanına kaydedilince
+							$message = 'Yeni Referans Eklendi';
+							$this->successMessage($message);
+						}
+					}
+					else // eğer image upload ve resize işlemleri başarısız ise hata bas 
+					{
+						$message =  'Resim Upload Ve Resize Edilirken Bi Sorunla Karşılaşıldı...';
+						$this->errorMessage($message);
+					}
+					#####################################################################################
+				}
+				else // daha önce böyle bir reference title kayitli ise hata bas
+				{
+					$message = 'HATA:: Bu Referans Başlığına Ait Bir Kayıt Var. Lütfen Yeni Bir Başlık Girin';
+					$this->errorMessage($message);
+				}
+				//////////////***********//////////////***********//////////////***********//////////////***********//////////////
+				//////////////***********//////////////***********//////////////***********//////////////***********//////////////
 			}
-																			
+			else
+			{
+				$message = 'Lütfen Bir Kategori Seçin Veya Yeni Bir Kategori Ekleyin'; // bununla birlikte yine formdan gelen reference_text_category field ı  da boş ise artık hata bassın
+				$this->errorMessage($message);
+				//var_dump($reference_category);
+			}
 		}
+		#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
+		#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
+		#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#				
+		else
+		{   //formdan gelen referans title veya referans detail bos ise
+			$message = 'HATA:: Referans Başlığını Ve Referans Açıklamasını Boş Bırakmayın';
+			$this->errorMessage($message);
+		}	
+	}	## +++/ controlReference metodu bitiş /+++
+## //**\\***//**\\***//**\\***//**\\//**\\***//**\\***//**\\***//**\\//**\\***//**\\
+
 		
-				
-	}
-	
-	
-	protected function imageUpload($image_form_field, array $upload_config, $display_errors = FALSE)
+
+	public function errorMessage($message, $return_path = NULL)
 	{
-		$this->load->library('upload',$upload_config);
-		$do_upload = $this->upload->do_upload($image_form_field);  // resmi upload eder, $image_form_field, ref. ekleme formundaki <input name="reference_image"> a eşit.
-		
-		if( ! $do_upload )
+		if ($return_path == NULL)
 		{
-			if($display_errors == TRUE) // resim upload işlemi başarısız ise ve hata bastırma açık ise hata basar
-			{
-				echo '<center><h3>'.$this->upload->display_errors('<p>', '</p>').'</h3></center>';
-				return FALSE;
-			}
-			else // resim upload işlemi başarısız ise ve hata bastırma açık değil ise sadece FALSE döndürür
-			{
-				return FALSE;
-			}
+			$return_path = 'addReference';
 		}
-		else // upload işlemi başarılı ise, kaydedilen resmin bilgilerini "imageAfterUploadData" değişkenine atar	
-		{
-			return $this->imageDataAfterUpload = $this->upload->data();
-		}
+
+		$this->parser_data = array(
+									'base' 				=> $this->base_data,
+									'error_message'		=> $message
+								  );
+		// admin panelinin ilgili view lerini yükler
+		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+		$this->parser->parse('backend_views/error_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
+		echo "<meta http-equiv=\"refresh\" content=\"3; url=$return_path\">";	
 	}
-	
-	
-	// bu metod referans resmini, "$resize_config" verilerine göre resize işleminden geçirir
-	protected function imageResize(array $resize_config,$display_errors = FALSE)
+
+	public function successMessage($message, $return_path = NULL)
 	{
-		$this->load->library('image_lib',$resize_config);
-		$do_resize = $this->image_lib->resize(); // referans resminin thumbnail ini oluşturmak için resmi resize işleminden geçirir
-		
-		if( ! $do_resize ) // eğer resim resize işlemi başarısızsa
+		if ($return_path == NULL)
 		{
-			if($display_errors == TRUE) // resim resize işlemi başarısızsa ve  hata bastırma açık ise hata basar 
-			{
-				echo '<center><h3>'.$this->image_lib->display_errors('<p>', '</p>').'</h3></center>';
-			}
-			else // resim resize işlemi başarısızsa ve  hata bastırma açık değil ise sadece FALSE döndürür
-			{
-				return FALSE;
-			}	
+			$return_path = 'addReference';
 		}
-		else // resim resize işlemi başarılı ise TRUE döndürür
-		{
-			return TRUE;
-		}
+
+		$this->parser_data = array(
+									'base' 				=> $this->base_data,
+									'success_message'	=> $message
+								  );
+		// admin panelinin ilgili view lerini yükler
+		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+		$this->parser->parse('backend_views/success_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
+		echo "<meta http-equiv=\"refresh\" content=\"4; url=$return_path\">";	
 	}
-	
+
+	public function addcat()
+	{
+		$category = 'daşşak';
+		$this->reference_model->add_Ref_Category($category);
+	}
+
+	public function control()
+	{
+		$category = $this->input->post('reference_dropdown_category');
+		echo "<h1> gelen kategori :  $category </h1>";
+	}
 	
 
 }

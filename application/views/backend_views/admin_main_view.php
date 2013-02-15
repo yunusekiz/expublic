@@ -18,45 +18,45 @@
 			<ul id="main-nav">  <!-- Accordion Menu -->
 				
 				<li>
-					<a href="#" class="nav-top-item">
+					<a href="#" class="nav-top-item {slider_current_nav}">
 						Anasayfa Slider
 					</a>
 					<ul>
-						<li><a href="{base}backend/slider/editBigSlider" class="">Büyük Slider Düzenle</a></li>
-						<li><a href="#" class="">Küçük Slider Düzenle</a></li>
+						<li><a href="{base}backend/slider/editBigSlider" class="{big_slider_current}">Büyük Slider Düzenle</a></li>
+						<li><a href="{base}backend/slider/editLittleSlider" class="{little_slider_current}">Küçük Slider Düzenle</a></li>
 					</ul>
 				</li>
 							
 				
 				
 				<li> 
-					<a href="#" class="nav-top-item current"> <!-- Add the class "current" to current menu item -->
+					<a href="#" class="nav-top-item {ref_current_nav}"> <!-- Add the class "current" to current menu item -->
 					Referanslar
 					</a>
 					<ul>
-						<li><a href="#" class="current">Referans Ekle</a></li>
-						<li><a href="#" class="'.$referans_duzenle.'">Referansları Düzenle</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a href="{base}backend/reference/addReference" class="{add_ref_current}">Referans Ekle</a></li>
+						<li><a href="#" class="{edit_ref_current}">Referansları Düzenle</a></li> <!-- Add class "current" to sub menu items also -->
 						
 					</ul>
 				</li>			
 				
 
 				<li>
-					<a href="#" class="nav-top-item">
+					<a href="#" class="nav-top-item {news_current_nav}">
 						Haberler
 					</a>
 					<ul>
-						<li><a href="#" class="'.$haber_ekle.'">Haber Ekle</a></li>
-						<li><a href="#" class="'.$haber_duzenle.'">Haberleri Düzenle</a></li>
+						<li><a href="{base}backend/news/addNews" class="{add_news_current}">Haber Ekle</a></li>
+						<li><a href="{base}backend/news/allNews" class="{edit_news_current}">Haberleri Düzenle</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#" class="nav-top-item">
+					<a href="#" class="nav-top-item {site_config_nav}">
 						Site ayarları
 					</a>
 					<ul>
-						<li><a href="#">SEO Ayarları</a></li>
-						<li><a href="#">Domain Ayarları</a></li>
+						<li><a href="{seo_config_current}">SEO Ayarları</a></li>
+						<li><a href="{domain_config_current}">Domain Ayarları</a></li>
 					</ul>
 				</li>                       
 				
@@ -134,7 +134,7 @@
 					<img src="{base}assets/backend_assets/images/icons/services_48.png" alt="icon" /><br />
 					Hizmetlerimiz Metnini Düzenle
 				</span></a></li>-->
-				<li><a class="shortcut-button" href="#"><span>
+				<li><a class="shortcut-button" href="{base}backend/news/addNews"><span>
 					<img src="{base}assets/backend_assets/images/icons/news_48.png" alt="icon" /><br />
 					Yeni Bir Haber Ekle
 				</span></a></li>

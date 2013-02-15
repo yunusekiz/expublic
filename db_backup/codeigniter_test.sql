@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: localhost
--- Üretim Zamanı: 07 Şub 2013, 12:25:41
+-- Üretim Zamanı: 15 Şub 2013, 12:14:13
 -- Sunucu sürümü: 5.5.25a
 -- PHP Sürümü: 5.4.4
 
@@ -84,7 +84,15 @@ CREATE TABLE IF NOT EXISTS `big_slider` (
   `big_image_path` text NOT NULL,
   `thumb_image_path` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Tablo döküm verisi `big_slider`
+--
+
+INSERT INTO `big_slider` (`id`, `image_title`, `big_image_path`, `thumb_image_path`) VALUES
+(1, 'merhaba harun abi', 'assets/theme_assets/slider_assets/photo/merhaba_harun_abi.jpg', 'assets/theme_assets/slider_assets/photo/thumb/merhaba_harun_abi_thumb.jpg'),
+(6, 'merhaba harun abi', 'assets/theme_assets/slider_assets/photo/merhaba_harun_abi1.jpg', 'assets/theme_assets/slider_assets/photo/thumb/merhaba_harun_abi1_thumb.jpg');
 
 -- --------------------------------------------------------
 
@@ -109,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
 --
 
 INSERT INTO `contact` (`id`, `address`, `phone`, `fax`, `email`, `facebook`, `twitter`, `gplus`) VALUES
-(1, '0', '0', '0', '0', '0', '0', '0');
+(1, '02424', '02424', '02424', '0242424', '0242424', '0242424', '0');
 
 -- --------------------------------------------------------
 
@@ -137,16 +145,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `news_date` varchar(225) NOT NULL,
   `news_detail` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
-
---
--- Tablo döküm verisi `news`
---
-
-INSERT INTO `news` (`id`, `news_date`, `news_detail`) VALUES
-(11, 'yeni haber tarihi_1', 'yeni haber detayi_1'),
-(12, 'yeni haber tarihi_2', 'yeni haber detayi_2'),
-(13, 'yeni haber tarihi_3', 'yeni haber detayi_3');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -169,15 +168,7 @@ CREATE TABLE IF NOT EXISTS `reference_category` (
   `ref_category_name` varchar(225) NOT NULL,
   PRIMARY KEY (`ref_category_id`),
   UNIQUE KEY `ref_category_name` (`ref_category_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=119 ;
-
---
--- Tablo döküm verisi `reference_category`
---
-
-INSERT INTO `reference_category` (`ref_category_id`, `ref_category_name`) VALUES
-(117, 'yeni_referans_kategorisi_1'),
-(118, 'yeni_referans_kategorisi_2');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -188,19 +179,11 @@ INSERT INTO `reference_category` (`ref_category_id`, `ref_category_name`) VALUES
 CREATE TABLE IF NOT EXISTS `reference_image` (
   `images_id` int(11) NOT NULL AUTO_INCREMENT,
   `ref_id` int(11) NOT NULL,
-  `path_big_full` text NOT NULL,
-  `path_thumb_full` text NOT NULL,
+  `path_big_image` text NOT NULL,
+  `path_thumb_image` text NOT NULL,
   PRIMARY KEY (`images_id`),
   KEY `ref_id` (`ref_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
-
---
--- Tablo döküm verisi `reference_image`
---
-
-INSERT INTO `reference_image` (`images_id`, `ref_id`, `path_big_full`, `path_thumb_full`) VALUES
-(26, 29, 'C:/xampp/htdocs/www/codeigniter_test/assets/images/reference_images/13.jpg', 'C:/xampp/htdocs/www/codeigniter_test/assets/images/reference_images/thumb/13_thumb.jpg'),
-(27, 30, 'C:/xampp/htdocs/www/codeigniter_test/assets/images/reference_images/1.jpg', 'C:/xampp/htdocs/www/codeigniter_test/assets/images/reference_images/thumb/1_thumb.jpg');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -211,50 +194,13 @@ INSERT INTO `reference_image` (`images_id`, `ref_id`, `path_big_full`, `path_thu
 CREATE TABLE IF NOT EXISTS `reference_text_field` (
   `ref_id` int(11) NOT NULL AUTO_INCREMENT,
   `ref_category_id` int(11) NOT NULL,
-  `ref_name` varchar(225) NOT NULL,
   `ref_date` varchar(30) NOT NULL,
   `ref_title` text NOT NULL,
   `ref_detail` text NOT NULL,
   PRIMARY KEY (`ref_id`),
-  UNIQUE KEY `ref_name` (`ref_name`),
   KEY `ref_category_id` (`ref_category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Tablo döküm verisi `reference_text_field`
---
-
-INSERT INTO `reference_text_field` (`ref_id`, `ref_category_id`, `ref_name`, `ref_date`, `ref_title`, `ref_detail`) VALUES
-(29, 117, 'yeni referans basligi_1', '31-12-2012', 'yeni referans basligi_1', 'yeni referans_detayi_1'),
-(30, 118, 'yeni referans basligi_2', '31-12-2012', 'yeni referans basligi_2', 'yeni referans_detayi_2');
-
--- --------------------------------------------------------
-
---
--- Görünüm yapısı durumu `reference_view`
---
-CREATE TABLE IF NOT EXISTS `reference_view` (
-`ref_category` varchar(225)
-,`ref_name` varchar(225)
-,`ref_date` varchar(30)
-,`ref_title` text
-,`ref_detail` text
-,`ref_image_big` text
-,`ref_image_thumb` text
-);
--- --------------------------------------------------------
-
---
--- Görünüm yapısı durumu `reference_view_alias`
---
-CREATE TABLE IF NOT EXISTS `reference_view_alias` (
-`kategori` varchar(225)
-,`tarih` varchar(30)
-,`baslik` text
-,`detay` text
-,`resim_buyuk` text
-,`resim_kucuk` text
-);
 -- --------------------------------------------------------
 
 --
@@ -281,24 +227,6 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `news_view_alias`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `news_view_alias` AS select `news`.`id` AS `id`,`news`.`news_date` AS `haber_tarihi`,`news`.`news_detail` AS `haber_detayi` from `news`;
-
--- --------------------------------------------------------
-
---
--- Görünüm yapısı `reference_view`
---
-DROP TABLE IF EXISTS `reference_view`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `reference_view` AS select `reference_category`.`ref_category_name` AS `ref_category`,`reference_text_field`.`ref_name` AS `ref_name`,`reference_text_field`.`ref_date` AS `ref_date`,`reference_text_field`.`ref_title` AS `ref_title`,`reference_text_field`.`ref_detail` AS `ref_detail`,`reference_image`.`path_big_full` AS `ref_image_big`,`reference_image`.`path_thumb_full` AS `ref_image_thumb` from ((`reference_category` join `reference_text_field`) join `reference_image`) where ((`reference_category`.`ref_category_id` = `reference_text_field`.`ref_category_id`) and (`reference_text_field`.`ref_id` = `reference_image`.`ref_id`));
-
--- --------------------------------------------------------
-
---
--- Görünüm yapısı `reference_view_alias`
---
-DROP TABLE IF EXISTS `reference_view_alias`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `reference_view_alias` AS select `reference_category`.`ref_category_name` AS `kategori`,`reference_text_field`.`ref_date` AS `tarih`,`reference_text_field`.`ref_title` AS `baslik`,`reference_text_field`.`ref_detail` AS `detay`,`reference_image`.`path_big_full` AS `resim_buyuk`,`reference_image`.`path_thumb_full` AS `resim_kucuk` from ((`reference_category` join `reference_text_field`) join `reference_image`) where ((`reference_category`.`ref_category_id` = `reference_text_field`.`ref_category_id`) and (`reference_text_field`.`ref_id` = `reference_image`.`ref_id`));
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar

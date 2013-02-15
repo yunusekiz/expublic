@@ -1,7 +1,7 @@
 <div class="clear"></div>        
 			<div id="footer">
 				<small> <!-- Remove this notice or replace it with whatever you want -->
-						&#169; Copyright 2012 | <a href="#">HARKUT</a>
+						&#169; Copyright 2013 | <a href="#">JeeMasters</a>
 				</small>
 			</div><!-- End #footer -->
 		
