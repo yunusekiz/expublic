@@ -280,6 +280,11 @@ class reference extends CI_Controller {
 		$category = $this->input->post('reference_dropdown_category');
 		echo "<h1> gelen kategori :  $category </h1>";
 	}
+
+	public function setView()
+	{
+		$this->reference_model->create_Ref_View();
+	}
 	
 
 }

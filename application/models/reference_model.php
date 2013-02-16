@@ -147,21 +147,28 @@ class reference_model extends CI_Model {
 		return $ref_category_id;
 	}
 	////////////////////////////////////////////	
-	public function getRefViewAlias()
+	public function getRefRowsForViewLayer()
 	{
-		$query = $this->db->select('*');
-		$query = $this->db->from('reference_view_alias');
-		$query = $this->db->get();
+		$query = $this->db->select('*')->from('reference_view')->get();
+
+		if ($query->num_rows()>0)
+		{
+			$result = $query->result_array();
+			return $result;
+		}
+		else
+		{
+			return NULL;
+		}
+
 		
-		$result = $query->result_array();
-		return $result;
 	}
 	////////////////////////////////////////////	
 	public function getRefCategoryRows()
 	{
 		$query = $this->db->select('ref_category_name')->from('reference_category')->get();
 
-		if ($query->num_rows>0)
+		if ($query->num_rows()>0)
 		{
 			$result_array = $query->result_array();
 			return $result_array;
@@ -172,5 +179,7 @@ class reference_model extends CI_Model {
 		}
 
 	}
-	////////////////////////////////////////////	
-}	
+
+
+
+}/* end of reference_model  */

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Anamakine: localhost
--- Üretim Zamanı: 15 Şub 2013, 12:14:13
--- Sunucu sürümü: 5.5.25a
--- PHP Sürümü: 5.4.4
+-- Anamakine: 127.0.0.1
+-- Üretim Zamanı: 16 Şub 2013, 17:12:00
+-- Sunucu sürümü: 5.5.27
+-- PHP Sürümü: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -168,7 +168,16 @@ CREATE TABLE IF NOT EXISTS `reference_category` (
   `ref_category_name` varchar(225) NOT NULL,
   PRIMARY KEY (`ref_category_id`),
   UNIQUE KEY `ref_category_name` (`ref_category_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Tablo döküm verisi `reference_category`
+--
+
+INSERT INTO `reference_category` (`ref_category_id`, `ref_category_name`) VALUES
+(6, 'ferrari'),
+(7, 'göt'),
+(5, 'horse');
 
 -- --------------------------------------------------------
 
@@ -183,7 +192,16 @@ CREATE TABLE IF NOT EXISTS `reference_image` (
   `path_thumb_image` text NOT NULL,
   PRIMARY KEY (`images_id`),
   KEY `ref_id` (`ref_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Tablo döküm verisi `reference_image`
+--
+
+INSERT INTO `reference_image` (`images_id`, `ref_id`, `path_big_image`, `path_thumb_image`) VALUES
+(5, 5, 'assets/images/reference_images/yeni_referans_basligi.jpg', 'assets/images/reference_images/thumb/yeni_referans_basligi_thumb.jpg'),
+(6, 6, 'assets/images/reference_images/buda_ikinci_referans_basligi.jpg', 'assets/images/reference_images/thumb/buda_ikinci_referans_basligi_thumb.jpg'),
+(7, 7, 'assets/images/reference_images/buda_ikinci_referans_basligighjk.jpg', 'assets/images/reference_images/thumb/buda_ikinci_referans_basligighjk_thumb.jpg');
 
 -- --------------------------------------------------------
 
@@ -199,8 +217,30 @@ CREATE TABLE IF NOT EXISTS `reference_text_field` (
   `ref_detail` text NOT NULL,
   PRIMARY KEY (`ref_id`),
   KEY `ref_category_id` (`ref_category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
+--
+-- Tablo döküm verisi `reference_text_field`
+--
+
+INSERT INTO `reference_text_field` (`ref_id`, `ref_category_id`, `ref_date`, `ref_title`, `ref_detail`) VALUES
+(5, 5, '16-02-2013', 'yeni referans basligi', 'yeni referans aciklamasi'),
+(6, 6, '16-02-2013', 'buda ikinci referans basligi', 'pornstarsssssssss s s'),
+(7, 7, '16-02-2013', 'buda ikinci referans basligighjk', 'rtfgjhkrghjjfghj');
+
+-- --------------------------------------------------------
+
+--
+-- Görünüm yapısı durumu `reference_view`
+--
+CREATE TABLE IF NOT EXISTS `reference_view` (
+`kategori` varchar(225)
+,`tarih` varchar(30)
+,`baslik` text
+,`aciklama` text
+,`buyuk_resim` text
+,`kucuk_resim` text
+);
 -- --------------------------------------------------------
 
 --
@@ -227,6 +267,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `news_view_alias`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `news_view_alias` AS select `news`.`id` AS `id`,`news`.`news_date` AS `haber_tarihi`,`news`.`news_detail` AS `haber_detayi` from `news`;
+
+-- --------------------------------------------------------
+
+--
+-- Görünüm yapısı `reference_view`
+--
+DROP TABLE IF EXISTS `reference_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `reference_view` AS select `reference_category`.`ref_category_name` AS `kategori`,`reference_text_field`.`ref_date` AS `tarih`,`reference_text_field`.`ref_title` AS `baslik`,`reference_text_field`.`ref_detail` AS `aciklama`,`reference_image`.`path_big_image` AS `buyuk_resim`,`reference_image`.`path_thumb_image` AS `kucuk_resim` from ((`reference_category` join `reference_text_field`) join `reference_image`) where ((`reference_category`.`ref_category_id` = `reference_text_field`.`ref_category_id`) and (`reference_text_field`.`ref_id` = `reference_image`.`ref_id`));
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar

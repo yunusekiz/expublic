@@ -3,26 +3,31 @@
 class referanslar extends CI_Controller {
 
 	protected $base_data;
-	protected $row_data;
+	protected $ref_row_data;
 	protected $parser_data;
-	
+
 	public function __construct()
 	{
 		parent::__construct();
 
-		$this->load->model('contact_model');
+		$this->load->model('reference_model');
 
-		$this->row_data = $this->contact_model->getContactRowForView();
+		$this->ref_row_data = $this->reference_model->getRefRowsForViewLayer();
+
+		if ($this->ref_row_data == NULL)
+		{
+			$ref_row_data = array();
+		}
+
+
+		$this->ref_row_data = $this->reference_model->getRefRowsForViewLayer();
 
 		$this->base_data = base_url();
 
-		// $this->parser_data = array(
-		// 							'base' => $this->base_data,
-		// 							'iletisim_kayitlari' => $this->row_data
-		// 						  );
-
 		$this->parser_data = array(
-									'base' => $this->base_data
+									'base' 					=> $this->base_data,
+									'referans_kayitlari'	=> $this->ref_row_data,
+									'kategoriler'			=> $this->ref_row_data
 								  );
 
 	}
