@@ -73,7 +73,7 @@
         <div class="container">
             <div class="row welcome_inner">
                 <div class="span12">
-                    <h1><span class="colored"></span>Referanslarımız</h1>
+                    <h1><span class="colored"></span>GALERİ</h1>
                 </div>
             </div>
         </div>
@@ -89,18 +89,20 @@
              <div class="span12">
                 
                 <section>
-                   
-                   <div id="filters" class="btn-group ">
+
+                    <div id="filters" class="btn-group ">
                     
-                        <button data-filter="*" class="btn btn-success">Hepsi</button>
-                        {kategoriler}
-                        <button data-filter=".{kategori}" class="btn btn-success">{kategori}</button>
-                        {/kategoriler}
-<!--                         <button data-filter=".coding" class="btn btn-success">2011</button>
+<!--                         <button data-filter="*" class="btn btn-success">Hepsi</button>
+                        <button data-filter=".coding" class="btn btn-success">2011</button>
                         <button data-filter=".marketing" class="btn btn-success">2012</button>
                         <button data-filter=".logo" class="btn btn-success">2013</button> -->
-                     
-                 </div>
+                        {hepsi_metni}
+                        <button data-filter="*" class="btn btn-success">{metin}</button>
+                        {/hepsi_metni}
+                        {referans_kategorileri}
+                        <button data-filter=".{trim_kategori}" class="btn btn-success">{kategori}</button>
+                        {/referans_kategorileri}
+                    </div>
                    
                 </section>
 
@@ -113,30 +115,43 @@
         <div class="row">
         	<div class="span12">
             	<div id="portfolio" class="row">
-                	{referans_kayitlari}
-                    <div class="span3 block {kategori}">
+            
+                     {referans_kayitlari}
+               	<div class="span3 block {trim_kategori}">
                         <div class="view view-first">
-                            <a href="{base}{buyuk_resim}" rel="prettyPhoto"><img src="{base}{kucuk_resim}" alt="" /></a>
+                            <a href="{base}{buyuk_resim}" rel="prettyPhoto">
+                                <img src="{base}{kucuk_resim}" alt="" />
+                            </a>
                             <div class="mask">
-                                <a href="{base}{buyuk_resim}" rel="prettyPhoto" class="info"><img src="{base}assets/theme_assets/img/plus.png" alt="" /></a>
-                                <a href="single_portfolio.html" class="link"><img src="{base}assets/theme_assets/img/link.png" alt="Visit link" /></a>
+                                <a href="{base}{buyuk_resim}" rel="prettyPhoto" class="info">
+                                    <img src="{base}assets/theme_assets/img/plus.png" alt="" /></a>
+                                <a href="#" class="link">
+                                    <img src="{base}assets/theme_assets/img/link.png" alt="Visit link" />
+                                </a>
                             </div>
                         </div>
-                        <h5><i class="icon-picture"></i> <a href="single_portfolio.html">{baslik}</a></h5>
+                        <h5><i class="icon-picture"></i> <a href="#">{baslik}</a></h5>
                         <div class="description">
-                            <p class="clo">{aciklama}.</p>
+                            <p class="clo">{aciklama}</p>
                         </div>
-                    </div>
-                     {/referans_kayitlari}
-                    
-<!--                 	<div class="span3 block logo">
+                </div>
+                     {/referans_kayitlari} 
+
+
+            
+<!--                     
+                <div class="span3 block logo">
                         <div class="view view-first">
-                            <a href="{base}assets/theme_assets/img/gal/2.jpg" rel="prettyPhoto"><img src="{base}assets/theme_assets/img/gal/2.jpg" alt="" /></a>
-                            <a href="{base}assets/theme_assets/img/gal/9.jpg" rel="prettyPhoto"></a>
-                            <a href="{base}assets/theme_assets/img/gal/10.jpg" rel="prettyPhoto"></a>
+                            <a href="{base}assets/theme_assets/img/gal/2.jpg" rel="prettyPhoto">
+                                <img src="{base}assets/theme_assets/img/gal/2.jpg" alt="" />
+                            </a>
                             <div class="mask">
-                                <a href="{base}assets/theme_assets/img/gal/2.jpg" rel="prettyPhoto" class="info"><img src="{base}assets/theme_assets/img/plus.png" alt="" /></a>
-                                <a href="single_portfolio.html" class="link"><img src="{base}assets/theme_assets/img/link.png" alt="Visit link" /></a>
+                                <a href="{base}assets/theme_assets/img/gal/2.jpg" rel="prettyPhoto" class="info">
+                                    <img src="{base}assets/theme_assets/img/plus.png" alt="" />
+                                </a>
+                                <a href="single_portfolio.html" class="link">
+                                    <img src="{base}assets/theme_assets/img/link.png" alt="Visit link" />
+                                </a>
                             </div>
                         </div>
                         <h5><i class="icon-picture"></i> <a href="single_portfolio.html">Psd Retro Badges Vintage</a></h5>
@@ -144,6 +159,7 @@
                             <p class="clo">Awesome psd descriprion.</p>
                         </div>
                     </div>
+
                     
                     <div class="span3 block marketing">
                         <div class="view view-first">

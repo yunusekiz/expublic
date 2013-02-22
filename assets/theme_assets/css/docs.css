@@ -1247,15 +1247,15 @@ img { margin:0px !important; padding:0px !important}
    transition: all 0.2s ease-in-out;
 }
 .block a:hover { 
-	text-shadow:1px 1px #fff;
-	color:#7daf27;
-	text-decoration:none;
-	-webkit-transition: all 0.2s ease-in-out;
+  text-shadow:1px 1px #fff;
+  color: #509adf;
+  text-decoration:none;
+  -webkit-transition: all 0.2s ease-in-out;
    -moz-transition: all 0.2s ease-in-out;
    -o-transition: all 0.2s ease-in-out;
    -ms-transition: all 0.2s ease-in-out;
-   transition: all 0.2s ease-in-out;	
-	}
+   transition: all 0.2s ease-in-out;  
+  }
 .left .span3 { text-align:left;}
 .nbm { margin-bottom:0px !important;}
 .nbm .span3 { margin-bottom:0px;}

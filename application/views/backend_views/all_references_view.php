@@ -2,7 +2,7 @@
 				
 				<div class="content-box-header">
 					
-					<h3><font style="margin-left:270px;">Kayıtlı Tüm Haberler</font></h3>
+					<h3><font style="margin-left:270px;">Kayıtlı Tüm Referanslar</font></h3>
 					
 					<div class="clear"></div>
 					
@@ -12,32 +12,40 @@
 			   
 					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
 					
-					<form action="{base}backend/news/operation" method="post">
+					<form action="{base}backend/reference/operation" method="post">
 						
 						<table>
 							
 							<thead>
 								<tr>
-									<th style="margin-left:270px;">Düzenle</th>
-								    <th>Haberi Sil</th>
-								    <th>Haber Tarihi</th>
-								    <th></th>
-								    <th>Haber İçeriği</th>
+									<th>Düzenle</th>
+								    <th><font style="margin-left:11px; margin-right:20px;">Sil</font></th>
+								    <th><font style="margin-left:1px; margin-right:20px;">Resim</font></th>
+								    <th>Kategori</th>
+								    <th>Tarih</th>
+								    <th>Başlık</th>
+								    <th>Açıklama</th>
 								</tr>
 								
 							</thead>
 						 
 						 
 							<tbody>
-								{haber_detaylari}
+								 {referans_detaylari}
 								<tr>
-									<td><input type="radio" name="news_radio_field" value="0.31{id}"/><a href="#" title="Düzenle"><img src="{base}assets/backend_assets/images/icons/pencil.png" alt="Düzenle" /></a></td>
-									<td><input type="radio" name="news_radio_field" value="1.31{id}"/><a href="#" title="Sil"><img src="{base}assets/backend_assets/images/icons/cross.png" alt="Sil" /></a></td>
-									<td>{haber_tarihi}</td>
-									<td></td>
-									<td>{haber_detayi}</td>
+									<td><input type="radio" name="reference_radio_field" value="0.31{ref_id}"/><a href="#" title="Düzenle"><img src="{base}assets/backend_assets/images/icons/pencil.png" alt="Düzenle" /></a></td>
+									<td><input type="radio" name="reference_radio_field" value="1.31{ref_id}"/><a href="#" title="Sil"><img src="{base}assets/backend_assets/images/icons/cross.png" alt="Sil" /></a></td>
+									<td class="cocukdiv_image">
+										<a href="{base}{buyuk_resim}" title="{baslik}">
+										 	<img src="{base}{kucuk_resim}" width="45" height="45" style="margin-bottom:-8px;" title="{baslik}" />
+										</a>
+									</td>
+									<td>{kategori}</td>
+									<td>{tarih}</td>
+									<td>{baslik}</td>
+									<td>{aciklama}</td>
 								</tr>
-								{/haber_detaylari}
+								 {/referans_detaylari}
 
 							</tbody>
 							

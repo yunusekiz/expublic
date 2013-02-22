@@ -6,6 +6,8 @@ class news extends CI_Controller {
 	protected $row_data;
 	protected $parser_data;
 
+	protected $submit_button_css;
+
 	public function index()
 	{
 		return null;
@@ -29,9 +31,18 @@ class news extends CI_Controller {
 
 			$this->base_data = base_url();
 			$this->row_data = $this->news_model->getNewsRowForView();
+			$this->submit_button_css = array(array());
+
+			if ($this->row_data == NULL) 
+			{
+				$this->row_data = array();
+				$this->submit_button_css = array();
+			}
 
 			$this->parser_data = array(
-											'base' => $this->base_data
+											'base' 				=> $this->base_data,
+											'haber_detaylari'	=> $this->row_data,
+											'submit_button_css'	=> $this->submit_button_css
 								 	  );			
 	
 
@@ -65,7 +76,7 @@ class news extends CI_Controller {
 			if ($add_new_news == TRUE)
 			{
 				$message = 'Yeni Haber Eklendi';
-				$this->successMessage($message);
+				$this->successMessage($message,'allNews');
 			}
 			else
 			{
@@ -87,27 +98,89 @@ class news extends CI_Controller {
 	}
 
 
-	public function operation($operation)
+	public function operation()
 	{
-		$radio_field = $this->input->post('radio_field');
+		$news_radio_field = $this->input->post('news_radio_field');
 
-		var_dump($radio_field);
-		
-		echo '<br/>';
+		$operation_option = $news_radio_field[0];
 
-		if ($operation == 'edit') 
+		switch ($operation_option) 
 		{
-			echo 'edit islemi yapiyorum ben';
+			case '0':
+				$news_radio_id = strtr($news_radio_field, array('0.31' => '')); // formdan gelen id numarasını alır
+				$this->editNews($news_radio_id);
+				break;
+
+			case '1':
+				$news_radio_id = strtr($news_radio_field, array('1.31' => '')); // formdan gelen id numarasını alır
+				$this->deleteNews($news_radio_id);
+				break;	
+			
+			default:
+				$message = 'HATA:: İşlem Yapabilmek Bir Eylem Seçmelisiniz, Yönlendiriliyorsunuz... ';
+				$this->errorMessage($message,'allNews');
+				break;
 		}
-		elseif ($operation == 'delete') 
+		
+	}
+
+	protected function deleteNews($id)
+	{
+		$delete_news = $this->news_model->deleteNews($id);
+
+		if ($delete_news == TRUE) 
 		{
-			echo 'delete islemi yapiyorum ben';
+			$message = 'Haber Silindi';
+			$this->successMessage($message,'allNews');
 		}
 		else
 		{
-			echo 'HATA basarim acimam';
+			$message = 'HATA:: Haber Silinemedi';
+			$this->errorMessage($message,'allNews');
 		}
 	}
+
+	protected function editNews($id)
+	{
+		$get_news_by_id = $this->getNewsById($id);
+
+		// admin panelinin ilgili view lerini yükler
+		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+		$this->parser->parse('backend_views/edit_news_form_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);			
+	}
+
+
+	public function updateNews()
+	{
+		$field_id = $this->input->post('id');
+		$real_id = strtr($field_id, array('31' => ''));
+
+		$news_date_field	= $this->input->post('news_date_field');
+		$news_detail_field	= $this->input->post('news_detail_field');
+
+		if (($news_date_field == '') || ($news_detail_field == '') ) 
+		{
+			$message = 'HATA:: Lütfen Boş Alan Bırakmayın';
+			$this->errorMessage($message,'allNews');
+		}
+		else
+		{
+			$update_news = $this->news_model->updateNews($real_id, $news_date_field, $news_detail_field);
+			if ($update_news == TRUE) 
+			{
+				$message = 'Haber Güncelllendi ';
+				$this->successMessage($message,'allNews');
+			}
+			else
+			{
+				$message = 'HATA:: Haber Güncellenmesi Sırasında Bir Hata Oluştu';
+				$this->errorMessage($message,'allNews');
+			}
+		}
+	}
+
 
 
 	public function successMessage($message, $return_path = NULL)
@@ -126,7 +199,7 @@ class news extends CI_Controller {
 		$this->parser->parse('backend_views/success_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"4; url=$return_path\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"2; url=$return_path\">";	
 	}
 
 
@@ -147,6 +220,22 @@ class news extends CI_Controller {
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
 		echo "<meta http-equiv=\"refresh\" content=\"3; url=$return_path\">";	
+	}
+
+	public function getNewsById($id = NULL)
+	{
+		if ($id == NULL) 
+		{
+			$message = 'HATA:: Buraya Erişim Yetkiniz Bulunmamaktadır';
+			$this->errorMessage($message,'../../home');
+		}
+		$news_array = $this->news_model->getNewsRowById($id);
+
+		$this->parser_data['haber_tarihi'] = $news_array['haber_tarihi'];
+		$this->parser_data['haber_detayi'] = $news_array['haber_detayi'];
+		$this->parser_data['id'] = $news_array['id'];
+
+
 	}	
 
 

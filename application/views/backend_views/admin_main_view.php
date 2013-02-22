@@ -35,8 +35,8 @@
 					</a>
 					<ul>
 						<li><a href="{base}backend/reference/addReference" class="{add_ref_current}">Referans Ekle</a></li>
-						<li><a href="#" class="{edit_ref_current}">Referansları Düzenle</a></li> <!-- Add class "current" to sub menu items also -->
-						
+						<li><a href="{base}backend/reference/allReferences" class="{edit_ref_current}">Referansları Düzenle</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a href="{base}backend/reference/allReferences" class="{edit_ref_current}">Kategorileri Düzenle</a></li>
 					</ul>
 				</li>			
 				
@@ -49,16 +49,7 @@
 						<li><a href="{base}backend/news/addNews" class="{add_news_current}">Haber Ekle</a></li>
 						<li><a href="{base}backend/news/allNews" class="{edit_news_current}">Haberleri Düzenle</a></li>
 					</ul>
-				</li>
-				<li>
-					<a href="#" class="nav-top-item {site_config_nav}">
-						Site ayarları
-					</a>
-					<ul>
-						<li><a href="{seo_config_current}">SEO Ayarları</a></li>
-						<li><a href="{domain_config_current}">Domain Ayarları</a></li>
-					</ul>
-				</li>                       
+				</li>                  
 				
 			</ul> <!-- End #main-nav -->
 			

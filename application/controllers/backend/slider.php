@@ -168,8 +168,8 @@ class slider extends CI_Controller {
 			die();
 		}
 
-		$unlink_thumg_image = $this->unLinkImage($thumb_img_row);
-		if (!$unlink_thumg_image)
+		$unlink_thumb_image = $this->unLinkImage($thumb_img_row);
+		if (!$unlink_thumb_image)
 		{
 			echo '<h1>kucuk resim silinemedi';
 			die();

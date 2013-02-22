@@ -7,10 +7,11 @@ class reference_model extends CI_Model {
 
 	////////////////////////////////////////////
 	// reference_category tablosuna yeni kayıt ekler
-	public function add_Ref_Category($cat_name)
+	public function add_Ref_Category($cat_name, $seo_friendly_cat_name)
 	{
 		$data = array(
-					'ref_category_name'	=>	$cat_name
+					'ref_category_name'	=>	$cat_name,
+					'ref_category_seofriendly_name' => $seo_friendly_cat_name
 					);
 		
 		$query = $this->db->insert('reference_category',$data);
@@ -94,6 +95,7 @@ class reference_model extends CI_Model {
 		$query = $this->db->query('	CREATE VIEW reference_view AS
 									SELECT 
      									reference_category.ref_category_name as kategori,
+     									reference_category.ref_category_seofriendly_name as trim_kategori,
  										reference_text_field.ref_date as tarih,
  										reference_text_field.ref_title as baslik,
  										reference_text_field.ref_detail as aciklama,
@@ -142,23 +144,49 @@ class reference_model extends CI_Model {
 	public function getRefCategoryId($name)
 	{
 		$query = $this->db->select('ref_category_id')->from('reference_category')->where('ref_category_name',$name)->get();
-		
-		$ref_category_id = $query->row()->ref_category_id;
-		return $ref_category_id;
-	}
-	////////////////////////////////////////////	
-	public function getRefRowsForViewLayer()
-	{
-		$query = $this->db->select('*')->from('reference_view')->get();
 
-		if ($query->num_rows()>0)
+		if ($query->num_rows()>0) 
 		{
-			$result = $query->result_array();
-			return $result;
+			$ref_category_id = $query->row()->ref_category_id;
+
+			return $ref_category_id;
 		}
 		else
 		{
 			return NULL;
+		}
+	}
+	////////////////////////////////////////////	
+	public function getRefRowsForViewLayer($id= NULL)
+	{
+		if ($id == NULL) 
+		{
+			$query = $this->db->select('*')->from('reference_view')->get();
+
+			if ($query->num_rows()>0)
+			{
+				$result = $query->result_array();
+				return $result;
+			}
+			else
+			{
+				return NULL;
+			}
+
+		}
+		else
+		{
+			$query = $this->db->select('*')->from('reference_view')->where('ref_id',$id)->get();
+
+			if ($query->num_rows()>0)
+			{
+				$result = $query->result_array();
+				return $result;
+			}
+			else
+			{
+				return NULL;
+			}			
 		}
 
 		
@@ -166,7 +194,7 @@ class reference_model extends CI_Model {
 	////////////////////////////////////////////	
 	public function getRefCategoryRows()
 	{
-		$query = $this->db->select('ref_category_name')->from('reference_category')->get();
+		$query = $this->db->select('ref_category_name AS kategori, ref_category_seofriendly_name AS trim_kategori ')->from('reference_category')->get();
 
 		if ($query->num_rows()>0)
 		{
@@ -181,5 +209,116 @@ class reference_model extends CI_Model {
 	}
 
 
+
+	public function getRefImageRowById($id)
+	{
+		$query = $this->db->select('path_big_image AS buyuk_resim, path_thumb_image AS kucuk_resim')->from('reference_image')->where('ref_id',$id)->get();
+
+		if ($query->num_rows()>0) 
+		{
+			$row_array = array(
+									'buyuk_resim' 	=> $query->row()->buyuk_resim,
+									'kucuk_resim' 	=> $query->row()->kucuk_resim
+							  );
+			return $row_array;
+		}
+		else
+		{
+			var_dump($id);
+			die('gelen id');
+		}
+	}
+
+
+	public function deleteRefTextFieldFromDB($id)
+	{
+		$query = $this->db->where('ref_id',$id)->delete('reference_text_field');
+
+		if ($this->db->affected_rows()>0) 
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+
+	public function updateRefTextFieldOnDB($ref_id, $ref_date, $ref_title, $ref_detail, $ref_category_id = NULL)
+	{
+		if ($ref_category_id == NULL) 
+		{
+			
+			$update_data = array(
+									'ref_date'		=> $ref_date,
+									'ref_title'		=> $ref_title,
+									'ref_detail'	=> $ref_detail
+								);
+
+			$query = $this->db->where('ref_id',$ref_id)->update('reference_text_field',$update_data);
+
+			$affected_rows = $this->db->affected_rows();
+
+			if ($affected_rows > 0)
+			{
+				return TRUE;
+			}
+			else
+			{
+				return FALSE;
+			}
+
+		}
+		elseif ($ref_category_id != NULL) 
+		{
+			$update_data = array(
+									'ref_date'			=> $ref_date,
+									'ref_title'			=> $ref_title,
+									'ref_detail'		=> $ref_detail,
+									'ref_category_id' 	=> $ref_category_id
+								);
+
+			$query = $this->db->where('ref_id',$ref_id)->update('reference_text_field',$update_data);
+
+			$affected_rows = $this->db->affected_rows();
+
+			if ($affected_rows > 0)
+			{
+				return TRUE;
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		else
+		{
+			return FALSE;
+		}
+
+
+	}
+
+
+	public function updateRefImgFieldOnDB($ref_id, $path_big_image, $path_thumb_image)
+	{
+		$update_data = array(
+								'path_big_image'		=> $path_big_image,
+								'path_thumb_image'		=> $path_thumb_image
+							);
+		
+		$query = $this->db->where('ref_id',$ref_id)->update('reference_image',$update_data);
+
+		$affected_rows = $this->db->affected_rows();
+
+		if ($affected_rows > 0)
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}		
+	}
 
 }/* end of reference_model  */

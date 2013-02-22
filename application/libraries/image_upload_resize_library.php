@@ -150,25 +150,42 @@ class image_upload_resize_library extends CI_Controller {
 		$this->CI->load->library('upload',$upload_config);
 
 		$do_upload = $this->upload->do_upload($image_form_field);
-
-		if ($do_upload)
+		$this->data_after_upload = $this->upload->data();
+		if ($this->data_after_upload['client_name'] != NULL) 
 		{
-			$this->data_after_upload = $this->upload->data();
-			return TRUE;
+			if ($do_upload)
+			{
+				return TRUE;
+			}
+			else
+			{
+				if ($this->display_errors == TRUE)
+				{
+					echo '<center><h3>'.$this->upload->display_errors('<p>', '</p>').'</h3></center>';
+					//return FALSE;
+				}
+				else
+				{
+					return FALSE;
+				}
+
+			}
+
 		}
 		else
 		{
 			if ($this->display_errors == TRUE)
 			{
-				echo '<center><h3>'.$this->upload->display_errors('<p>', '</p>').'</h3></center>';
-				//return FALSE;
+				echo '<center><h3> Upload Icın Dosya Secilmedi <br>'.$this->upload->display_errors('<p>', '</p>').'</h3></center>';
+					//return FALSE;
 			}
 			else
 			{
 				return FALSE;
 			}
-
 		}
+
+
 	}
 
 

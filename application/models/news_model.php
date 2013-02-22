@@ -2,15 +2,16 @@
 
 class news_model extends CI_Model {
 
-	public function getNewsRowAsArray()
+	public function getNewsRowById($id)
 	{
-		$query = $this->db->select('*')->from('news')->get();
+		$query = $this->db->select('news_date AS haber_tarihi, news_detail AS haber_detayi, id')->from('news')->where('id',$id)->get();
 
 		if ($query->num_rows()>0) 
 		{
 			$row_array = array(
-									'news_date' 	=> $query->row()->news_date,
-									'news_detail' 	=> $query->row()->news_detail
+									'haber_tarihi' 	=> $query->row()->haber_tarihi,
+									'haber_detayi' 	=> $query->row()->haber_detayi,
+									'id'			=> $query->row()->id
 							  );
 			return $row_array;
 		}

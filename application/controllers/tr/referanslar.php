@@ -3,8 +3,10 @@
 class referanslar extends CI_Controller {
 
 	protected $base_data;
-	protected $ref_row_data;
+	protected $reference_view_row_data;
+	protected $reference_category_row_data;
 	protected $parser_data;
+	protected $required_css_text;
 
 	public function __construct()
 	{
@@ -12,22 +14,33 @@ class referanslar extends CI_Controller {
 
 		$this->load->model('reference_model');
 
-		$this->ref_row_data = $this->reference_model->getRefRowsForViewLayer();
+		$this->required_css_text = array(array('metin' => 'Hepsi'));
+		
+		$this->reference_view_row_data = $this->reference_model->getRefRowsForViewLayer();
 
-		if ($this->ref_row_data == NULL)
+		$this->reference_category_row_data = $this->reference_model->getRefCategoryRows();
+
+		if ($this->reference_view_row_data == NULL)
 		{
-			$ref_row_data = array();
+		  	$this->reference_view_row_data = array();
+		  	$this->required_css_text = array();
+		}
+
+		if ($this->reference_category_row_data == NULL)
+		{
+		 	$this->reference_category_row_data = array();
 		}
 
 
-		$this->ref_row_data = $this->reference_model->getRefRowsForViewLayer();
+
 
 		$this->base_data = base_url();
 
 		$this->parser_data = array(
 									'base' 					=> $this->base_data,
-									'referans_kayitlari'	=> $this->ref_row_data,
-									'kategoriler'			=> $this->ref_row_data
+									'referans_kayitlari'	=> $this->reference_view_row_data,
+									'referans_kategorileri'	=> $this->reference_category_row_data,
+									'hepsi_metni'			=> $this->required_css_text
 								  );
 
 	}
