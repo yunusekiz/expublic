@@ -24,9 +24,7 @@ class reference_model extends CI_Model {
 			return TRUE;
 		}
 		else
-		{
 			return FALSE;
-		}
 	}
 	////////////////////////////////////////////
 
@@ -59,9 +57,7 @@ class reference_model extends CI_Model {
 			return TRUE;
 		}
 		else
-		{
-			return FALSE;
-		}		 
+			return FALSE;		 
 	}
 	////////////////////////////////////////////	
 	
@@ -78,52 +74,49 @@ class reference_model extends CI_Model {
 						
 		$query = $this->db->insert('reference_image',$data);
 
-		$affected_rows = $this->db->affected_rows();
-		
-		if($affected_rows > 0)
-		{
+		if($this->db->affected_rows()>0)
 			return TRUE;
-		}
 		else
-		{
-			return FALSE;
-		}		
+			return FALSE;	
 	}
 	////////////////////////////////////////////		
 	public function create_Ref_View()
 	{
 		$query = $this->db->query('	CREATE VIEW reference_view AS
-									SELECT 
-     									reference_category.ref_category_name as kategori,
-     									reference_category.ref_category_seofriendly_name as trim_kategori,
- 										reference_text_field.ref_date as tarih,
- 										reference_text_field.ref_title as baslik,
- 										reference_text_field.ref_detail as aciklama,
-  										reference_image.path_big_image as buyuk_resim,
-     									reference_image.path_thumb_image as kucuk_resim
-  									FROM
-     									reference_category,reference_text_field,reference_image 
-  									WHERE
-     									reference_category.ref_category_id = reference_text_field.ref_category_id
-  									AND
-     									reference_text_field.ref_id = reference_image.ref_id');
+									SELECT 	reference_category.ref_category_name as kategori,
+     										reference_category.ref_category_seofriendly_name as trim_kategori,
+ 											reference_text_field.ref_date as tarih,
+ 											reference_text_field.ref_title as baslik,
+ 											reference_text_field.ref_detail as aciklama,
+  											reference_image.path_big_image as buyuk_resim,
+     										reference_image.path_thumb_image as kucuk_resim
+  									FROM 	reference_category,reference_text_field,reference_image 
+  									WHERE 	reference_category.ref_category_id = reference_text_field.ref_category_id
+  									AND 	reference_text_field.ref_id = reference_image.ref_id');
 		return $query;																	
 	}
-	////////////////////////////////////////////	
-	
+	////////////////////////////////////////////
+
+	public function createNullRefCategoryView()
+	{
+		$query = $this->db->query('CREATE VIEW null_reference_categories AS
+									SELECT  reference_category.ref_category_id as null_kategori_id,
+											reference_category.ref_category_name as null_kategori,
+											reference_category.ref_category_seofriendly_name as null_trim_kategori
+									FROM 	reference_category, reference_text_field
+									WHERE 	reference_category.ref_category_id <> reference_text_field.ref_category_id');
+		return $query;
+	}	
+	////////////////////////////////////////////
 	// reference_text_field tablosunda, ref_name sütununda, $record değişkeninin değerinde bir kayıt olup olmadığını kontrol eder
 	public function isThereAnyRefTextFieldRowLikeIt($record)
 	{
 		$query = $this->db->select('ref_title')->from('reference_text_field')->where('ref_title',$record);
 		$query = $this->db->get();
 		if($query->num_rows()>0) // eğer bu koşulları sağlayan bir kayıt var ise TRUE döndürür
-		{
 			return TRUE;
-		}
 		else // eğer bu koşulları sağlayan bi kayıt yok ise FALSE döndürür
-		{
 			return FALSE;
-		}
 	}
 	////////////////////////////////////////////	
 	
@@ -132,13 +125,9 @@ class reference_model extends CI_Model {
 	{
 		$query = $this->db->select('ref_category_name')->from('reference_category')->where('ref_category_name',$record)->get();
 		if($query->num_rows()>0) // eğer bu koşulları sağlayan bir kayıt var ise TRUE döndürür
-		{
 			return TRUE;
-		}
 		else // eğer bu koşulları sağlayan bi kayıt yok ise FALSE döndürür
-		{
 			return FALSE;
-		}
 	}
 	////////////////////////////////////////////
 	public function getRefCategoryId($name)
@@ -152,9 +141,7 @@ class reference_model extends CI_Model {
 			return $ref_category_id;
 		}
 		else
-		{
 			return NULL;
-		}
 	}
 	////////////////////////////////////////////	
 	public function getRefRowsForViewLayer($id= NULL)
@@ -169,9 +156,7 @@ class reference_model extends CI_Model {
 				return $result;
 			}
 			else
-			{
 				return NULL;
-			}
 
 		}
 		else
@@ -184,31 +169,41 @@ class reference_model extends CI_Model {
 				return $result;
 			}
 			else
-			{
-				return NULL;
-			}			
+				return NULL;			
 		}
-
 		
-	}
-	////////////////////////////////////////////	
-	public function getRefCategoryRows()
-	{
-		$query = $this->db->select('ref_category_name AS kategori, ref_category_seofriendly_name AS trim_kategori ')->from('reference_category')->get();
+	}	
 
-		if ($query->num_rows()>0)
+///////////////////////////////////////////////////	
+	public function getRefCategoryRows($cat_id = NULL)
+	{
+		if ($cat_id == NULL) 
 		{
-			$result_array = $query->result_array();
-			return $result_array;
+			$query = $this->db->select('ref_category_name AS kategori, ref_category_seofriendly_name AS trim_kategori, ref_category_id AS cat_id')->from('reference_category')->get();
+
+			if ($query->num_rows()>0)
+			{
+				$result_array = $query->result_array();
+				return $result_array;
+			}
+			else
+				return NULL;		
+		}
+		if ($cat_id != NULL) 
+		{
+			$query = $this->db->select('ref_category_name AS kategori, ref_category_id AS cat_id')->from('reference_category')->where('ref_category_id',$cat_id)->get();
+			
+			if ($query->num_rows()>0)
+				return $query->result_array();
+			else
+				return NULL;
 		}
 		else
-		{
 			return NULL;
-		}
 
 	}
 
-
+///////////////////////////////////////////////////
 
 	public function getRefImageRowById($id)
 	{
@@ -223,102 +218,171 @@ class reference_model extends CI_Model {
 			return $row_array;
 		}
 		else
-		{
-			var_dump($id);
-			die('gelen id');
-		}
+			return NULL;
 	}
-
-
+/////////////////////////////////////////////////////////////////
 	public function deleteRefTextFieldFromDB($id)
 	{
 		$query = $this->db->where('ref_id',$id)->delete('reference_text_field');
 
 		if ($this->db->affected_rows()>0) 
-		{
 			return TRUE;
-		}
 		else
-		{
 			return FALSE;
-		}
 	}
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public function updateRefTextFieldOnDB($ref_id, $ref_date, $ref_title, $ref_detail, $ref_category_id = NULL)
 	{
 		if ($ref_category_id == NULL) 
-		{
-			
-			$update_data = array(
-									'ref_date'		=> $ref_date,
-									'ref_title'		=> $ref_title,
-									'ref_detail'	=> $ref_detail
-								);
+		{		
+		 	$array = array('ref_id' => $ref_id, 'ref_date' => $ref_date, 'ref_title' => $ref_title, 'ref_detail' => $ref_detail);
+		 	$condition_query = $this->db->select('ref_id')->from('reference_text_field')->where($array)->get();
+			// eğer update formundan gelenler zaten veri tabanındakilerle birebir aynı ise TRUE döndür
+		 	if ($condition_query->num_rows()>0)
+		 	{
+		 		return TRUE;
+		 	}
+		 	else // update formundan gelenler veri tabanındakilerler aynı değil ise update işlemine başla
+		 	{
+		 		$update_data = array(
+										'ref_date'		=> $ref_date,
+										'ref_title'		=> $ref_title,
+										'ref_detail'	=> $ref_detail
+									);
+		 	
+		 		$query = $this->db->where('ref_id',$ref_id)->update('reference_text_field',$update_data);
 
-			$query = $this->db->where('ref_id',$ref_id)->update('reference_text_field',$update_data);
-
-			$affected_rows = $this->db->affected_rows();
-
-			if ($affected_rows > 0)
-			{
-				return TRUE;
-			}
-			else
-			{
-				return FALSE;
-			}
+				if ($this->db->affected_rows()>0)
+					return TRUE;
+				else
+					return FALSE; 
+		 	}			
 
 		}
 		elseif ($ref_category_id != NULL) 
 		{
-			$update_data = array(
-									'ref_date'			=> $ref_date,
-									'ref_title'			=> $ref_title,
-									'ref_detail'		=> $ref_detail,
-									'ref_category_id' 	=> $ref_category_id
-								);
+			$array = array('ref_date'=>$ref_date, 'ref_title'=>$ref_title, 'ref_detail'=>$ref_detail, 'ref_category_id'=>$ref_category_id);
+		 	$condition_query = $this->db->select('ref_id')->from('reference_text_field')->where($array)->get();
+			// eğer update formundan gelenler zaten veri tabanındakilerle birebir aynı ise update işlemine başlamadan direk TRUE döndür
+		 	if ($condition_query->num_rows()>0)
+		 	{
+		 		return TRUE;
+		 	}
+		 	else
+		 	{
+		 		$update_data = array(
+										'ref_date'			=> $ref_date,
+										'ref_title'			=> $ref_title,
+										'ref_detail'		=> $ref_detail,
+										'ref_category_id' 	=> $ref_category_id
+									);
 
-			$query = $this->db->where('ref_id',$ref_id)->update('reference_text_field',$update_data);
+				$query = $this->db->where('ref_id',$ref_id)->update('reference_text_field',$update_data);
 
-			$affected_rows = $this->db->affected_rows();
-
-			if ($affected_rows > 0)
-			{
-				return TRUE;
-			}
-			else
-			{
-				return FALSE;
-			}
+				if ($this->db->affected_rows()>0)
+					return TRUE;
+				else
+					return FALSE;
+		 	}
+		
 		}
 		else
-		{
-			return FALSE;
-		}
-
-
+			return NULL;
+	
 	}
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public function updateRefImgFieldOnDB($ref_id, $path_big_image, $path_thumb_image)
 	{
-		$update_data = array(
-								'path_big_image'		=> $path_big_image,
-								'path_thumb_image'		=> $path_thumb_image
-							);
-		
-		$query = $this->db->where('ref_id',$ref_id)->update('reference_image',$update_data);
-
-		$affected_rows = $this->db->affected_rows();
-
-		if ($affected_rows > 0)
-		{
+		$array = array('path_big_image'=>$path_big_image, 'path_thumb_image'=>$path_thumb_image);
+		$condition_query = $this->db->select('images_id')->from('reference_image')->where($array)->get();
+		// eğer update formundan gelenler zaten veri tabanındakilerle birebir aynı ise update işlemine başlamadan direk TRUE döndür
+		if ($condition_query->num_rows()>0)
 			return TRUE;
-		}
 		else
 		{
-			return FALSE;
-		}		
+			$update_data = array(
+									'path_big_image'		=> $path_big_image,
+									'path_thumb_image'		=> $path_thumb_image
+								);
+		
+			$query = $this->db->where('ref_id',$ref_id)->update('reference_image',$update_data);
+
+			if ($this->db->affected_rows()>0)
+				return TRUE;
+			else
+				return FALSE;				
+		}	
+
 	}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public function updateRefCategoryOnDB($cat_id, $ref_category_name)
+	{
+		$array = array('ref_category_id' => $cat_id, 'ref_category_name' => $ref_category_name);
+		$condition_query = $this->db->select('ref_category_id')->from('reference_category')->where($array)->get();
+		// eğer update formundan gelenler zaten veri tabanındakilerle birebir aynı ise update işlemine başlamadan direk TRUE döndür
+		if ($condition_query->num_rows()>0)
+			return TRUE;
+		else
+		{
+			$update_data = array(
+									'ref_category_name' => $ref_category_name
+								);
+
+			$query = $this->db->where('ref_category_id', $cat_id)->update('reference_category', $update_data);
+
+			if ($this->db->affected_rows()>0)
+				return TRUE;
+			else
+				return FALSE;
+		}
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public function getNullRefCategoryRows($cat_id = NULL)
+	{
+		if ($cat_id == NULL) 
+		{
+			$query = $this->db->select('*')->from('null_reference_category')->get();
+			
+			if ($query->num_rows()>0)
+				return $query->result_array();
+			else
+				return NULL;	
+		}
+		elseif ($cat_id != NULL) 
+		{
+			$query = $this->db->select('null_kategori_id')->from('null_reference_category')->where('null_kategori_id', $cat_id)->get();
+			
+			if ($query->num_rows()>0)
+				return $query->row()->null_kategori_id;
+			else
+				return NULL;
+		}
+		else
+			return NULL;
+		
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public function deleteNullCategory($cat_id)
+	{
+		if ($cat_id == $this->getNullRefCategoryRows($cat_id)) 
+		{
+			$query = $this->db->where('ref_category_id', $cat_id)->delete('reference_category');
+			if ($this->db->affected_rows()>0)
+				return TRUE;
+			else
+				return FALSE;
+		}
+		else
+			return NULL;
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }/* end of reference_model  */

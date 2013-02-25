@@ -19,11 +19,12 @@
 				
 				<li>
 					<a href="#" class="nav-top-item {slider_current_nav}">
-						Anasayfa Slider
+						Anasayfa Düzeni
 					</a>
 					<ul>
 						<li><a href="{base}backend/slider/editBigSlider" class="{big_slider_current}">Büyük Slider Düzenle</a></li>
-						<li><a href="{base}backend/slider/editLittleSlider" class="{little_slider_current}">Küçük Slider Düzenle</a></li>
+						<li><a href="{base}backend/slider/editStaticImages" class="{little_slider_current}"> Sabit Resimleri Düzenle</a></li>
+
 					</ul>
 				</li>
 							
@@ -35,8 +36,10 @@
 					</a>
 					<ul>
 						<li><a href="{base}backend/reference/addReference" class="{add_ref_current}">Referans Ekle</a></li>
-						<li><a href="{base}backend/reference/allReferences" class="{edit_ref_current}">Referansları Düzenle</a></li> <!-- Add class "current" to sub menu items also -->
-						<li><a href="{base}backend/reference/allReferences" class="{edit_ref_current}">Kategorileri Düzenle</a></li>
+						<li><a href="{base}backend/reference/allReferences" class="{edit_ref_current}">Referans Düzenle/Sil</a></li> <!-- Add class "current" to sub menu items also -->
+						<li><a href="{base}backend/reference/addCategory" class="{edit_ref_current}">Kategori Ekle</a></li>
+						<li><a href="{base}backend/reference/allCategories" class="{edit_ref_current}">Kategori Düzenle</a></li>
+						<li><a href="{base}backend/reference/deleteCategory" class="{edit_ref_current}">Kategori Sil</a></li>
 					</ul>
 				</li>			
 				

@@ -571,8 +571,161 @@ class reference extends CI_Controller {
 
 	}
 
-		
 
+	public function allCategories()
+	{
+		// admin panelinin ilgili view lerini yükler
+		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+		$this->parser->parse('backend_views/all_categories_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);		
+	}
+
+
+	public function operationCategory($ref_id = NULL)
+	{
+		$category_radio_field = $this->input->post('category_radio_field');
+
+		if ($category_radio_field != '') 
+		{
+			$ref_id = strtr($category_radio_field, array('0.32' => ''));
+			$this->editCategories($ref_id);
+		}
+		elseif ($ref_id != NULL) 
+		{
+			$ref_id = strtr($ref_id, array('0.32' => '')); // formdan gelen ref_id numarasını alır
+			$this->editCategories($ref_id);
+		}
+		else
+		{
+			$message = 'HATA:: İşlem Yapabilmek Bir Eylem Seçmelisiniz, Yönlendiriliyorsunuz... ';
+			$this->errorMessage($message,'allCategories');			
+		}			
+	}
+
+
+	protected function editCategories($ref_id)
+	{
+
+		$get_category_by_id = $this->reference_model->getRefCategoryRows($ref_id);
+
+		$this->parser_data['referans_kategorisi'] = $get_category_by_id;
+		$this->parser_data['referans_kategorisi_update'] = $get_category_by_id;
+		
+		// admin panelinin ilgili view lerini yükler
+		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+		$this->parser->parse('backend_views/edit_category_form_view',$this->parser_data);
+		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
+	}
+
+	public function updateCategory()
+	{
+		$category_name_field = $this->input->post('category_name_field');
+
+		$id_field = $this->input->post('id_field');
+		$salt_id = strtr($id_field, array('0.32' => '')); // id field ını 0.32 prefixinden arındırır
+
+		if ($category_name_field == '')
+		{
+			$message = 'Lütfen Boş Alan Bırakmayın';
+			$this->errorMessage($message,"operationCategory/$id_field");
+		}
+		else
+		{
+			$update_ref_category = $this->reference_model->updateRefCategoryOnDB($salt_id, $category_name_field);
+			if ($update_ref_category)
+			{
+				$message = 'Referans Kategorisi Güncellendi';
+				$this->successMessage($message,'allCategories');
+			}
+			else
+			{
+				$message = 'HATA::Referans Kategorisi Güncellenemedi';
+				$this->errorMessage($message,"operationCategory/$id_field");
+			}
+		}
+
+	}
+
+	public function addCategory()
+	{
+		$category_name_field = $this->input->post('category_name_field');
+		if ($category_name_field != '' )
+		{
+			$seo_friendly_cat_name = $this->regex($category_name_field);
+
+			$is_there_any_category_like_it = $this->reference_model->isThereAnyRefCategoryRowLikeIt($category_name_field);
+			// daha önce böyle bir kayıtlı kategori olup olmadığına bakar / varsa hat basar, forma geri yönlendirir
+			if ($is_there_any_category_like_it != TRUE)
+			{
+				$add_ref_category = $this->reference_model->add_Ref_Category($category_name_field, $seo_friendly_cat_name);
+				if ($add_ref_category == TRUE) 
+				{
+					$message = 'Yeni Kategori Eklendi';
+					$this->successMessage($message,'allCategories');
+				}
+				else
+				{
+					$message = 'KAtegori Eklenirken Bir Sorunla Karşılaşıldı';
+					$this->errorMessage($message,'addCategory');
+				}
+			}
+			else
+			{
+				$message = 'Bu Kategori Daha Önceden Eklenmiş.. Lütfen Yeni Bir Kategori Ekleyin..';
+				$this->errorMessage($message,'addCategory');
+			}
+		}
+		elseif ($category_name_field === FALSE)
+		{
+			// admin panelinin ilgili view lerini yükler
+			$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+			$this->parser->parse('backend_views/add_category_form_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);				
+		}
+		else
+		{
+			$message = 'Lütfen Boş Alan Bırakmayın';
+			$this->errorMessage($message,'addCategory');
+		}
+	
+	}
+
+
+	public function deleteCategory()
+	{
+		$category_radio_field = $this->input->post('category_radio_field');
+		if ($category_radio_field != '') 
+		{
+			$cat_id = strtr($category_radio_field, array('0.32' => ''));
+			
+			$deleteCategory = $this->reference_model->deleteNullCategory($cat_id);
+			if($deleteCategory == TRUE)
+			{
+				$message = 'Kategori Silindi';
+				$this->successMessage($message,'allCategories');
+			}
+			else
+			{
+				$message = 'Kategori Silinemedi';
+				$this->errorMessage($message,'deleteCategory');
+			}
+		}
+		elseif ($category_radio_field === FALSE) 
+		{
+			$this->parser_data['null_referans_kategorileri'] = $this->reference_model->getNullRefCategoryRows();
+						// admin panelinin ilgili view lerini yükler
+			$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+			$this->parser->parse('backend_views/all_null_categories_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);	
+		}
+	}
+
+
+		
 	public function errorMessage($message, $return_path = NULL)
 	{
 		if ($return_path == NULL)
@@ -636,10 +789,10 @@ class reference extends CI_Controller {
 
 	public function gel()
 	{
-		$ref_id = '18';
-		$ref_date = '01/02/2023';
-		$ref_title = 'basbakan';
-		$ref_detail = 'erdogan gerisi yalan';
+		$ref_id = '25';
+		$ref_date = '02/02/2013';
+		$ref_title = 'yeni referans basligi';
+		$ref_detail = 'referans aciklamasi';
 
 		$path_big_image = 'buyuk_resim_yolu';
 		$path_thumb_image = 'kucuk_resim_yolu';

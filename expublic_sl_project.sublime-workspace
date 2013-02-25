@@ -4,6 +4,130 @@
 		"selected_items":
 		[
 			[
+				"coun",
+				"count"
+			],
+			[
+				"edi",
+				"editStaticImages"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"parse",
+				"parser_data"
+			],
+			[
+				"Sili",
+				"Silinemedi"
+			],
+			[
+				"Sil",
+				"Silindi"
+			],
+			[
+				"ref",
+				"ref_id"
+			],
+			[
+				"catego",
+				"category_radio_field"
+			],
+			[
+				"num",
+				"num_rows"
+			],
+			[
+				"category_id",
+				"category_radio_field"
+			],
+			[
+				"null",
+				"NULL"
+			],
+			[
+				"cat",
+				"cat_id"
+			],
+			[
+				"Günce",
+				"Güncellenemedi"
+			],
+			[
+				"Gün",
+				"Güncellendi"
+			],
+			[
+				"update",
+				"update_data"
+			],
+			[
+				"con",
+				"condition_query"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"silin",
+				"Silinemedi"
+			],
+			[
+				"old",
+				"old_big_image_path"
+			],
+			[
+				"id",
+				"id_field"
+			],
+			[
+				"update_ref",
+				"update_ref_img_field"
+			],
+			[
+				"update_re",
+				"update_ref_text_field"
+			],
+			[
+				"upda",
+				"update"
+			],
+			[
+				"path_",
+				"path_thumb_image"
+			],
+			[
+				"refe",
+				"reference_model"
+			],
+			[
+				"else",
+				"elseif	elseif …"
+			],
+			[
+				"ELSE",
+				"elseif"
+			],
+			[
+				"Alan",
+				"Alanları"
+			],
+			[
+				"up",
+				"upload"
+			],
+			[
+				"referen_de",
+				"reference_detail_field"
+			],
+			[
+				"reference_date",
+				"reference_date_field"
+			],
+			[
 				"ref_ti",
 				"reference_title_field"
 			],
@@ -40,10 +164,6 @@
 				"function"
 			],
 			[
-				"ref",
-				"ref_id"
-			],
-			[
 				"Veri",
 				"veritabanına"
 			],
@@ -66,10 +186,6 @@
 			[
 				"refene",
 				"reference_date"
-			],
-			[
-				"update",
-				"update_news"
 			],
 			[
 				"pos",
@@ -144,10 +260,6 @@
 				"ref_category_id"
 			],
 			[
-				"els",
-				"elseif	elseif …"
-			],
-			[
 				"categor",
 				"ref_category_id"
 			],
@@ -176,10 +288,6 @@
 				"message_1"
 			],
 			[
-				"refe",
-				"reference_category"
-			],
-			[
 				"var",
 				"var_dump"
 			],
@@ -206,10 +314,6 @@
 			[
 				"base",
 				"base_data"
-			],
-			[
-				"parse",
-				"parser"
 			],
 			[
 				"curren",
@@ -306,10 +410,6 @@
 			[
 				"getUplo",
 				"getUploadedFileHeight"
-			],
-			[
-				"el",
-				"else"
 			],
 			[
 				"ime",
@@ -414,140 +514,64 @@
 			[
 				"afe",
 				"affected_rows"
-			],
-			[
-				"guncelle",
-				"guncellendi"
-			],
-			[
-				"test",
-				"test_delete_before"
-			],
-			[
-				"print",
-				"print_r"
-			],
-			[
-				"th",
-				"this"
-			],
-			[
-				"w",
-				"where"
-			],
-			[
-				"upda",
-				"update_data"
-			],
-			[
-				"news_",
-				"news_date"
-			],
-			[
-				"ba",
-				"base"
-			],
-			[
-				"num",
-				"num_rows"
-			],
-			[
-				"ma",
-				"margin-top"
-			],
-			[
-				"back",
-				"background-color"
-			],
-			[
-				"par",
-				"parser_data"
-			],
-			[
-				"resul",
-				"result_as_array"
-			],
-			[
-				"about",
-				"about_us_view_alias"
-			],
-			[
-				"bas",
-				"base_data"
-			],
-			[
-				"ha",
-				"hakkimizda"
-			],
-			[
-				"ka",
-				"kayit_getir"
-			],
-			[
-				"abo",
-				"about_model"
-			],
-			[
-				"t",
-				"this"
-			],
-			[
-				"mysql_re",
-				"mysql_real_escape_string"
-			],
-			[
-				"ob_en",
-				"ob_end_flush"
-			],
-			[
-				"mysql_er",
-				"mysql_error"
-			],
-			[
-				"cofi",
-				"Config"
-			],
-			[
-				"de",
-				"deger"
-			],
-			[
-				"load",
-				"com_load"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "application/models/reference_model.php",
+			"file": "application/controllers/backend/slider.php",
 			"settings":
 			{
-				"buffer_size": 7074,
+				"buffer_size": 11679,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/views/backend_views/all_references_view.php",
+			"file": "application/models/slider_model.php",
 			"settings":
 			{
-				"buffer_size": 3403,
+				"buffer_size": 4995,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/views/backend_views/edit_reference_form_view.php",
+			"file": "application/views/backend_views/big_slider_view.php",
 			"settings":
 			{
-				"buffer_size": 5329,
+				"buffer_size": 2494,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/controllers/backend/reference.php",
+			"file": "application/views/backend_views/static_images_view_empty.php",
 			"settings":
 			{
-				"buffer_size": 20595,
+				"buffer_size": 1954,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/backend_views/static_images_view.php",
+			"settings":
+			{
+				"buffer_size": 2748,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/tr/anasayfa.php",
+			"settings":
+			{
+				"buffer_size": 1550,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "theme/tr/anasayfa.html",
+			"settings":
+			{
+				"buffer_size": 17851,
 				"line_ending": "Windows"
 			}
 		}
@@ -584,24 +608,37 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view_empty.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/static_images_view.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
+		"/C/xampp/htdocs/www/expublic/application/models/reference_model.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_null_categories_view.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.html",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_categories_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_references_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/edit_category_form_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/edit_reference_form_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/add_category_form_view.php",
+		"/C/xampp/htdocs/www/expublic/system/libraries/Parser.php",
+		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-02-22.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_news_view.php",
+		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-02-21.php",
+		"/C/xampp/htdocs/www/expublic/application/libraries/image_upload_resize_library.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/about_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/reference_view.php",
+		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
 		"/C/xampp/htdocs/www/expublic/application/models/news_model.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/news.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/edit_news_form_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_view.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/reference_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/news_view.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_references_view.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_news_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_header_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/update_news_view.php",
-		"/C/xampp/htdocs/www/expublic/application/models/reference_model.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/referanslar.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/4columns_portfolio.html",
-		"/C/xampp/htdocs/www/expublic/system/libraries/Parser.php",
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/docs.css",
 		"/C/xampp/htdocs/www/Simpla Admin/index.html",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/home.php",
@@ -612,15 +649,11 @@
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_footer_view.php",
 		"/C/xampp/htdocs/www/expublic/assets/backend_assets/jquery_datepicker_assets/css/ui-lightness/jquery-ui-1.10.0.custom.css",
 		"/C/xampp/htdocs/www/expublic/assets/backend_assets/jquery_datepicker_assets/js/jquery-ui-1.10.0.custom.js",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/about_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/contact_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/news_view.php",
-		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
-		"/C/xampp/htdocs/www/expublic/application/libraries/image_upload_resize_library.php",
 		"/C/xampp/htdocs/www/expublic/assets/backend_assets/scripts/facebox.js",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference_1a.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/footer.html",
-		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.html",
 		"/C/xampp/htdocs/www/valera/index.html",
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/slider_assets/js/jquery.DDSlider.js",
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/css/prettyPhoto.css",
@@ -645,7 +678,6 @@
 		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/application.js",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/footer_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/anasayfa_view.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view_empty.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/up.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/upload.php",
 		"/C/xampp/htdocs/www/expublic/application/views/upload_form.php",
@@ -703,15 +735,7 @@
 		"/C/xampp/htdocs/www/codeigniter_test/assets/css/styles.css",
 		"/C/xampp/htdocs/www/expublic/assets/css/bootstrap.css",
 		"/C/xampp/htdocs/www/expublic/about.html",
-		"/C/xampp/htdocs/www/expublic/code_canyon/js/jquery.DDSlider.min.js",
-		"/C/xampp/htdocs/www/expublic/contact-us.html",
-		"/C/xampp/htdocs/www/expublic/4columns_portfolio.html",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/news.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/contact.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/reference.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/controllers/backend/pass.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/views/backend_views/pass_view.php",
-		"/C/xampp/htdocs/www/codeigniter_test/application/models/pass_model.php"
+		"/C/xampp/htdocs/www/expublic/code_canyon/js/jquery.DDSlider.min.js"
 	],
 	"find":
 	{
@@ -729,6 +753,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"editStaticImages",
+			"static_images_view",
+			" ')->",
+			"slider_current_nav",
+			"			\n",
+			"update",
+			"referans_kategorisi_update",
+			"referans_kategori",
+			"referans_kategorisi",
+			"getRef",
+			"getRefCategoryRows",
+			"getReferenceById",
+			"operation",
+			"referans_kategorileri",
+			"readonly_category_field",
+			"Veritabanındaki Referans Text Alanları Ve Resim Alanları Güncellenemedi",
+			"		 	\n",
+			"boyle bir id yok",
+			"Secilmedi",
+			"{ref_category_name}",
+			"getRefCategoryId",
+			"ref_category_name",
+			"reference_radio_field",
+			"getRefImageRowById",
 			"delete",
 			"setView",
 			"getir",
@@ -832,31 +880,7 @@
 			"LoadModule",
 			"<?",
 			"name",
-			" Resim Yüklemeyi Bitir ve Galeriye Git ",
-			"max_file_size",
-			"max",
-			"raven",
-			"edit_gallery",
-			"galeriye_resim_ekle",
-			"raven",
-			"title",
-			"Örnek Fidan Sitesi",
-			"main_box_wrapper",
-			"deveci",
-			"Hakkımızda örnek metni",
-			"Downloads/Manuals",
-			"ımage",
-			"deveci",
-			"001",
-			"hurma",
-			"kayısı_fide",
-			"sasa",
-			"screenshot1.jpg",
-			"papaz",
-			"Armut",
-			"Şekerpare",
-			"Eşme",
-			"armut"
+			" Resim Yüklemeyi Bitir ve Galeriye Git "
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -878,23 +902,23 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/models/reference_model.php",
+					"file": "application/controllers/backend/slider.php",
 					"settings":
 					{
-						"buffer_size": 7074,
+						"buffer_size": 11679,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6618,
-								6684
+								1378,
+								1452
 							]
 						],
 						"settings":
@@ -903,25 +927,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3573.0,
+						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "application/views/backend_views/all_references_view.php",
+					"file": "application/models/slider_model.php",
 					"settings":
 					{
-						"buffer_size": 3403,
+						"buffer_size": 4995,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1595,
-								1587
+								4677,
+								4688
 							]
 						],
 						"settings":
@@ -929,53 +953,104 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 130.0,
-						"translation.y": 135.0,
+						"translation.x": 83.0,
+						"translation.y": 2475.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "application/views/backend_views/edit_reference_form_view.php",
+					"file": "application/views/backend_views/big_slider_view.php",
 					"settings":
 					{
-						"buffer_size": 5329,
+						"buffer_size": 2494,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4867,
-								4867
+								832,
+								854
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": 216.0,
-						"translation.y": 990.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "application/controllers/backend/reference.php",
+					"file": "application/views/backend_views/static_images_view_empty.php",
 					"settings":
 					{
-						"buffer_size": 20595,
+						"buffer_size": 1954,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15736,
-								15756
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/views/backend_views/static_images_view.php",
+					"settings":
+					{
+						"buffer_size": 2748,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1075,
+								983
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 250.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "application/controllers/tr/anasayfa.php",
+					"settings":
+					{
+						"buffer_size": 1550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1188,
+								1209
 							]
 						],
 						"settings":
@@ -984,7 +1059,35 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5658.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "theme/tr/anasayfa.html",
+					"settings":
+					{
+						"buffer_size": 17851,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7909,
+								7909
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2505.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1052,6 +1155,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 50.0,
+	"side_bar_width": 53.0,
 	"status_bar_visible": true
 }

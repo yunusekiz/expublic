@@ -79,7 +79,7 @@ class slider_model extends CI_Model {
 			return FALSE;
 		}
 	}
-
+////////////////////////////////////////////////////////////////////////////////
 	public function getThumbImagePathFromDB($id)
 	{
 		$query = $this->db->select('thumb_image_path')->from('big_slider')->where('id',$id)->get();
@@ -93,20 +93,115 @@ class slider_model extends CI_Model {
 			return FALSE;
 		}		
 	}
-
+////////////////////////////////////////////////////////////////////////////////
 	public function isThereAnyRowInDB()
 	{
 		$query = $this->db->select('*')->from('big_slider')->get();
 		
 		if ($query->num_rows()>0)
-		{
 			return TRUE;
+		else
+			return FALSE;
+	}
+
+////////////////////////////////////////////////////////////////////////////////
+	public function insertImageToStaticImages($image_title, $image_detail, $big_image_path, $thumb_image_path)
+	{
+		$insert_data = array(
+								'image_title' 		=> $image_title,
+								'image_detail'		=> $image_detail,
+								'big_image_path'	=> $big_image_path,
+								'thumb_image_path'	=> $thumb_image_path
+							);
+
+		$query = $this->db->insert('home_static_images',$insert_data);
+
+		if($this->db->affected_rows() > 0)
+			return TRUE;
+		else
+			return FALSE;
+	}
+////////////////////////////////////////////////////////////////////////////////
+
+	public function getStaticBigImagePathFromDB($id)
+	{
+		$query = $this->db->select('big_image_path')->from('home_static_images')->where('id',$id)->get();
+		if($query->num_rows()>0)
+			return  $query->row()->big_image_path;
+		else
+			return FALSE;			
+	}
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+	public function getStaticThumbImagePathFromDB($id)
+	{
+		$query = $this->db->select('thumb_image_path')->from('home_static_images')->where('id',$id)->get();
+		if($query->num_rows()>0)
+			return  $query->row()->thumb_image_path;
+		else
+			return FALSE;			
+	}
+
+////////////////////////////////////////////////////////////////////////////////
+
+	public function deleteStaticImages($id)
+	{
+		$test_delete_before = $this->db->select('id')->from('home_static_images')->where('id',$id)->get();
+
+		if($test_delete_before->num_rows() > 0)
+		{
+			$query = $this->db->where('id',$id)->delete('home_static_images');
+
+			if($this->db->affected_rows() > 0)
+				return TRUE;
+			else
+				return FALSE;
 		}
 		else
-		{
 			return FALSE;
-		}
-
 	}
+////////////////////////////////////////////////////////////////////////////////
+
+	public function isThereAnyStaticImages()
+	{
+		$query = $this->db->select('*')->from('home_static_images')->get();
+
+		if ($query->num_rows()>0)
+			return TRUE;
+		else
+			return FALSE;
+	}
+////////////////////////////////////////////////////////////////////////////////
+
+	public function countOfStaticImages()
+	{
+		$query = $this->db->select('*')->from('home_static_images')->get();
+		if ($query->num_rows()>0)
+		{
+			return $this->db->count_all('home_static_images');
+		}
+			
+		else
+			return 0;
+	}
+////////////////////////////////////////////////////////////////////////////////
+
+	public function getStaticImagesRow()
+	{
+		$query = $this->db->select('id AS id, image_title AS resim_baslik, image_detail AS resim_detay, big_image_path AS buyuk_resim, thumb_image_path AS kucuk_resim ')->from('home_static_images')->get();
+
+		if ($query->num_rows()>0) 
+		{
+			$result = $query->result_array();
+			return $result;
+		}
+		else
+			return NULL;
+	}
+////////////////////////////////////////////////////////////////////////////////
 
 }

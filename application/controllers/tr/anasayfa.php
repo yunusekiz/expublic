@@ -7,6 +7,9 @@ class anasayfa extends CI_Controller {
 	protected $base_data;
 
 	protected $is_there_any_row;
+
+	protected $static_images_row_data;
+	protected $is_there_static_images_row;
 	
 	public function __construct()
 	{
@@ -15,6 +18,10 @@ class anasayfa extends CI_Controller {
 		$this->load->model('slider_model');
 		// slider da herhangi bir resim yüklü olup olmadığına bakar
 		$this->is_there_any_row = $this->slider_model->isThereAnyRowInDB();
+
+
+		$this->is_there_any_static_images = $this->slider_model->isThereAnyStaticImages();
+		$this->static_images_row_data = $this->slider_model->getStaticImagesRow();
 
 		if ($this->is_there_any_row == TRUE)
 		{
@@ -25,11 +32,22 @@ class anasayfa extends CI_Controller {
 			$buyuk_slider_resimleri = array();
 		}
 
+
+		if ($this->is_there_any_static_images == TRUE) 
+		{
+			$sabit_resimler = $this->static_images_row_data;
+		}
+		else
+		{
+			$sabit_resimler = array();
+		}
+
 		$this->base_data = base_url();
 
 		$this->parser_data = array(
 									'base'	=>	$this->base_data,
-									'buyuk_slider_resimleri_dizisi'	=> $buyuk_slider_resimleri
+									'buyuk_slider_resimleri_dizisi'	=> $buyuk_slider_resimleri,
+									'sabit_resim_detaylari'			=> $sabit_resimler
 								  );
 
 	}
