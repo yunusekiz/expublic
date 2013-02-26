@@ -90,8 +90,8 @@ class reference extends CI_Controller {
 						'upload_path'		=>	'assets/images/reference_images',
 						'big_img_width'		=>	NULL,
 						'big_img_height'	=>	NULL,
-						'thumb_img_width'	=>	220,
-						'thumb_img_height'	=>	110
+						'thumb_img_width'	=>	270,
+						'thumb_img_height'	=>	135
 					  );
 	
 		$reference_dropdown_category = $this->input->post('reference_dropdown_category');
