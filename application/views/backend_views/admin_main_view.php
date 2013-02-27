@@ -24,6 +24,8 @@
 					<ul>
 						<li><a href="{base}backend/slider/editBigSlider" class="{big_slider_current}">Büyük Slider Düzenle</a></li>
 						<li><a href="{base}backend/slider/editStaticImages" class="{little_slider_current}"> Sabit Resimleri Düzenle</a></li>
+						<li><a href="{base}backend/slider/editLittleSlider" class="{little_slider_current}"> Küçük Slider Düzenle</a></li>
+
 
 					</ul>
 				</li>

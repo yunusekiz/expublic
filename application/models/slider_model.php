@@ -203,5 +203,79 @@ class slider_model extends CI_Model {
 			return NULL;
 	}
 ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
+	public function insertImageToLittleSlider($image_title, $image_date, $image_detail, $big_image_path, $thumb_image_path)
+	{
+		$insert_data = array(
+								'image_title'		=> $image_title,
+								'image_date'		=> $image_date,
+								'image_detail'		=> $image_detail,
+								'big_image_path'	=> $big_image_path,
+								'thumb_image_path'	=> $thumb_image_path
+							);
+
+		$query = $this->db->insert('little_slider', $insert_data);
+		if ($this->db->affected_rows()>0)
+			return TRUE;
+		else
+			return FALSE;
+	}
+////////////////////////////////////////////////////////////////////////////////
+	public function getLittleSliderRow()
+	{
+		 $query = $this->db->select('id AS id, image_title AS resim_baslik, image_date AS resim_tarih, image_detail AS resim_detay, big_image_path AS buyuk_resim, thumb_image_path AS kucuk_resim')->from('little_slider')->get();
+
+		 if ($query->num_rows()>0)
+		 	return $query->result_array();
+		 else
+		 	return NULL;
+	}
+////////////////////////////////////////////////////////////////////////////////
+	public function getLittleSliderBigImageFromDB()
+	{
+		$query = $this->db->select('big_image_path')->from('little_slider')->get();
+		if ($query->num_rows()>0)
+			return $query->row()->big_image_path;
+		else
+			return NULL;
+	}
+////////////////////////////////////////////////////////////////////////////////
+	public function getLittleSliderThumbImageFromDB($id)
+	{
+		$query = $this->db->select('thumb_image_path')->from('little_slider')->where('id', $id)->get();
+		if ($query->num_rows()>0)
+			return $query->row()->thumb_image_path;
+		else
+			return NULL;
+	}
+////////////////////////////////////////////////////////////////////////////////
+	public function isThereAnyLittleSliderRow()
+	{
+		$query = $this->select('id')->from('little_slider')->get();
+		if ($query->num_rows()>0)
+			return TRUE;
+		else
+			return FALSE;
+	}
+////////////////////////////////////////////////////////////////////////////////
+	public function deleteLittleSlider($id)
+	{
+		$test_delete_before = $this->select('id')->from('little_slider')->where('id', $id)->get();
+		if ($test_delete_before->num_rows()>0) 
+		{
+			$query = $this->db->where('id', $id)->delete('little_slider');
+
+			if ($this->db->affected_rows()>0)
+				return TRUE;
+			else
+				return FALSE;
+		}
+		else
+			return FALSE;
+	}
+////////////////////////////////////////////////////////////////////////////////	
 }

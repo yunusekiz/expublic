@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: localhost
--- Üretim Zamanı: 25 Şub 2013, 16:45:28
+-- Üretim Zamanı: 27 Şub 2013, 22:52:57
 -- Sunucu sürümü: 5.5.25a
 -- PHP Sürümü: 5.4.4
 
@@ -84,14 +84,15 @@ CREATE TABLE IF NOT EXISTS `big_slider` (
   `big_image_path` text NOT NULL,
   `thumb_image_path` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Tablo döküm verisi `big_slider`
 --
 
 INSERT INTO `big_slider` (`id`, `image_title`, `big_image_path`, `thumb_image_path`) VALUES
-(1, 'merhaba harun abi', 'assets/theme_assets/slider_assets/photo/merhaba_harun_abi.jpg', 'assets/theme_assets/slider_assets/photo/thumb/merhaba_harun_abi_thumb.jpg');
+(7, 'tuh', 'assets/theme_assets/slider_assets/photo/tuh.jpg', 'assets/theme_assets/slider_assets/photo/thumb/tuh_thumb.jpg'),
+(8, 'hghghgh', 'assets/theme_assets/slider_assets/photo/hghghgh.jpg', 'assets/theme_assets/slider_assets/photo/thumb/hghghgh_thumb.jpg');
 
 -- --------------------------------------------------------
 
@@ -146,15 +147,32 @@ CREATE TABLE IF NOT EXISTS `home_static_images` (
   `big_image_path` text NOT NULL,
   `thumb_image_path` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Tablo döküm verisi `home_static_images`
 --
 
 INSERT INTO `home_static_images` (`id`, `image_title`, `image_detail`, `big_image_path`, `thumb_image_path`) VALUES
-(8, 'yeni resmimim adi', 'yeni resmimim detay bilgisi', 'assets/images/home_static_images/yeni_resmimim_adi.jpg', 'assets/images/home_static_images/thumb/yeni_resmimim_adi_thumb.jpg'),
-(12, 'bu son yuklene', 'son yuklenen resmin aciklamasi', 'assets/images/home_static_images/bu_son_yuklene.jpg', 'assets/images/home_static_images/thumb/bu_son_yuklene_thumb.jpg');
+(13, 'yeni resmimim adi', 'yeni resmimim detay bilgisi', 'assets/images/home_static_images/yeni_resmimim_adi.jpg', 'assets/images/home_static_images/thumb/yeni_resmimim_adi_thumb.jpg'),
+(15, 'reerere', 'fyhkkpo', 'assets/images/home_static_images/reerere.jpg', 'assets/images/home_static_images/thumb/reerere_thumb.jpg'),
+(16, 'mikkmkjhk', 'njnyhınolk', 'assets/images/home_static_images/mikkmkjhk.jpg', 'assets/images/home_static_images/thumb/mikkmkjhk_thumb.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `little_slider`
+--
+
+CREATE TABLE IF NOT EXISTS `little_slider` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image_title` text NOT NULL,
+  `image_date` varchar(255) NOT NULL,
+  `image_detail` text NOT NULL,
+  `big_image_path` text NOT NULL,
+  `thumb_image_path` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

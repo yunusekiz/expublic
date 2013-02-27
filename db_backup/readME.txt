@@ -1,1 +1,1 @@
-Yedek Alma Tarih Ve Saati: 25 Þubat 2013 Pazartesi Saat: 17.00
+Yedek Alma Tarih Ve Saati: 27 Þubat 2013 çarþamba Saat: 23.54
