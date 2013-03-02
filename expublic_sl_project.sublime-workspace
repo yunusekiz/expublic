@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"image_up",
+				"image_up_and_resize"
+			],
+			[
+				"little",
+				"little_slider_date_form_field"
+			],
+			[
+				"lttl",
+				"little_slider_title_form_field"
+			],
+			[
+				"little_sli",
+				"little_slider_title_form_field"
+			],
+			[
+				"littl",
+				"little_slider_row_data"
+			],
+			[
+				"is_there_",
+				"is_there_any_little_slider"
+			],
+			[
+				"edi",
+				"editLittleSlider"
+			],
+			[
 				"dele",
 				"deleteStaticImages"
 			],
@@ -26,10 +54,6 @@
 			[
 				"coun",
 				"count"
-			],
-			[
-				"edi",
-				"editStaticImages"
 			],
 			[
 				"el",
@@ -490,40 +514,16 @@
 			[
 				"the",
 				"theme_data"
-			],
-			[
-				"requ",
-				"require_data"
-			],
-			[
-				"hea",
-				"header_theme"
-			],
-			[
-				"re",
-				"require_data"
-			],
-			[
-				"pass",
-				"pass_model"
-			],
-			[
-				"pas",
-				"pass_now"
-			],
-			[
-				"pri",
-				"private"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "application/controllers/backend/slider.php",
+			"file": "application/views/backend_views/little_slider_view.php",
 			"settings":
 			{
-				"buffer_size": 11679,
+				"buffer_size": 3015,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,47 +531,23 @@
 			"file": "application/models/slider_model.php",
 			"settings":
 			{
-				"buffer_size": 7693,
+				"buffer_size": 7697,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/views/backend_views/big_slider_view.php",
+			"file": "application/views/backend_views/little_slider_view_empty.php",
 			"settings":
 			{
-				"buffer_size": 2494,
+				"buffer_size": 2219,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/views/backend_views/static_images_view_empty.php",
+			"file": "application/controllers/backend/slider.php",
 			"settings":
 			{
-				"buffer_size": 1954,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/views/backend_views/static_images_view.php",
-			"settings":
-			{
-				"buffer_size": 2748,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme/tr/anasayfa.html",
-			"settings":
-			{
-				"buffer_size": 18018,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/views/backend_views/admin_main_view.php",
-			"settings":
-			{
-				"buffer_size": 6264,
+				"buffer_size": 17625,
 				"line_ending": "Windows"
 			}
 		}
@@ -608,15 +584,22 @@
 	},
 	"file_history":
 	[
+		"/C/Documents and Settings/ynsekiz/Desktop/kayitkayitkayit.vcf",
+		"/C/Documents and Settings/ynsekiz/Desktop/index.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.html",
+		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-02-28.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/referenceee.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/static_images_view.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/static_images_view_empty.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/anasayfa.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/4columns_portfolio.html",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_main_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view_empty.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/static_images_view.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
 		"/C/xampp/htdocs/www/expublic/application/models/reference_model.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_null_categories_view.php",
-		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.html",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_categories_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_references_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/edit_category_form_view.php",
@@ -635,8 +618,6 @@
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/edit_news_form_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/news_view.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
-		"/C/xampp/htdocs/www/expublic/application/views/backend_views/big_slider_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/admin_header_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/update_news_view.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/tr/referanslar.php",
@@ -730,12 +711,7 @@
 		"/C/xampp/htdocs/www/expublic/theme/tr/anasayfa.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/index.html",
 		"/C/xampp/htdocs/www/expublic/index.html",
-		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/header_view",
-		"/C/xampp/htdocs/www/expublic/assets/css/docs.css",
-		"/C/xampp/htdocs/www/codeigniter_test/assets/css/styles.css",
-		"/C/xampp/htdocs/www/expublic/assets/css/bootstrap.css",
-		"/C/xampp/htdocs/www/expublic/about.html",
-		"/C/xampp/htdocs/www/expublic/code_canyon/js/jquery.DDSlider.min.js"
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/header_view"
 	],
 	"find":
 	{
@@ -902,32 +878,31 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/controllers/backend/slider.php",
+					"file": "application/views/backend_views/little_slider_view.php",
 					"settings":
 					{
-						"buffer_size": 11679,
+						"buffer_size": 3015,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1378,
-								1452
+								1906,
+								1936
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 5064.0,
+						"translation.x": 162.0,
+						"translation.y": 225.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -937,15 +912,15 @@
 					"file": "application/models/slider_model.php",
 					"settings":
 					{
-						"buffer_size": 7693,
+						"buffer_size": 7697,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7490,
-								7490
+								5362,
+								5373
 							]
 						],
 						"settings":
@@ -954,32 +929,32 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2996.0,
+						"translation.y": 2778.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "application/views/backend_views/big_slider_view.php",
+					"file": "application/views/backend_views/little_slider_view_empty.php",
 					"settings":
 					{
-						"buffer_size": 2494,
+						"buffer_size": 2219,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								832,
-								854
+								1111,
+								1141
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": 0.0,
+						"translation.x": 71.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -987,98 +962,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "application/views/backend_views/static_images_view_empty.php",
+					"file": "application/controllers/backend/slider.php",
 					"settings":
 					{
-						"buffer_size": 1954,
+						"buffer_size": 17625,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19,
-								19
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "application/views/backend_views/static_images_view.php",
-					"settings":
-					{
-						"buffer_size": 2748,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								227,
-								227
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 250.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "theme/tr/anasayfa.html",
-					"settings":
-					{
-						"buffer_size": 18018,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7688,
-								7699
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 45.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "application/views/backend_views/admin_main_view.php",
-					"settings":
-					{
-						"buffer_size": 6264,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1140,
-								1156
+								15533,
+								15538
 							]
 						],
 						"settings":
@@ -1086,8 +981,8 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 145.0,
-						"translation.y": 90.0,
+						"translation.x": 0.0,
+						"translation.y": 5448.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1155,6 +1050,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 50.0,
+	"side_bar_width": 70.0,
 	"status_bar_visible": true
 }

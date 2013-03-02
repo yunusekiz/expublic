@@ -15,13 +15,17 @@ class slider extends CI_Controller {
 	protected $static_images_row_data;
 	protected $is_there_any_static_images;
 
+	protected $little_slider_row_data;
+	protected $is_there_any_little_slider;
+
 	public $current_nav;
 	public $big_slider_current;
 	public $little_slider_current;
 	
 	public function index()
 	{
-		return null;
+		//return null;
+		echo "<meta http-equiv=\"refresh\" content=\"0; url=../home\">";
 	}
 	
 	public function __construct()
@@ -46,7 +50,19 @@ class slider extends CI_Controller {
 		$this->little_slider_current = 'current';
 
 		$this->parser_data['base'] = $this->base_data;
-		
+
+
+		//////////////////////////////////////////////
+		$this->is_there_any_little_slider	= $this->slider_model->isThereAnyLittleSliderRow();
+		$this->little_slider_row_data	= $this->slider_model->getLittleSliderRow();
+
+		if ($this->is_there_any_little_slider == TRUE) 
+		{
+			$this->parser_data['kucuk_slider_detaylari'] = $this->little_slider_row_data;
+		}
+		//////////////////////////////////////////////
+		//////////////////////////////////////////////
+		//////////////////////////////////////////////
 		$this->is_there_any_static_images = $this->slider_model->isThereAnyStaticImages();
 		$this->static_images_row_data = $this->slider_model->getStaticImagesRow();
 
@@ -55,6 +71,7 @@ class slider extends CI_Controller {
 			$this->parser_data['sabit_resim_detaylari' ] = $this->static_images_row_data;
 											
 		}
+		//////////////////////////////////////////////
 
 		// slider da herhangi bir resim yüklü olup olmadığına bakar
 		$this->is_there_any_row = $this->slider_model->isThereAnyRowInDB();
@@ -74,7 +91,6 @@ class slider extends CI_Controller {
 
 		if ($this->is_there_any_row == TRUE)
 		{
-			
 			// admin panelinin ilgili view lerini yükler
 			$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
 			$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
@@ -89,8 +105,7 @@ class slider extends CI_Controller {
 			$this->parser->parse('backend_views/big_slider_view_empty',$this->parser_data);
 			$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);	
 		}
-
-				
+		
 	}
 
 
@@ -217,7 +232,7 @@ class slider extends CI_Controller {
 
 
 
-///////////////////////////////////////////////////////////////////////////////
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 	public function imageUploadToStaticImages()
 	{
 		$count_of_static_Images = $this->countOfStaticImages();
@@ -279,6 +294,7 @@ class slider extends CI_Controller {
 		else
 		{
 			$message = '<h1> HataKodu::1001:: Resim Yükleme Başarısız Oldu : ';
+			$this->errorMessage($message,'editStaticImages');
 		}
 ###################################################################################################################
 		}
@@ -329,7 +345,107 @@ class slider extends CI_Controller {
 		}
 	}
 
+	protected function countOfStaticImages()
+	{
+		$count = $this->slider_model->countOfStaticImages();
+		return $count;
+	}
 
+	#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+	#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+	#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+	#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public function	editLittleSlider()
+	{
+		if ($this->is_there_any_little_slider == TRUE)
+		{
+			// admin panelinin ilgili view lerini yükler
+			$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+			$this->parser->parse('backend_views/little_slider_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);		
+		}
+		else
+		{
+			// admin panelinin ilgili view lerini yükler
+			$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+			$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+			$this->parser->parse('backend_views/little_slider_view_empty',$this->parser_data);
+			$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);	
+		}
+	}
+
+
+	public function imageUploadToLittleSlider()
+	{
+		$little_slider_title_form_field		= $this->input->post('little_slider_title_form_field');
+		$little_slider_detail_form_field	= $this->input->post('little_slider_detail_form_field');
+		$little_slider_date_form_field		= $this->input->post('little_slider_date_form_field');
+
+		if ( ($little_slider_title_form_field == '')||($little_slider_detail_form_field == '')||($little_slider_date_form_field =='') ) 
+		{
+			$message = 'HATA:: Lütfen Boş Alan Bırakmayın';
+			$this->errorMessage($message,'editLittleSlider'); 			
+		}
+		else
+		{
+			$new_image_name = 'resimmm'; //$this->regex($little_slider_title_form_field);
+			$array = array(
+							'image_form_field'	=>	'little_slider_image_form_field',
+							'upload_path'		=>	'assets/images/little_slider_images',
+							'image_name'		=>	$new_image_name,
+							'big_img_width'		=>	460,
+							'big_img_height'	=>	170,
+							'thumb_img_width'	=>	80,
+							'thumb_img_height'	=>	80
+						  );
+
+			$this->load->library('image_upload_resize_library');
+			$this->image_upload_resize_library->setBootstrapData($array);
+			$this->image_upload_resize_library->display_errors = TRUE;
+			$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize();
+
+			if ($image_up_and_resize == TRUE) 
+			{
+				$big_img_data_for_db	= $this->image_upload_resize_library->getSizedBigImgNameForDB();
+				$thumb_img_data_for_db	= $this->image_upload_resize_library->getSizedThumbImgNameForDB();
+
+				$insert_data_to_db = $this->slider_model->insertImageToLittleSlider(
+																						$new_image_name,
+																						$little_slider_date_form_field,
+																						$little_slider_detail_form_field,
+																						$big_img_data_for_db,
+																						$thumb_img_data_for_db
+																					);
+				if ($insert_data_to_db == TRUE) 
+				{
+					$message = 'Resim Başarıyla Yüklendi';
+					$this->successMessage($message,'editLittleSlider');
+				}
+				else
+				{
+					$message = 'HATA:: Resim Bilgileri Veritabanına Kaydedilemedi :';
+					$this->errorMessage($message,'editLittleSlider');
+				}
+			}
+			else
+			{
+				$message = '<h1> HataKodu::1001:: Resim Yükleme Başarısız Oldu : ';
+				$this->errorMessage($message,'editLittleSlider');
+			}
+		}
+
+	}
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public function unLinkImage($victim)
 	{
@@ -349,6 +465,25 @@ class slider extends CI_Controller {
 	}
 	
 
+	protected function regex($denek)
+	{
+		$denek = strtr($denek, array(	'Ü' => 'U', 'Ş' => 'S', 'Ç' => 'C',
+										'İ' => 'I', 'Ğ'	=> 'G', 'Ö' => 'O', 
+										'ü'	=> 'u', 'ö' => 'o', 'ş' => 's',
+										'ç' => 'c', 'ı' => 'i', 'ğ' => 'g'
+									));
+		
+		$denek = preg_replace('/\%/',' percentage',$denek); 
+		$denek = preg_replace('/\@/',' at ',$denek); 
+		$denek = preg_replace('/\&/',' and ',$denek); 
+		$denek = preg_replace('/\s[\s]+/','-',$denek);    // Strip off multiple spaces 
+		$denek = preg_replace('/[\s\W]+/','-',$denek);    // Strip off spaces and non-alpha-numeric 
+		$denek = preg_replace('/^[\-]+/','',$denek); // Strip off the starting hyphens 
+		$denek = preg_replace('/[\-]+$/','',$denek);
+		return $denek;
+	}
+
+
 	public function errorMessage($message, $return_path = NULL)
 	{
 		if ($return_path == NULL)
@@ -360,7 +495,6 @@ class slider extends CI_Controller {
 									'base' 				=> $this->base_data,
 									'error_message'		=> $message
 								  );
-
 		// admin panelinin ilgili view lerini yükler
 		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
 		$this->parser->parse('backend_views/error_view',$this->parser_data);
@@ -381,20 +515,14 @@ class slider extends CI_Controller {
 									'base' 				=> $this->base_data,
 									'success_message'	=> $message
 								  );
-
 		// admin panelinin ilgili view lerini yükler
 		$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
 		$this->parser->parse('backend_views/success_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
 		echo "<meta http-equiv=\"refresh\" content=\"4; url=$return_path\">";	
-
 	}
 
-	protected function countOfStaticImages()
-	{
-		$count = $this->slider_model->countOfStaticImages();
-		return $count;
-	}
+
 	
 }

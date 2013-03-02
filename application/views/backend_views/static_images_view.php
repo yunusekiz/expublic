@@ -54,7 +54,7 @@
 								<label> Seçtiğiniz resme detay bilgisi girin :  </label>
 								<input class="text-input large-input" type="text" style="color:black" id="large-input" name="static_images_detail_form_field" />
 							</p>
-							</br>
+							<br/>
 							<p>
 								<input class="button" type="submit" value="Yeni Resmi Kaydet" />
 							</p>  

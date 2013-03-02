@@ -768,7 +768,6 @@ class reference extends CI_Controller {
 
 	protected function regex($denek)
 	{
-
 		$denek = strtr($denek, array(	'Ü' => 'U', 'Ş' => 'S', 'Ç' => 'C',
 										'İ' => 'I', 'Ğ'	=> 'G', 'Ö' => 'O', 
 										'ü'	=> 'u', 'ö' => 'o', 'ş' => 's',
@@ -783,7 +782,6 @@ class reference extends CI_Controller {
 		$denek = preg_replace('/^[\-]+/','',$denek); // Strip off the starting hyphens 
 		$denek = preg_replace('/[\-]+$/','',$denek);
 		return $denek;
-
 	}
 
 

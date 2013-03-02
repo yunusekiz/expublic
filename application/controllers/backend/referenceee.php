@@ -99,39 +99,12 @@ class reference extends CI_Controller {
 				
 				$this->load->library('image_lib',$resize_config);
 				$this->image_lib->resize() or die($this->image_lib->display_errors());
-				
-				
 			}
 	
 		}
 		
-		
 	}
 	
-	protected function imageUpload()
-	{		
-		$config_image['upload_path'] = './assets/images/';
-		$config_image['allowed_types'] = 'gif|jpg|png';
-		
-		$this->load->library('upload',$config_image);
-		
-		if($this->reference->imageUpload())
-		{
-			echo 'resim yuklendi : <br>';
-			$data = array('upload_data' => $this->upload->data());
-			var_dump($data);
-		}
-		else
-		{
-			echo 'resim yuklenemedi : <br>';
-			$this->upload->display_errors('<p>', '</p>');
-		}
 
-	} 
-	
-	public function saveReference()
-	{
-
-	}
 
 }

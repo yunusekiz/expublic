@@ -2,7 +2,7 @@
 <div class="content-box"><!-- Start Content Box -->
 				          
              <div class="content-box-header">
-				<h3> <font style="margin-left:230px;">Anasayfa Büyük Slider Düzenleme Formu</font></h3>
+				<h3> <font style="margin-left:230px;">Anasayfa Küçük Slider Düzenleme Formu</font></h3>
 							 
 			</div> <!-- End .content-box-header -->     
 			
@@ -10,28 +10,28 @@
             					
 					<div class="tab-content default-tab" id="1">                 
 					
-						<form action="{base}backend/slider/imageUploadToBigSlider" method="post" enctype="multipart/form-data" >
+						<form action="{base}backend/slider/imageUploadToLittleSlider" method="post" enctype="multipart/form-data" >
 						
 							<fieldset> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->											
 
 								<p>
-									<label> Büyük Slider' ın mevcut resimleri </label>
+									<label>Küçük Slider' ın mevcut resimleri </label>
 								</p>
 								<div class="anadiv_cerceve_dis">
                  
-                  				{buyuk_slider_detaylari}
+                  				{kucuk_slider_detaylari}
 									<div class="anadiv_cerceve_ic">
          								<div class="cocukdiv_image">
-            								<a href="{base}{big_image_path}" title="{image_title}">
-                								<img src="{base}{thumb_image_path}" width="80" height="80" alt="" />
+            								<a href="{base}{buyuk_resim}" title="{resim_baslik}">
+                								<img src="{base}{kucuk_resim}" width="80" height="80" alt="" />
             								</a>
           								</div>
-          							<a href="deleteBigSlider/{id}">
+          							<a href="deleteLittleSlider/{id}">
           								<div class="cocukdiv_icon"><img src="{base}assets/backend_assets/lightbox_images/delete.png" title="Resmi Sil" /></div>
           								<div class="cocukdiv_icon_text"> Resmi Sil</div>  
           							</a>
 									</div>
-                  				{/buyuk_slider_detaylari}
+                  				{/kucuk_slider_detaylari}
                                           
 								</div>
 							</fieldset>
@@ -40,19 +40,30 @@
                    <br/><hr><br/>
                   
               <p>
-                  <label> Büyük Slider' a yeni resim yüklemek için dosya seçin :  </label>
+                  <label> Küçük Slider' a yeni resim yüklemek için dosya seçin :  </label>
               </p>
 								
-                  <input type="file" name="big_slider_image_form_field" accept="image/*" />
+                  <input type="file" name="little_slider_image_form_field" accept="image/*" />
                    <br/><br/><br/>
-              <p>
+              				<p>
 								<label> Seçtiğiniz resme isim verin :  </label>
-								<input class="text-input large-input" type="text" style="color:black" id="large-input" name="big_slider_title_form_field" />
+								<input class="text-input large-input" type="text" style="color:black" id="large-input" name="little_slider_title_form_field" />
+							</p>
+							<br/>
+              				<p>
+								<label> Seçtiğiniz resme detay bilgisi girin : </label>
+								<input class="text-input large-input" type="text" style="color:black" id="large-input" name="little_slider_detail_form_field" />
 							</p>
 							</br>
+              				<p>
+								<label> Seçtiğiniz resim için bir tarih girin : </label>
+								<input class="text-input large-input" type="text" style="color:black" id="datepicker" name="little_slider_date_form_field" />
+							</p>
+							</br>							
 							<p>
 								<input class="button" type="submit" value="Yeni Resmi Kaydet" />
-							</p> 
+							</p>
+
 						</form>
 						
 					</div>  <!-- End #tab1 -->      

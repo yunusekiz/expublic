@@ -255,7 +255,7 @@ class slider_model extends CI_Model {
 ////////////////////////////////////////////////////////////////////////////////
 	public function isThereAnyLittleSliderRow()
 	{
-		$query = $this->select('id')->from('little_slider')->get();
+		$query = $this->db->select('id')->from('little_slider')->get();
 		if ($query->num_rows()>0)
 			return TRUE;
 		else
