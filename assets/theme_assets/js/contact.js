@@ -3,20 +3,19 @@ $(document).ready(function ()
 { // после загрузки DOM
     $("#ajax-contact-form").submit(function ()
     {
-        // this указывает на нашу форму
-        var str = $(this).serialize(); // сериализуем данные для POST-запроса
+        var str = $(this).serialize(); 
         $.ajax(
         {
             type: "POST",
-            url: "contact.php",
+            url: "eposta",
             data: str,
             success: function (msg)
             {
                 $("#note").ajaxComplete(function (event, request, settings)
                 {
-                    if (msg == 'OK') // Если сообщение отправлено, поблагодарим пользователя
+                    if (msg == 'OK') 
                     {
-                        result = '<div class="notification_ok">Message was sent to website administrator, thank you!</div>';
+                        result = '<div class="notification_ok">Mesajınız bize ulaştı, teşekkürler!</div>';
                         $("#fields").hide();
                     }
                     else

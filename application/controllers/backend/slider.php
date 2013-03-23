@@ -175,7 +175,7 @@ class slider extends CI_Controller {
 			if($insert_data_to_db == TRUE)
 			{
 				$message = 'Resim Başarıyla Yüklendi';
-				$this->successMessage($message);
+				$this->successMessage($message,NULL,1);
 			}
 			else
 			{
@@ -220,7 +220,7 @@ class slider extends CI_Controller {
 		{
 			$message = 'Resim Başarıyla Silindi';
 			$return_path = '../editBigSlider';
-			$this->successMessage($message,$return_path);
+			$this->successMessage($message,$return_path,0.5);
 		}
 		else
 		{
@@ -282,7 +282,7 @@ class slider extends CI_Controller {
 			if($insert_data_to_db == TRUE)
 			{
 				$message = 'Resim Başarıyla Yüklendi';
-				$this->successMessage($message,'editStaticImages');
+				$this->successMessage($message,'editStaticImages',1);
 			}
 			else
 			{
@@ -328,14 +328,14 @@ class slider extends CI_Controller {
 			die();
 		}
 
-		//echo '<h1>'. $id.' nolu slider i siliyorum kardes haberin olsun ';
+		// static images leri sildikten sonra veri tabanındaki ilgili kayıtlarıda siler
 		$delete_row_from_db = $this->slider_model->deleteStaticImages($id);
 
 		if($delete_row_from_db == TRUE)
 		{
 			$message = 'Resim Başarıyla Silindi';
 			$return_path = '../editStaticImages';
-			$this->successMessage($message,$return_path);
+			$this->successMessage($message,$return_path,0.5);
 		}
 		else
 		{
@@ -394,7 +394,7 @@ class slider extends CI_Controller {
 		}
 		else
 		{
-			$new_image_name = 'resimmm'; //$this->regex($little_slider_title_form_field);
+			$new_image_name = $this->regex($little_slider_title_form_field);
 			$array = array(
 							'image_form_field'	=>	'little_slider_image_form_field',
 							'upload_path'		=>	'assets/images/little_slider_images',
@@ -416,7 +416,7 @@ class slider extends CI_Controller {
 				$thumb_img_data_for_db	= $this->image_upload_resize_library->getSizedThumbImgNameForDB();
 
 				$insert_data_to_db = $this->slider_model->insertImageToLittleSlider(
-																						$new_image_name,
+																						$little_slider_title_form_field,
 																						$little_slider_date_form_field,
 																						$little_slider_detail_form_field,
 																						$big_img_data_for_db,
@@ -425,7 +425,7 @@ class slider extends CI_Controller {
 				if ($insert_data_to_db == TRUE) 
 				{
 					$message = 'Resim Başarıyla Yüklendi';
-					$this->successMessage($message,'editLittleSlider');
+					$this->successMessage($message,'editLittleSlider',1);
 				}
 				else
 				{
@@ -440,6 +440,112 @@ class slider extends CI_Controller {
 			}
 		}
 
+	}
+
+
+	public function deleteLittleSlider($id)
+	{
+		$big_img_row 	= $this->slider_model->getLittleSliderBigImageFromDB($id);
+		$thumb_img_row	= $this->slider_model->getLittleSliderThumbImageFromDB($id);
+		
+		$unlink_big_image = $this->unLinkImage($big_img_row);
+		if (!$unlink_big_image)
+		{
+			echo '<h1>buyuk resim silinemedi : ';
+			die();
+		}
+
+		$unlink_thumb_image = $this->unLinkImage($thumb_img_row);
+		if (!$unlink_thumb_image)
+		{
+			echo '<h1>kucuk resim silinemedi';
+			die();
+		}
+
+		// küçük slider resimleri silindikten sonra veritabanındaki kayıtlarını da sil	
+		$delete_row_from_db = $this->slider_model->deleteLittleSlider($id);
+
+		if($delete_row_from_db == TRUE)
+		{
+			$message = 'Resim Başarıyla Silindi';
+			$return_path = '../editLittleSlider';
+			$this->successMessage($message,$return_path,0.5);
+		}
+		else
+		{
+			$message = 'HATA:: Veritabanından İlgili Kayit Silinemedi';
+			$return_path = '../editLittleSlider';
+			$this->errorMessage($message,$return_path);
+		}		
+
+	}
+
+
+	public function updateLittleSlider($id = NULL)
+	{
+		$id_little_slider_update_form_field = $this->input->post('id_little_slider_update_form_field');
+
+		if ($id != NULL) // küçük slider için resim düzenleme formunu basmadan önde böyle bir "id" olup olmadığını kontrol et
+		{
+			if($this->slider_model->getLittleSliderBigImageFromDB($id) != NULL)
+			{
+				$only_one_little_slider_detail = $this->slider_model->getLittleSliderRow($id);
+				$this->parser_data['bir_adet_kucuk_slider_detayi_a'] = $only_one_little_slider_detail;
+				$this->parser_data['bir_adet_kucuk_slider_detayi_b'] = $only_one_little_slider_detail;
+
+				// admin panelinin ilgili view lerini yükler
+				$this->parser->parse('backend_views/admin_header_view',$this->parser_data);
+				$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
+				$this->parser->parse('backend_views/edit_little_slider_form_view',$this->parser_data);
+				$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);	
+			}
+			else // yönlendirilen "id "veritabanında yoksa ekrana hata bas
+			{
+				$message = 'HATA:: Bu Sayfaya Erişim Yetkiniz Bulunmuyor...';
+				$return_path = '../editLittleSlider';
+				$this->errorMessage($message,$return_path,2);
+			}
+		}
+		elseif($id_little_slider_update_form_field != NULL) // eğer id alanı boş ise bu sefer düzenleme formundan bir post gelip gelmediğini kontrol eder
+		{
+			$id = strtr($id_little_slider_update_form_field, array('0.31' => ''));
+
+			$title_little_slider_update_form_field	= $this->input->post('title_little_slider_update_form_field');
+			$detail_little_slider_update_form_field	= $this->input->post('detail_little_slider_update_form_field');
+			$date_little_slider_update_form_field	= $this->input->post('date_little_slider_update_form_field');
+
+			if(($title_little_slider_update_form_field=='')||($detail_little_slider_update_form_field=='')||($date_little_slider_update_form_field=='') )
+			{
+				$message ='Lütfen Boş Alan Bırakmayın';
+				$return_path = "updateLittleSlider/$id";
+				$this->errorMessage($message,$return_path,2);
+			}
+			else
+			{
+				$new_image_name = $this->regex($little_slider_title_form_field);
+				$array = array(
+								'image_form_field'	=>	'little_slider_image_form_field',
+								'upload_path'		=>	'assets/images/little_slider_images',
+								'image_name'		=>	$new_image_name,
+								'big_img_width'		=>	460,
+								'big_img_height'	=>	170,
+								'thumb_img_width'	=>	80,
+								'thumb_img_height'	=>	80
+							   );
+
+			$this->load->library('image_upload_resize_library');
+			$this->image_upload_resize_library->setBootstrapData($array);
+			$this->image_upload_resize_library->display_errors = TRUE;
+			$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize();
+
+			}
+		} 
+		else // yukarıdaki her iki koşulda sağlanmıyorsa ekrana hata basar
+		{
+			$message = 'HATA:: Bu Sayfaya Erişim Yetkiniz Bulunmuyor...';
+			$return_path = 'editLittleSlider';
+			$this->errorMessage($message,$return_path,2);
+		}
 	}
 
 
@@ -504,11 +610,15 @@ class slider extends CI_Controller {
 
 	}
 
-	public function successMessage($message, $return_path = NULL)
+	public function successMessage($message, $return_path = NULL, $return_time = NULL)
 	{
 		if ($return_path == NULL)
 		{
 			$return_path = 'editBigSlider';
+		}
+		elseif ($return_time == NULL) 
+		{
+			$return_time = 4;
 		}
 
 		$this->parser_data = array(
@@ -520,7 +630,7 @@ class slider extends CI_Controller {
 		$this->parser->parse('backend_views/success_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"4; url=$return_path\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"$return_time; url=$return_path\">";	
 	}
 
 

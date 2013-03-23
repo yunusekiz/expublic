@@ -225,19 +225,32 @@ class slider_model extends CI_Model {
 			return FALSE;
 	}
 ////////////////////////////////////////////////////////////////////////////////
-	public function getLittleSliderRow()
+	public function getLittleSliderRow($id = NULL)
 	{
-		 $query = $this->db->select('id AS id, image_title AS resim_baslik, image_date AS resim_tarih, image_detail AS resim_detay, big_image_path AS buyuk_resim, thumb_image_path AS kucuk_resim')->from('little_slider')->get();
+		if ($id == NULL) 
+		{
+			$query = $this->db->select('id AS id, image_title AS resim_baslik, image_date AS resim_tarih, image_detail AS resim_detay, big_image_path AS buyuk_resim, thumb_image_path AS kucuk_resim')->from('little_slider')->get();
 
-		 if ($query->num_rows()>0)
-		 	return $query->result_array();
-		 else
-		 	return NULL;
+		 	if ($query->num_rows()>0)
+		 		return $query->result_array();
+		 	else
+		 		return NULL;
+		}
+		elseif ($id != NULL)
+		{
+			$query = $this->db->select('id AS id, image_title AS resim_baslik, image_date AS resim_tarih, image_detail AS resim_detay, big_image_path AS buyuk_resim, thumb_image_path AS kucuk_resim')->from('little_slider')->where('id',$id)->get();
+
+		 	if ($query->num_rows()>0)
+		 		return $query->result_array();
+		 	else
+		 		return NULL;
+		}
+
 	}
 ////////////////////////////////////////////////////////////////////////////////
-	public function getLittleSliderBigImageFromDB()
+	public function getLittleSliderBigImageFromDB($id)
 	{
-		$query = $this->db->select('big_image_path')->from('little_slider')->get();
+		$query = $this->db->select('big_image_path')->from('little_slider')->where('id', $id)->get();
 		if ($query->num_rows()>0)
 			return $query->row()->big_image_path;
 		else
@@ -264,7 +277,7 @@ class slider_model extends CI_Model {
 ////////////////////////////////////////////////////////////////////////////////
 	public function deleteLittleSlider($id)
 	{
-		$test_delete_before = $this->select('id')->from('little_slider')->where('id', $id)->get();
+		$test_delete_before = $this->db->select('id')->from('little_slider')->where('id', $id)->get();
 		if ($test_delete_before->num_rows()>0) 
 		{
 			$query = $this->db->where('id', $id)->delete('little_slider');

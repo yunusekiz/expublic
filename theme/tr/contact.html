@@ -88,7 +88,7 @@
             {iletisim_kayitlari}
             	<div class="span4">
                 	<div class="well">
-					<h4><span class="colored"></span> İletişim Bilgileri</h4>
+					<h4><span class="colored"></span> İLETİŞİM BİLGİLERİ</h4>
                     <p>Bize aşağıdaki iletişim  bilgilerimizden ulaşabilirsiniz.</p>
                 	<hr>
                     <span><strong class="colored">Adres : </strong>{adres}</span>
@@ -102,12 +102,13 @@
                 </div>
            {/iletisim_kayitlari}
                 <div class="span8">
-                	<h3><span class="colored"></span> İletişim Kutusu</h3>
+                	<h3><span class="colored"></span> İLETİŞİM KUTUSU</h3>
                     <div id="note"></div>
-                	<form class="form" id="ajax-contact-form" action="javascript:alert('Gönderildi!');">
-                        <input type="text" name="name" class="span4" style="margin-right:25px;" placeholder="İsminiz" />
-                        <input  class="span4" name="email" placeholder="E-posta adresiniz" />
-                        <textarea type="text" name="message" placeholder="Mesajınız" rows="8" class="span8"></textarea>
+                	<form class="form" id="ajax-contact-form" action="javascript:alert('Gonderildi!');">
+                        <input type="text" name="name" class="span4" style="margin-right:25px;" placeholder="İsminiz" required />
+                        <input  class="span4" name="email" placeholder="E-posta adresiniz" required/>
+                        <input  class="span4" name="subject" placeholder="Konu" required/>
+                        <textarea type="text" name="message" placeholder="Mesajınız" rows="8" class="span8" required></textarea>
                         <button type="submit"  class="btn btn-success">Gönder</button>
                     </form>
                 </div>

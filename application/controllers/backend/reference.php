@@ -667,7 +667,7 @@ class reference extends CI_Controller {
 				}
 				else
 				{
-					$message = 'KAtegori Eklenirken Bir Sorunla Karşılaşıldı';
+					$message = 'Kategori Eklenirken Bir Sorunla Karşılaşıldı';
 					$this->errorMessage($message,'addCategory');
 				}
 			}
