@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: localhost
--- Üretim Zamanı: 02 Mar 2013, 16:21:53
+-- Üretim Zamanı: 23 Mar 2013, 19:14:28
 -- Sunucu sürümü: 5.5.25a
 -- PHP Sürümü: 5.4.4
 
@@ -172,7 +172,15 @@ CREATE TABLE IF NOT EXISTS `little_slider` (
   `big_image_path` text NOT NULL,
   `thumb_image_path` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+
+--
+-- Tablo döküm verisi `little_slider`
+--
+
+INSERT INTO `little_slider` (`id`, `image_title`, `image_date`, `image_detail`, `big_image_path`, `thumb_image_path`) VALUES
+(20, 'örnek resim detay bilgisi', '31/03/2013', 'örnek resim detay bilgisi', 'assets/images/little_slider_images/ornek-resim-detay-bilgisi.jpg', 'assets/images/little_slider_images/thumb/ornek-resim-detay-bilgisi_thumb.jpg'),
+(21, 'bu benim yeni resmim', '07/06/2013', 'bu benim yeni resmimi detayı', 'assets/images/little_slider_images/bu-benim-yeni-resmim.jpg', 'assets/images/little_slider_images/thumb/bu-benim-yeni-resmim_thumb.jpg');
 
 -- --------------------------------------------------------
 
@@ -192,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 --
 
 INSERT INTO `news` (`id`, `news_date`, `news_detail`) VALUES
-(23, '15/02/2013', 'ikinci haberi');
+(23, '15/02/2013', 'ikinci haber');
 
 -- --------------------------------------------------------
 
