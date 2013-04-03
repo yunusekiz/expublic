@@ -4,16 +4,52 @@
 		"selected_items":
 		[
 			[
+				"file",
+				"file_full_pth"
+			],
+			[
+				"file_",
+				"file_full_path"
+			],
+			[
+				"old",
+				"old_name"
+			],
+			[
+				"pa",
+				"path"
+			],
+			[
+				"rar",
+				"rar_wrapper_cache_stats"
+			],
+			[
+				"parse",
+				"parser"
+			],
+			[
+				"send",
+				"sendMail"
+			],
+			[
+				"retr",
+				"return_time"
+			],
+			[
+				"el",
+				"elseif	elseif …"
+			],
+			[
+				"succe",
+				"successMessage"
+			],
+			[
 				"ema",
 				"email"
 			],
 			[
 				"em",
 				"email"
-			],
-			[
-				"send",
-				"sendEmail"
 			],
 			[
 				"sen",
@@ -62,10 +98,6 @@
 			[
 				"re",
 				"return_path"
-			],
-			[
-				"el",
-				"else"
 			],
 			[
 				"bor",
@@ -136,10 +168,6 @@
 				"count"
 			],
 			[
-				"parse",
-				"parser_data"
-			],
-			[
 				"Sili",
 				"Silinemedi"
 			],
@@ -194,10 +222,6 @@
 			[
 				"silin",
 				"Silinemedi"
-			],
-			[
-				"old",
-				"old_big_image_path"
 			],
 			[
 				"id",
@@ -490,30 +514,6 @@
 			[
 				"getUp",
 				"getUploadedFileExtension"
-			],
-			[
-				"data",
-				"data_after_resize"
-			],
-			[
-				"asse",
-				"assets"
-			],
-			[
-				"strs",
-				"strstr"
-			],
-			[
-				"ro",
-				"root"
-			],
-			[
-				"control",
-				"controlBootstrapData"
-			],
-			[
-				"getUplo",
-				"getUploadedFileHeight"
 			]
 		]
 	},
@@ -523,74 +523,7 @@
 			"file": "application/controllers/backend/slider.php",
 			"settings":
 			{
-				"buffer_size": 21746,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/models/slider_model.php",
-			"settings":
-			{
-				"buffer_size": 8129,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/views/backend_views/edit_little_slider_form_view.php",
-			"settings":
-			{
-				"buffer_size": 3325,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "theme/tr/contact.html",
-			"settings":
-			{
-				"buffer_size": 6924,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/controllers/tr/eposta.php",
-			"settings":
-			{
-				"buffer_size": 1575,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "assets/theme_assets/js/contact.js",
-			"settings":
-			{
-				"buffer_size": 892,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/xampp/htdocs/www/cagri_android_frontend/andro_itson.sql",
-			"settings":
-			{
-				"buffer_size": 7408,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/xampp/htdocs/www/cagri_android_frontend/index.php",
-			"settings":
-			{
-				"buffer_size": 6357,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "",
-			"file": "/C/xampp/htdocs/www/cagri_android_frontend/admin.php",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 0,
+				"buffer_size": 23135,
 				"line_ending": "Windows"
 			}
 		}
@@ -627,6 +560,21 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/www/expublic/application/views/ornek_view.rar",
+		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-04-02.php",
+		"/C/xampp/htdocs/www/expublic/application/errors/error_php.php",
+		"/C/xampp/htdocs/www/expublic/application/errors/error_general.php",
+		"/C/xampp/htdocs/www/expublic/application/errors/error_db.php",
+		"/C/xampp/htdocs/www/expublic/application/errors/error_404.php",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
+		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
+		"/C/xampp/htdocs/www/expublic/application/views/backend_views/edit_little_slider_form_view.php",
+		"/C/xampp/htdocs/www/expublic/theme/tr/contact.html",
+		"/C/xampp/htdocs/www/expublic/application/controllers/tr/eposta.php",
+		"/C/xampp/htdocs/www/expublic/assets/theme_assets/js/contact.js",
+		"/C/xampp/htdocs/www/cagri_android_frontend/andro_itson.sql",
+		"/C/xampp/htdocs/www/cagri_android_frontend/index.php",
+		"/C/xampp/htdocs/www/cagri_android_frontend/admin.php",
 		"/C/xampp/htdocs/www/cagri_android_frontend/check.php",
 		"/C/xampp/htdocs/www/cagri_android_frontend/index_1.php",
 		"/C/Documents and Settings/ynsekiz/mydjango/app.py",
@@ -643,9 +591,7 @@
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/edit_reference_form_view.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/all_references_view.php",
 		"/C/xampp/htdocs/www/expublic/assets/backend_assets/images/icons/cross.png",
-		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/little_slider_view_empty.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
 		"/C/xampp/htdocs/www/metronic_metronic/db_backup/metro_db.sql",
 		"/C/Documents and Settings/ynsekiz/Desktop/kayitkayitkayit.vcf",
 		"/C/Documents and Settings/ynsekiz/Desktop/index.php",
@@ -741,20 +687,7 @@
 		"/C/xampp/htdocs/www/expublic/theme/tr/footer_2.html",
 		"/C/xampp/htdocs/www/expublic/theme/tr/about.html",
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/referanslar_view.php",
-		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/iletisim_view.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/tr/iletisim.php",
-		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/footer_2_view.php",
-		"/C/xampp/htdocs/www/expublic/theme/tr/thm/4columns_portfolio.html",
-		"/C/xampp/htdocs/www/expublic/theme/tr/4columns_portfolio.html.html",
-		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/hakkimizda_view.php",
-		"/C/xampp/htdocs/www/expublic/theme/tr/Yeni Metin Belgesi.html",
-		"/C/xampp/htdocs/www/expublic/application/controllers/tr/referanslar",
-		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/slider_assets/js/jquery.DDSlider.js",
-		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/slider_assets/DDSlider.css",
-		"/C/xampp/htdocs/www/expublic/application/controllers/tr/hakkimizda.php",
-		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/index.html",
-		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/js/jquery.DDSlider.js",
-		"/C/Documents and Settings/ynsekiz/Desktop/codecanyon-104797-ddslider-10-transitions-inline-content-support/Download File/HTML/js/jquery.easing.1.3.js"
+		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/iletisim_view.php"
 	],
 	"find":
 	{
@@ -772,6 +705,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"change",
 			"little_slider_update_form_field_title",
 			"operation",
 			"upload",
@@ -898,8 +832,7 @@
 			"img",
 			"play-hover",
 			"play",
-			"img",
-			"imd"
+			"img"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -921,7 +854,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -929,15 +862,15 @@
 					"file": "application/controllers/backend/slider.php",
 					"settings":
 					{
-						"buffer_size": 21746,
+						"buffer_size": 23135,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4904,
-								4907
+								23130,
+								23130
 							]
 						],
 						"settings":
@@ -946,227 +879,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1852.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "application/models/slider_model.php",
-					"settings":
-					{
-						"buffer_size": 8129,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5928,
-								5946
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3126.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "application/views/backend_views/edit_little_slider_form_view.php",
-					"settings":
-					{
-						"buffer_size": 3325,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2144,
-								2144
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 196.0,
-						"translation.y": 765.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "theme/tr/contact.html",
-					"settings":
-					{
-						"buffer_size": 6924,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4602,
-								4602
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1243.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "application/controllers/tr/eposta.php",
-					"settings":
-					{
-						"buffer_size": 1575,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								551,
-								551
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "assets/theme_assets/js/contact.js",
-					"settings":
-					{
-						"buffer_size": 892,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								382,
-								387
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/xampp/htdocs/www/cagri_android_frontend/andro_itson.sql",
-					"settings":
-					{
-						"buffer_size": 7408,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SQL/SQL.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/C/xampp/htdocs/www/cagri_android_frontend/index.php",
-					"settings":
-					{
-						"buffer_size": 6357,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/C/xampp/htdocs/www/cagri_android_frontend/admin.php",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1680.0,
+						"translation.y": 9977.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1234,6 +947,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 50.0,
+	"side_bar_width": 273.0,
 	"status_bar_visible": true
 }

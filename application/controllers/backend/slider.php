@@ -37,7 +37,7 @@ class slider extends CI_Controller {
 															// şu aşamada olup olmadığı bilinmeyen admin_session değişkeni atanır
 		if( empty($admin) ) // eğer $admin değişkenini değeri boş ise, kullanıcı login formuna geri gönderilir
 		{
-			echo "<meta http-equiv=\"refresh\" content=\"0; url=../../login\">";
+			echo "<meta http-equiv=\"refresh\" content=\"0; url=".base_url()."login\">";
 			die();
 		}
 		
@@ -590,11 +590,15 @@ class slider extends CI_Controller {
 	}
 
 
-	public function errorMessage($message, $return_path = NULL)
+	public function errorMessage($message, $return_path = NULL, $return_time = NULL)
 	{
 		if ($return_path == NULL)
 		{
 			$return_path = 'editBigSlider';
+		}
+		elseif ($return_time == NULL) 
+		{
+			$return_time = 4;
 		}
 
 		$this->parser_data = array(
@@ -632,6 +636,70 @@ class slider extends CI_Controller {
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
 		echo "<meta http-equiv=\"refresh\" content=\"$return_time; url=$return_path\">";	
 	}
+
+
+	protected function sendMail()
+	{
+		$this->load->library('email');
+
+		$this->email->from('goldenpoisonfrog@hotmail.com', 'Your Name');
+		$this->email->to('ynsekiz@gmail.com'); 
+
+		$this->email->subject('Email Test');
+		$this->email->message('Testing the email class.');	
+
+		$config['protocol'] = 'mail';
+		$this->email->initialize($config);
+
+		if (@$this->email->send())
+		{
+			echo "mesaj gittiii <br>";
+			echo $this->email->print_debugger();
+			//echo $this->email->print_debugger();
+			//$this->successMessage('mesaj gönderildi','../send',3);
+		}
+		else
+		{
+			echo "HATA::mesaj gitmedi hocuu <br>";
+			///echo $this->email->print_debugger();
+			//$this->errorMessage('HATA:: Mesaj Gönderilemedi','../send',3);
+		}
+			
+	}
+
+	public function send($id = NULL)
+	{
+		if ($id == NULL)
+			return NULL;
+		else
+			$this->sendMail();
+	}
+
+
+	public function change($name = 'madem oyle iste boyle canim')
+	{
+		$name = preg_replace('/\s+/', '_', $name);
+
+		$file_full_pth = FCPATH.'assets\images\son kez son bir kez daha.jsp';
+
+
+		$file_ext = substr($file_full_pth, -strpos(strrev($file_full_pth), '.'));
+		
+		$old_name = $file_full_pth;
+		
+		$new_name = FCPATH."assets\images\\".$name.'.'.$file_ext;
+
+		
+
+
+		if(rename($old_name, $new_name))
+			echo 'isim degisti';
+		else
+			echo 'isim degisemedi';
+	}
+
+
+
 
 
 	
