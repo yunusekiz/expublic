@@ -520,11 +520,27 @@
 	"buffers":
 	[
 		{
-			"file": "application/controllers/backend/slider.php",
+			"file": "/C/xampp/htdocs/www/mydjango/setup.py",
 			"settings":
 			{
-				"buffer_size": 23135,
+				"buffer_size": 283,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/xampp/htdocs/www/mydjango/wsgi/application",
+			"settings":
+			{
+				"buffer_size": 6467,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/xampp/htdocs/www/mydjango/wsgi/mydjango/Django-1.5.1/setup.py",
+			"settings":
+			{
+				"buffer_size": 5395,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -560,13 +576,36 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/www/pyyy/.openshift/action_hooks/stop",
+		"/C/xampp/htdocs/www/pyyy/.openshift/action_hooks/start",
+		"/C/xampp/htdocs/www/pyyy/.openshift/action_hooks/build",
+		"/C/xampp/htdocs/www/flaskim/wsgi/myflaskapp.py",
+		"/C/xampp/htdocs/www/flaskim/wsgi/views.py",
+		"/C/xampp/htdocs/www/pyyy/diy/application.py",
+		"/C/xampp/htdocs/www/mydjango/setup.py",
+		"/C/xampp/htdocs/www/mic/run.py",
+		"/C/xampp/htdocs/www/flaskim/distribute_setup.py",
+		"/C/xampp/htdocs/www/flaskim/wsgi/app/views.py",
+		"/C/xampp/htdocs/www/flaskim/wsgi/app/__init__.py",
+		"/C/xampp/htdocs/www/flaskim/wsgi/run.py",
+		"/C/xampp/htdocs/www/edupublic/index.html",
+		"/C/xampp/htdocs/www/edupublic/stylesheets/style.css",
+		"/C/xampp/htdocs/www/edupublic/assets/css/typography.css",
+		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
+		"/C/xampp/htdocs/www/edupublic/stylesheets/nivo-slider.css",
+		"/C/xampp/htdocs/www/expublic/application/config/foreign_chars.php",
+		"/C/xampp/htdocs/www/expublic/application/config/routes.php",
+		"/C/xampp/htdocs/www/edupublic/application/config/autoload.php",
+		"/C/xampp/htdocs/www/expublic/application/config/autoload.php",
+		"/C/xampp/htdocs/www/expublic/application/config/database.php",
+		"/C/xampp/htdocs/www/edupublic/application/config/database.php",
+		"/C/xampp/htdocs/www/edupublic/application/config/config.php",
 		"/C/xampp/htdocs/www/expublic/application/views/ornek_view.rar",
 		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-04-02.php",
 		"/C/xampp/htdocs/www/expublic/application/errors/error_php.php",
 		"/C/xampp/htdocs/www/expublic/application/errors/error_general.php",
 		"/C/xampp/htdocs/www/expublic/application/errors/error_db.php",
 		"/C/xampp/htdocs/www/expublic/application/errors/error_404.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/backend/slider.php",
 		"/C/xampp/htdocs/www/expublic/application/models/slider_model.php",
 		"/C/xampp/htdocs/www/expublic/application/views/backend_views/edit_little_slider_form_view.php",
 		"/C/xampp/htdocs/www/expublic/theme/tr/contact.html",
@@ -580,7 +619,6 @@
 		"/C/Documents and Settings/ynsekiz/mydjango/app.py",
 		"/C/xampp/htdocs/www/basicphp/.openshift/action_hooks/pre_build",
 		"/C/xampp/htdocs/www/expublic/application/controllers/backend/reference.php",
-		"/C/xampp/htdocs/www/expublic/application/config/database.php",
 		"/C/xampp/htdocs/www/basicphp/php/selam.php",
 		"/C/xampp/htdocs/www/basicphp/php/application/views/welcome_message.php",
 		"/C/xampp/htdocs/www/basicphp/php/index.php",
@@ -665,29 +703,7 @@
 		"/C/xampp/htdocs/www/expublic/application/controllers/upload.php",
 		"/C/xampp/htdocs/www/expublic/application/views/upload_form.php",
 		"/C/xampp/htdocs/www/expublic/application/views/up_view.php",
-		"/C/Documents and Settings/ynsekiz/Desktop/hh.php",
-		"/C/xampp/php/php.ini",
-		"/C/xampp/htdocs/www/expublic/application/logs/log-2013-02-07.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/pagenotfound.php",
-		"/C/xampp/htdocs/www/expublic/application/config/doctypes.php",
-		"/C/xampp/htdocs/www/expublic/application/models/about_model.php",
-		"/C/xampp/htdocs/www/expublic/application/views/404/404_view.php",
-		"/C/xampp/htdocs/www/expublic/assets/backend_assets/lightbox_css/jquery.lightbox-0.5.css",
-		"/C/Documents and Settings/ynsekiz/Desktop/jquery-lightbox-0.5/css/jquery.lightbox-0.5.css",
-		"/C/xampp/htdocs/www/jquery-lightbox-0.5/index.html",
-		"/C/xampp/htdocs/www/son_raven_son/admin/admin_plugins/galleriffic/galleriffic-2.0.php",
-		"/C/xampp/htdocs/www/son_raven_son/cf.php",
-		"/C/xampp/htdocs/www/expublic/application/config/smileys.php",
-		"/C/xampp/htdocs/www/expublic/application/config/constants.php",
-		"/C/xampp/htdocs/www/expublic/application/controllers/anasayfa.php",
-		"/C/xampp/htdocs/www/expublic/application/config/routes.php",
-		"/C/xampp/htdocs/www/expublic/application/config/migration.php",
-		"/C/Documents and Settings/ynsekiz/Desktop/database.php",
-		"/C/xampp/htdocs/www/expublic/db_backup/codeigniter_test.sql",
-		"/C/xampp/htdocs/www/expublic/theme/tr/footer_2.html",
-		"/C/xampp/htdocs/www/expublic/theme/tr/about.html",
-		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/referanslar_view.php",
-		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/iletisim_view.php"
+		"/C/Documents and Settings/ynsekiz/Desktop/hh.php"
 	],
 	"find":
 	{
@@ -705,6 +721,39 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pp",
+			"Sizden",
+			"about-quote",
+			"Our Trusted Clientsİş ortakla",
+			"Our Trusted Clients",
+			"aliveli",
+			"about-inner",
+			"about-quote",
+			"Ekip Üye 1",
+			"features",
+			"quote",
+			"Testimonial One",
+			"Our Team of Talents",
+			"anlaşmamız",
+			"eleg",
+			"discover",
+			"discover everything about our business",
+			"designova",
+			"İngiltere & Birleşik Krallık",
+			"portfolio",
+			"Animated Promo",
+			"Our Services",
+			"Websites",
+			"Websites & Apps",
+			"Our Pricing",
+			"Responsive Design",
+			"Responsive Design\n",
+			"Responsive Design",
+			"20.jpg",
+			"Animated Promo",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor lobortis molestie. Aenean justo enim, consequat quis malesuada conseq",
+			"Responsive Design",
+			"intro-intersection",
 			"change",
 			"little_slider_update_form_field_title",
 			"operation",
@@ -799,40 +848,7 @@
 			"yourSliderId",
 			"editBigSlider",
 			"big_slider_image_form_field",
-			"HATA:: Resim Yukleme FALSE Dondu",
-			"load->library",
-			"$this->lo",
-			"$this->CI",
-			"$this->load",
-			"load",
-			" $",
-			"}\n",
-			"DOCUMENT_ROOT",
-			"();\n",
-			"up load edilen resmin genisligi",
-			"upload_max_filesize",
-			"dizin_data",
-			"backend_assets",
-			"gal",
-			"HABERLER",
-			"src",
-			"prev.png",
-			"blogslider",
-			"icon-calendar",
-			"Firmamız resmi olarak faaliyete geçti",
-			"glyphicons-halflings",
-			"glyphicons-halflings-white",
-			"Image",
-			">\n",
-			"wrapper",
-			"container",
-			"container_slider",
-			"container",
-			"play-hover",
-			"img",
-			"play-hover",
-			"play",
-			"img"
+			"HATA:: Resim Yukleme FALSE Dondu"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -840,6 +856,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"edupublic",
 			"{base}assets/backend_assets/images",
 			"protected function",
 			"http://localhost/www/expublic/assets/theme_assets/images",
@@ -854,32 +871,87 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/controllers/backend/slider.php",
+					"file": "/C/xampp/htdocs/www/mydjango/setup.py",
 					"settings":
 					{
-						"buffer_size": 23135,
+						"buffer_size": 283,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								23130,
-								23130
+								137,
+								137
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 9977.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/xampp/htdocs/www/mydjango/wsgi/application",
+					"settings":
+					{
+						"buffer_size": 6467,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/xampp/htdocs/www/mydjango/wsgi/mydjango/Django-1.5.1/setup.py",
+					"settings":
+					{
+						"buffer_size": 5395,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -947,6 +1019,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 273.0,
+	"side_bar_width": 211.0,
 	"status_bar_visible": true
 }

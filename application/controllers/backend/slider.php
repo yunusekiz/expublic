@@ -699,6 +699,15 @@ class slider extends CI_Controller {
 	}
 
 
+	public function tmpp()
+	{
+		$tmp_data = array(
+							'tab_baslik' => array(
+													array('' => , );=> , )
+							
+						 )
+							
+	}
 
 
 
