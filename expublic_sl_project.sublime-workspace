@@ -520,27 +520,27 @@
 	"buffers":
 	[
 		{
-			"file": "/C/xampp/htdocs/www/mydjango/setup.py",
+			"file": "application/controllers/backend/slider.php",
 			"settings":
 			{
-				"buffer_size": 283,
+				"buffer_size": 23129,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/xampp/htdocs/www/mydjango/wsgi/application",
+			"file": "application/controllers/backend/reference.php",
 			"settings":
 			{
-				"buffer_size": 6467,
+				"buffer_size": 30749,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/xampp/htdocs/www/mydjango/wsgi/mydjango/Django-1.5.1/setup.py",
+			"file": "application/libraries/image_upload_resize_library.php",
 			"settings":
 			{
-				"buffer_size": 5395,
-				"line_ending": "Unix"
+				"buffer_size": 9362,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -576,13 +576,15 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/www/mydjango/setup.py",
+		"/C/xampp/htdocs/www/mydjango/wsgi/mydjango/Django-1.5.1/setup.py",
+		"/C/xampp/htdocs/www/mydjango/wsgi/application",
 		"/C/xampp/htdocs/www/pyyy/.openshift/action_hooks/stop",
 		"/C/xampp/htdocs/www/pyyy/.openshift/action_hooks/start",
 		"/C/xampp/htdocs/www/pyyy/.openshift/action_hooks/build",
 		"/C/xampp/htdocs/www/flaskim/wsgi/myflaskapp.py",
 		"/C/xampp/htdocs/www/flaskim/wsgi/views.py",
 		"/C/xampp/htdocs/www/pyyy/diy/application.py",
-		"/C/xampp/htdocs/www/mydjango/setup.py",
 		"/C/xampp/htdocs/www/mic/run.py",
 		"/C/xampp/htdocs/www/flaskim/distribute_setup.py",
 		"/C/xampp/htdocs/www/flaskim/wsgi/app/views.py",
@@ -701,9 +703,7 @@
 		"/C/xampp/htdocs/www/expublic/application/views/frontend_views/tr/anasayfa_view.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/up.php",
 		"/C/xampp/htdocs/www/expublic/application/controllers/upload.php",
-		"/C/xampp/htdocs/www/expublic/application/views/upload_form.php",
-		"/C/xampp/htdocs/www/expublic/application/views/up_view.php",
-		"/C/Documents and Settings/ynsekiz/Desktop/hh.php"
+		"/C/xampp/htdocs/www/expublic/application/views/upload_form.php"
 	],
 	"find":
 	{
@@ -721,6 +721,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"client_name",
+			"getUploadedFileClientName",
+			"updateReference",
 			"pp",
 			"Sizden",
 			"about-quote",
@@ -845,10 +848,7 @@
 			"home",
 			"homeLating",
 			"yourSliderIdhome",
-			"yourSliderId",
-			"editBigSlider",
-			"big_slider_image_form_field",
-			"HATA:: Resim Yukleme FALSE Dondu"
+			"yourSliderId"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -871,28 +871,28 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/xampp/htdocs/www/mydjango/setup.py",
+					"file": "application/controllers/backend/slider.php",
 					"settings":
 					{
-						"buffer_size": 283,
+						"buffer_size": 23129,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								137,
-								137
+								605,
+								609
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -902,56 +902,54 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/C/xampp/htdocs/www/mydjango/wsgi/application",
+					"file": "application/controllers/backend/reference.php",
 					"settings":
 					{
-						"buffer_size": 6467,
+						"buffer_size": 30749,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								18042,
+								18067
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6357.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/C/xampp/htdocs/www/mydjango/wsgi/mydjango/Django-1.5.1/setup.py",
+					"file": "application/libraries/image_upload_resize_library.php",
 					"settings":
 					{
-						"buffer_size": 5395,
+						"buffer_size": 9362,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3656,
+								3660
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
+						"translation.y": 2070.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1019,6 +1017,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 211.0,
+	"side_bar_width": 350.0,
 	"status_bar_visible": true
 }

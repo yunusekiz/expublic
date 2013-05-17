@@ -690,26 +690,11 @@ class slider extends CI_Controller {
 		$new_name = FCPATH."assets\images\\".$name.'.'.$file_ext;
 
 		
-
-
 		if(rename($old_name, $new_name))
 			echo 'isim degisti';
 		else
 			echo 'isim degisemedi';
 	}
-
-
-	public function tmpp()
-	{
-		$tmp_data = array(
-							'tab_baslik' => array(
-													array('' => , );=> , )
-							
-						 )
-							
-	}
-
-
 
 	
 }
