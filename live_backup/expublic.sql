@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: localhost
--- Üretim Zamanı: 23 Mar 2013, 19:14:28
+-- Üretim Zamanı: 08 Ağu 2013, 22:58:44
 -- Sunucu sürümü: 5.5.25a
 -- PHP Sürümü: 5.4.4
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Veritabanı: `codeigniter_test`
+-- Veritabanı: `expublic`
 --
 
 -- --------------------------------------------------------
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `about_us` (
 --
 
 INSERT INTO `about_us` (`id`, `about`, `vision`, `mission`) VALUES
-(1, 'hakkimizda ornek metni 3', 'vizyonumuz ornek metni 3', 'misyonumuz ornek metni 3');
+(1, 'hakkimizda ornek metni 4', 'vizyonumuz ornek metni 4', 'misyonumuz ornek metni 4');
 
 -- --------------------------------------------------------
 
@@ -84,15 +84,16 @@ CREATE TABLE IF NOT EXISTS `big_slider` (
   `big_image_path` text NOT NULL,
   `thumb_image_path` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Tablo döküm verisi `big_slider`
 --
 
 INSERT INTO `big_slider` (`id`, `image_title`, `big_image_path`, `thumb_image_path`) VALUES
-(7, 'tuh', 'assets/theme_assets/slider_assets/photo/tuh.jpg', 'assets/theme_assets/slider_assets/photo/thumb/tuh_thumb.jpg'),
-(8, 'hghghgh', 'assets/theme_assets/slider_assets/photo/hghghgh.jpg', 'assets/theme_assets/slider_assets/photo/thumb/hghghgh_thumb.jpg');
+(9, 'yeni slider ismi', 'assets/theme_assets/slider_assets/photo/yeni_slider_ismi.jpg', 'assets/theme_assets/slider_assets/photo/thumb/yeni_slider_ismi_thumb.jpg'),
+(10, 'yeni slider ismi2', 'assets/theme_assets/slider_assets/photo/yeni_slider_ismi2.jpg', 'assets/theme_assets/slider_assets/photo/thumb/yeni_slider_ismi2_thumb.jpg'),
+(11, 'night tokio', 'assets/theme_assets/slider_assets/photo/night_tokio.jpg', 'assets/theme_assets/slider_assets/photo/thumb/night_tokio_thumb.jpg');
 
 -- --------------------------------------------------------
 
@@ -200,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 --
 
 INSERT INTO `news` (`id`, `news_date`, `news_detail`) VALUES
-(23, '15/02/2013', 'ikinci haber');
+(23, '15/02/2013', 'ikinci haber edit');
 
 -- --------------------------------------------------------
 
@@ -234,14 +235,15 @@ CREATE TABLE IF NOT EXISTS `reference_category` (
   `ref_category_seofriendly_name` varchar(225) NOT NULL,
   PRIMARY KEY (`ref_category_id`),
   UNIQUE KEY `ref_category_name` (`ref_category_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Tablo döküm verisi `reference_category`
 --
 
 INSERT INTO `reference_category` (`ref_category_id`, `ref_category_name`, `ref_category_seofriendly_name`) VALUES
-(13, 'retro style', 'retro-style');
+(13, 'retro style', 'retro-style'),
+(14, 'yeni kategori', 'yeni-kategori');
 
 -- --------------------------------------------------------
 
@@ -256,14 +258,14 @@ CREATE TABLE IF NOT EXISTS `reference_image` (
   `path_thumb_image` text NOT NULL,
   PRIMARY KEY (`images_id`),
   KEY `ref_id` (`ref_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Tablo döküm verisi `reference_image`
 --
 
 INSERT INTO `reference_image` (`images_id`, `ref_id`, `path_big_image`, `path_thumb_image`) VALUES
-(26, 26, 'assets/images/reference_images/yeni-referans-basligi.jpg', 'assets/images/reference_images/thumb/yeni-referans-basligi_thumb.jpg');
+(26, 26, 'assets/images/reference_images/yeni-referans-basligi22.JPG', 'assets/images/reference_images/thumb/yeni-referans-basligi22_thumb.JPG');
 
 -- --------------------------------------------------------
 
@@ -279,14 +281,14 @@ CREATE TABLE IF NOT EXISTS `reference_text_field` (
   `ref_detail` text NOT NULL,
   PRIMARY KEY (`ref_id`),
   KEY `ref_category_id` (`ref_category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Tablo döküm verisi `reference_text_field`
 --
 
 INSERT INTO `reference_text_field` (`ref_id`, `ref_category_id`, `ref_date`, `ref_title`, `ref_detail`) VALUES
-(26, 13, '01/02/2013', 'yeni referans basligi', 'referans aciklamasi ');
+(26, 13, '01/02/2013', 'yeni referans basligi22', 'referans aciklamasi 22');
 
 -- --------------------------------------------------------
 
@@ -310,7 +312,7 @@ CREATE TABLE IF NOT EXISTS `reference_view` (
 --
 DROP TABLE IF EXISTS `about_us_view_alias`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `about_us_view_alias` AS select `about_us`.`id` AS `id`,`about_us`.`about` AS `hakkimizda`,`about_us`.`vision` AS `vizyonumuz`,`about_us`.`mission` AS `misyonumuz` from `about_us` where (`about_us`.`id` = 1);
+CREATE ALGORITHM=UNDEFINED DEFINER=`yunus`@`localhost` SQL SECURITY DEFINER VIEW `about_us_view_alias` AS select `about_us`.`id` AS `id`,`about_us`.`about` AS `hakkimizda`,`about_us`.`vision` AS `vizyonumuz`,`about_us`.`mission` AS `misyonumuz` from `about_us` where (`about_us`.`id` = 1);
 
 -- --------------------------------------------------------
 
@@ -319,7 +321,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `contact_view_alias`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `contact_view_alias` AS select `contact`.`id` AS `id`,`contact`.`address` AS `adres`,`contact`.`phone` AS `telefon`,`contact`.`fax` AS `faks`,`contact`.`email` AS `email`,`contact`.`facebook` AS `facebook`,`contact`.`twitter` AS `twitter`,`contact`.`gplus` AS `gplus` from `contact` where (`contact`.`id` = 1);
+CREATE ALGORITHM=UNDEFINED DEFINER=`yunus`@`localhost` SQL SECURITY DEFINER VIEW `contact_view_alias` AS select `contact`.`id` AS `id`,`contact`.`address` AS `adres`,`contact`.`phone` AS `telefon`,`contact`.`fax` AS `faks`,`contact`.`email` AS `email`,`contact`.`facebook` AS `facebook`,`contact`.`twitter` AS `twitter`,`contact`.`gplus` AS `gplus` from `contact` where (`contact`.`id` = 1);
 
 -- --------------------------------------------------------
 
@@ -328,7 +330,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `news_view_alias`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `news_view_alias` AS select `news`.`id` AS `id`,`news`.`news_date` AS `haber_tarihi`,`news`.`news_detail` AS `haber_detayi` from `news`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`yunus`@`localhost` SQL SECURITY DEFINER VIEW `news_view_alias` AS select `news`.`id` AS `id`,`news`.`news_date` AS `haber_tarihi`,`news`.`news_detail` AS `haber_detayi` from `news`;
 
 -- --------------------------------------------------------
 
@@ -337,7 +339,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `null_reference_category`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `null_reference_category` AS select `reference_category`.`ref_category_id` AS `null_kategori_id`,`reference_category`.`ref_category_name` AS `null_kategori`,`reference_category`.`ref_category_seofriendly_name` AS `null_trim_kategori` from (`reference_category` join `reference_text_field`) where (`reference_category`.`ref_category_id` <> `reference_text_field`.`ref_category_id`);
+CREATE ALGORITHM=UNDEFINED DEFINER=`yunus`@`localhost` SQL SECURITY DEFINER VIEW `null_reference_category` AS select `reference_category`.`ref_category_id` AS `null_kategori_id`,`reference_category`.`ref_category_name` AS `null_kategori`,`reference_category`.`ref_category_seofriendly_name` AS `null_trim_kategori` from (`reference_category` join `reference_text_field`) where (`reference_category`.`ref_category_id` <> `reference_text_field`.`ref_category_id`);
 
 -- --------------------------------------------------------
 
@@ -346,7 +348,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `reference_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `reference_view` AS select `reference_category`.`ref_category_name` AS `kategori`,`reference_category`.`ref_category_seofriendly_name` AS `trim_kategori`,`reference_text_field`.`ref_id` AS `ref_id`,`reference_text_field`.`ref_date` AS `tarih`,`reference_text_field`.`ref_title` AS `baslik`,`reference_text_field`.`ref_detail` AS `aciklama`,`reference_image`.`path_big_image` AS `buyuk_resim`,`reference_image`.`path_thumb_image` AS `kucuk_resim` from ((`reference_category` join `reference_text_field`) join `reference_image`) where ((`reference_category`.`ref_category_id` = `reference_text_field`.`ref_category_id`) and (`reference_text_field`.`ref_id` = `reference_image`.`ref_id`));
+CREATE ALGORITHM=UNDEFINED DEFINER=`yunus`@`localhost` SQL SECURITY DEFINER VIEW `reference_view` AS select `reference_category`.`ref_category_name` AS `kategori`,`reference_category`.`ref_category_seofriendly_name` AS `trim_kategori`,`reference_text_field`.`ref_id` AS `ref_id`,`reference_text_field`.`ref_date` AS `tarih`,`reference_text_field`.`ref_title` AS `baslik`,`reference_text_field`.`ref_detail` AS `aciklama`,`reference_image`.`path_big_image` AS `buyuk_resim`,`reference_image`.`path_thumb_image` AS `kucuk_resim` from ((`reference_category` join `reference_text_field`) join `reference_image`) where ((`reference_category`.`ref_category_id` = `reference_text_field`.`ref_category_id`) and (`reference_text_field`.`ref_id` = `reference_image`.`ref_id`));
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar

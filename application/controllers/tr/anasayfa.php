@@ -15,6 +15,7 @@ class anasayfa extends CI_Controller {
 	{
 		parent::__construct();
 
+		$this->load->model('news_model');
 		$this->load->model('slider_model');
 		// slider da herhangi bir resim yüklü olup olmadığına bakar
 		$this->is_there_any_row = $this->slider_model->isThereAnyRowInDB();
@@ -24,30 +25,36 @@ class anasayfa extends CI_Controller {
 		$this->static_images_row_data = $this->slider_model->getStaticImagesRow();
 
 		if ($this->is_there_any_row == TRUE)
-		{
 			$buyuk_slider_resimleri = $this->slider_model->getBigSliderRowForAdminPanel();
-		}
 		else
-		{
 			$buyuk_slider_resimleri = array();
-		}
 
 
 		if ($this->is_there_any_static_images == TRUE) 
-		{
 			$sabit_resimler = $this->static_images_row_data;
-		}
 		else
-		{
 			$sabit_resimler = array();
-		}
+
+
+		if ($this->slider_model->getLittleSliderRow()!=NULL)
+			$kucuk_slider = $this->slider_model->getLittleSliderRow();
+		else
+			$kucuk_slider = array();
+
+		if ($this->news_model->getNewsRowForView()!=NULL)
+			$haber_dizisi = $this->news_model->getNewsRowForView();
+		else
+			$haber_dizisi = array();
+
 
 		$this->base_data = base_url();
 
 		$this->parser_data = array(
 									'base'	=>	$this->base_data,
 									'buyuk_slider_resimleri_dizisi'	=> $buyuk_slider_resimleri,
-									'sabit_resim_detaylari'			=> $sabit_resimler
+									'sabit_resim_detaylari'			=> $sabit_resimler,
+									'kucuk_slider_resimleri_dizisi'	=> $kucuk_slider,
+									'haber_dizisi'					=> $haber_dizisi
 								  );
 
 	}

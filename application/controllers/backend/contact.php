@@ -79,25 +79,24 @@ class contact extends CI_Controller {
 		{
 			$message = 'Lütfen Boş Alan Bırakmayın';
 			$this->errorMessage($message);
-		
-		}
-		
-		$update = $this->contact_model->updateContact($address_field, $phone_field, $fax_field, $email_field, $facebook_field, $twitter_field, $gplus_field);
-		
-		if($update == TRUE)
-		{
-			$message = 'İletişim Bilgileri Başrıyla Değiştirildi';
-			$this->successMessage($message);
 		}
 		else
 		{
-			$message =  ' Güncelleme İşlemi Başarısız Oldu';
-			$this->errorMessage($message);
-		}
-			
-		
-	}
+			$update = $this->contact_model->updateContact($address_field, $phone_field, $fax_field, $email_field, $facebook_field, $twitter_field, $gplus_field);
 
+			if($update == TRUE)
+			{
+				$message = 'İletişim Bilgileri Başarıyla Değiştirildi';
+				$this->successMessage($message);
+			}
+			else
+			{
+				$message =  'Güncelleme İşlemi Başarısız Oldu';
+				$this->errorMessage($message);
+			}
+		}
+
+	}
 
 
 	public function errorMessage($message)
@@ -112,7 +111,7 @@ class contact extends CI_Controller {
 		$this->parser->parse('backend_views/error_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"3; url=../contact/editContact\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"1; url=../contact/editContact\">";	
 
 	}
 
@@ -128,10 +127,8 @@ class contact extends CI_Controller {
 		$this->parser->parse('backend_views/success_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"4; url=../contact/editContact\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"1; url=../contact/editContact\">";	
 
 	}
-
-
 
 }

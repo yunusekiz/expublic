@@ -68,7 +68,7 @@
             </div>
            <div class="row">
                 <div class="span4 logo">
-                    <a href="index.html"><img src="{base}assets/theme_assets/img/logo.png" alt="logo" style="margin-bottom:7px; margin-top:7px;" /></a>
+                    <a href="{base}"><img src="{base}assets/theme_assets/img/logo.png" alt="logo" style="margin-bottom:7px; margin-top:7px;" /></a>
                 </div>
                 <div class="span8">
                     <nav id="main-nav">
@@ -206,13 +206,15 @@
 
                                         <div class="testimonialslider">
                                             <ul class="slides" style="margin-left:-20px;">
+                                                {haber_dizisi}
                                                 <li>
                                                     <blockquote>
-                                                        <p>Firmamız resmi olarak faaliyete geçti.</p>
-                                                        <small>Tarih : 18-12-2012</small>
+                                                        <p>{haber_detayi}.</p>
+                                                        <small>Tarih : {haber_tarihi}</small>
                                                     </blockquote>
                                                 </li>
-                                                <li>
+                                                {/haber_dizisi}
+<!--                                                 <li>
                                                     <blockquote>
                                                         <p>Açılışımız çok görkemliydi. Reklam ve Enformasyon Bakanı Recai Çağlayan kurdelemizi kesti.</p>
                                                         <small>Tarih : 18-12-2012</small>
@@ -229,7 +231,7 @@
                                                         <p>Hayat bize güzel.</p>
                                                         <small>Tarih : 18-12-2012</small>
                                                     </blockquote>
-                                                </li>
+                                                </li> -->
 
                                             </ul>
                                         </div>
@@ -248,23 +250,25 @@
                     <div class="row">
                         <div class="blogslider span6 clearfix">
                             <ul class="slides">
+                                {kucuk_slider_resimleri_dizisi}
                                 <li>
                                     <div class="blog_item">
                                         <div class="blog_head">
-                                            <h4>Ankara Work & Travel Expo</h4>
-                                            <span><i class="icon-calendar icon-white"></i>Tarih:  Aralık 28, 2012</span>
+                                            <h4>{resim_baslik}</h4>
+                                            <span><i class="icon-calendar icon-white"></i>Tarih:  {resim_tarih}</span>
                                         </div>
                                         <div class="view view-first">
-                                            <a href="{base}assets/theme_assets/img/gal/6.jpg" rel="prettyPhoto"><img src="{base}assets/theme_assets/img/gal/6.jpg" alt="" /></a>
+                                            <a href="{base}{buyuk_resim}" rel="prettyPhoto"><img src="{base}{buyuk_resim}" alt="" /></a>
                                             <div class="mask">
-                                                <a href="{base}assets/theme_assets/img/gal/6.jpg" rel="prettyPhoto" class="info"><img src="{base}assets/theme_assets/img/plus.png" alt="Hanging Note Sign Psd" /></a>
+                                                <a href="{base}{buyuk_resim}" rel="prettyPhoto" class="info"><img src="{base}assets/theme_assets/img/plus.png" alt="Hanging Note Sign Psd" /></a>
                                                 <a href="#" class="link"><img src="{base}assets/theme_assets/img/link.png" alt="Visit link" /></a>
                                             </div>
                                         </div>
-                                        <p>Ordaydık.<br><br><a class="btn btn-small" href="#">Detaylar</a></p>
+                                        <p>{resim_detay}<br><br><!-- <a class="btn btn-small" href="#">Detaylar</a> --></p>
                                     </div>
                                 </li>
-                                <li>
+                                {/kucuk_slider_resimleri_dizisi}
+<!--                                 <li>
                                     <div class="blog_item">
                                         <div class="blog_head">
                                             <h4>İzmir Expo</h4>
@@ -311,7 +315,7 @@
                                         </div>
                                         <p>Ordaydık<br><br><a class="btn btn-small" href="#">Detaylar</a></p>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>

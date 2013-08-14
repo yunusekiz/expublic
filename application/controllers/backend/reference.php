@@ -373,6 +373,15 @@ class reference extends CI_Controller {
 	}
 
 
+	protected function deleteItemPhoto(array $files)
+	{	
+		if (unLinkFile($files) == TRUE) 
+			return TRUE;
+		else
+			return FALSE;
+	}	
+
+
 	protected function editReference($id)
 	{
 
@@ -421,12 +430,14 @@ class reference extends CI_Controller {
 		
 		$id_field		= $this->input->post('id_field');
 		$id_field 		= strtr($id_field, array('0.31' => ''));
+		$images_id 		= $this->input->post('images_id');
 		
 		$img_paths 		= $this->reference_model->getRefImageRowById($id_field);
 
 		$big_img_path 	= $img_paths['buyuk_resim'];
 		$thumb_img_path = $img_paths['kucuk_resim'];
 
+		$image_arrays = array($big_img_path,$thumb_img_path);
 
 		if ($reference_dropdown_category_field == '0') // update formunda kategori de bi değişiklik yapılmamışsa
 		{
@@ -442,6 +453,7 @@ class reference extends CI_Controller {
 				$this->image_upload_resize_library->display_errors = FALSE; // image_upload_resize_library sınıfının hata gösterme/saklama seçeneğini ayarlar
 				$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize(); // resmi yükle ve yeniden boyutlandır
 				############
+
 				if ($this->image_upload_resize_library->getUploadedFileClientName() == NULL) // Eğer herhangi bir dosya yüklenmemişse
 				{
 					if (($this->reference_model->updateRefTextFieldOnDB($id_field, $reference_date_field, $reference_title_field, $reference_detail_field) == TRUE)) 
@@ -476,10 +488,15 @@ class reference extends CI_Controller {
 					{
 						die('referans resim alani  guncellenirken bir ariza verdi');
 					}
-					else
+					elseif ($this->deleteItemPhoto($image_arrays) == TRUE)
 					{
 						$message = 'Referans Güncellendi';
 						$this->successMessage($message,'allReferences');
+					}
+					else
+					{
+						$message = 'HATA:: Referans Güncellenemedi';
+						$this->errorMessage($message,'operation/'.$this->input->post("id_field").'');						
 					}
 
 				}
@@ -540,10 +557,15 @@ class reference extends CI_Controller {
 						{
 							die('referans resim alani  guncellenirken bir ariza verdi');
 						}
-						else
+						elseif($this->deleteItemPhoto($image_arrays) == TRUE)
 						{
 							$message = 'Referans Güncellendi';
 							$this->successMessage($message,'allReferences');
+						}
+						else
+						{
+							$message = 'Hata... Önceki resim silinemedi.';
+							$this->errorMessage($message,'allReferences');
 						}
 					}
 					else

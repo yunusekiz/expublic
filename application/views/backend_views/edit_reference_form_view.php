@@ -85,6 +85,7 @@
 									style="color:#000; font-size:9px;" id="large-input" name="reference_detail_field" 
 									value="{aciklama}" />
 									<input class="text-input large-input" type="hidden" name="id_field" value="0.31{ref_id}"/>
+									<input class="text-input large-input" type="hidden" name="images_id" value="{resim_id}"/>
 								</p>
 								
 								<p>

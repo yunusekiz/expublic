@@ -63,18 +63,20 @@ class about extends CI_Controller {
 			$message = 'Lütfen Boş Alan Bırakmayın';
 			$this->errorMessage($message);
 		}
-		
-		$update = $this->about_model->updateAboutUs($about_field, $vision_field, $mission_field);
-		
-		if($update == TRUE)
-		{
-			$message = 'Hakkımızda Metni Başarıyla Güncellendi. Yönlendiriliyorsunuz...';
-			$this->successMessage($message);
-		}
 		else
 		{
-			$message = 'Güncelleme İşlemi Başarısız Oldu';
-			$this->errorMessage($message);
+			$update = $this->about_model->updateAboutUs($about_field, $vision_field, $mission_field);
+
+			if($update == TRUE)
+			{
+				$message = 'Hakkımızda Metni Başarıyla Güncellendi.';
+				$this->successMessage($message);
+			}
+			else
+			{
+				$message = 'Güncelleme İşlemi Başarısız Oldu.';
+				$this->errorMessage($message);
+			}
 		}
 				
 	}
@@ -91,7 +93,7 @@ class about extends CI_Controller {
 		$this->parser->parse('backend_views/error_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"3; url=../about/editAboutUs\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"1; url=../about/editAboutUs\">";	
 
 	}
 
@@ -107,7 +109,7 @@ class about extends CI_Controller {
 		$this->parser->parse('backend_views/success_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"3; url=../about/editAboutUs\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"1; url=../about/editAboutUs\">";	
 
 	}
 	

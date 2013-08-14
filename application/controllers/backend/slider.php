@@ -156,7 +156,7 @@ class slider extends CI_Controller {
 				
 		$this->image_upload_resize_library->setBootstrapData($array);
 		
-		$this->image_upload_resize_library->display_errors = TRUE;
+		$this->image_upload_resize_library->display_errors = FALSE;
 
 		$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize();
 
@@ -399,8 +399,8 @@ class slider extends CI_Controller {
 							'image_form_field'	=>	'little_slider_image_form_field',
 							'upload_path'		=>	'assets/images/little_slider_images',
 							'image_name'		=>	$new_image_name,
-							'big_img_width'		=>	460,
-							'big_img_height'	=>	170,
+							'big_img_width'		=>	931,
+							'big_img_height'	=>	375,
 							'thumb_img_width'	=>	80,
 							'thumb_img_height'	=>	80
 						  );
@@ -503,7 +503,7 @@ class slider extends CI_Controller {
 			{
 				$message = 'HATA:: Bu Sayfaya Erişim Yetkiniz Bulunmuyor...';
 				$return_path = '../editLittleSlider';
-				$this->errorMessage($message,$return_path,2);
+				$this->errorMessage($message,$return_path,1);
 			}
 		}
 		elseif($id_little_slider_update_form_field != NULL) // eğer id alanı boş ise bu sefer düzenleme formundan bir post gelip gelmediğini kontrol eder
@@ -518,33 +518,92 @@ class slider extends CI_Controller {
 			{
 				$message ='Lütfen Boş Alan Bırakmayın';
 				$return_path = "updateLittleSlider/$id";
-				$this->errorMessage($message,$return_path,2);
+				$this->errorMessage($message,$return_path,1);
 			}
 			else
 			{
-				$new_image_name = $this->regex($little_slider_title_form_field);
+				$new_image_name = $this->regex($title_little_slider_update_form_field);
 				$array = array(
-								'image_form_field'	=>	'little_slider_image_form_field',
+								'image_form_field'	=>	'little_slider_update_form_field_image',
 								'upload_path'		=>	'assets/images/little_slider_images',
 								'image_name'		=>	$new_image_name,
-								'big_img_width'		=>	460,
-								'big_img_height'	=>	170,
+								'big_img_width'		=>	971,
+								'big_img_height'	=>	375,
 								'thumb_img_width'	=>	80,
 								'thumb_img_height'	=>	80
 							   );
 
-			$this->load->library('image_upload_resize_library');
-			$this->image_upload_resize_library->setBootstrapData($array);
-			$this->image_upload_resize_library->display_errors = TRUE;
-			$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize();
+				$this->load->library('image_upload_resize_library');
+				$this->image_upload_resize_library->setBootstrapData($array);
+				$this->image_upload_resize_library->display_errors = FALSE;
+				$image_up_and_resize = $this->image_upload_resize_library->imageUpAndResize();
 
+				$big_img_row 	= $this->slider_model->getLittleSliderBigImageFromDB($id);
+				$thumb_img_row	= $this->slider_model->getLittleSliderThumbImageFromDB($id);
+
+				$little_slider_images = array($big_img_row,$thumb_img_row);
+
+
+				if ($this->image_upload_resize_library->getUploadedFileClientName() == NULL) // eğer herhabgi bi resim yüklenmemişse
+				{
+					$update_little_slider_detail = $this->slider_model->update_little_slider_detail($id,$title_little_slider_update_form_field,
+																									$date_little_slider_update_form_field,
+																									$detail_little_slider_update_form_field);
+					if ($update_little_slider_detail == TRUE) 
+					{
+						$message = 'Tebrikler. Küçük slider güncellendi.';
+						$return_path = 'editLittleSlider';
+						$this->successMessage($message,$return_path,1);					
+					}
+					else
+					{
+						$message = 'HATA:: Küçük slider güncellenemedi (without-photo)';
+						$return_path = "updateLittleSlider/$id";
+						$this->errorMessage($message,$return_path,1);						
+					}
+				}
+				elseif ($image_up_and_resize == TRUE) // herhangi bir resim yüklenmiş ve resize işlemi başarılı olmuşsa
+				{
+					$new_uploaded_images = array($this->image_upload_resize_library->getSizedBigImgNameForDB(),
+												 $this->image_upload_resize_library->getSizedThumbImgNameForDB());
+
+					$update_ltl_slider = $this->slider_model->update_little_slider_detail($id,$title_little_slider_update_form_field,
+																	 					  $date_little_slider_update_form_field,
+																	 					  $detail_little_slider_update_form_field,
+																	 					  $new_uploaded_images);
+					if ($update_ltl_slider==FALSE) // database update işlemi başarısızsa
+					{
+						$message = 'HATA:: Küçük slider güncellenemedi (with-photo and new detail)';
+						$return_path = "updateLittleSlider/$id";
+						$this->errorMessage($message,$return_path,1);
+					}
+					elseif ($this->deleteItemPhoto($little_slider_images) == TRUE) // eski resimler silindiyse
+					{
+						$message = 'Tebrikler. Küçük slider güncellendi.';
+						$return_path = 'editLittleSlider';
+						$this->successMessage($message,$return_path);	
+					}
+					else
+					{
+						$message = 'HATA:: Küçük slider güncellenemedi (with-photo)';
+						$return_path = "updateLittleSlider/$id";
+						$this->errorMessage($message,$return_path,1);						
+					}
+
+				}
+				else
+				{
+					$message = 'HATA:: Küçük slider güncellenemedi';
+					$return_path = "updateLittleSlider/$id";
+					$this->errorMessage($message,$return_path,1);					
+				}
 			}
 		} 
 		else // yukarıdaki her iki koşulda sağlanmıyorsa ekrana hata basar
 		{
 			$message = 'HATA:: Bu Sayfaya Erişim Yetkiniz Bulunmuyor...';
 			$return_path = 'editLittleSlider';
-			$this->errorMessage($message,$return_path,2);
+			$this->errorMessage($message,$return_path,1);
 		}
 	}
 
@@ -569,6 +628,15 @@ class slider extends CI_Controller {
 		}
 		
 	}
+
+
+	protected function deleteItemPhoto(array $files)
+	{	
+		if (unLinkFile($files) == TRUE) 
+			return TRUE;
+		else
+			return FALSE;
+	}		
 	
 
 	protected function regex($denek)

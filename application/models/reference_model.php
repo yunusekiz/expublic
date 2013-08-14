@@ -82,17 +82,19 @@ class reference_model extends CI_Model {
 	////////////////////////////////////////////		
 	public function create_Ref_View()
 	{
-		$query = $this->db->query('	CREATE VIEW reference_view AS
-									SELECT 	reference_category.ref_category_name as kategori,
-     										reference_category.ref_category_seofriendly_name as trim_kategori,
- 											reference_text_field.ref_date as tarih,
- 											reference_text_field.ref_title as baslik,
- 											reference_text_field.ref_detail as aciklama,
-  											reference_image.path_big_image as buyuk_resim,
-     										reference_image.path_thumb_image as kucuk_resim
-  									FROM 	reference_category,reference_text_field,reference_image 
-  									WHERE 	reference_category.ref_category_id = reference_text_field.ref_category_id
-  									AND 	reference_text_field.ref_id = reference_image.ref_id');
+		$query = $this->db->query('	CREATE VIEW reference_view AS 
+									SELECT reference_category.ref_category_name as kategori,
+									reference_category.ref_category_seofriendly_name as trim_kategori,
+									reference_text_field.ref_id as ref_id,
+									reference_text_field.ref_date as tarih,
+									reference_text_field.ref_title as baslik,
+									reference_text_field.ref_detail as aciklama,
+									reference_image.images_id as resim_id,
+									reference_image.path_big_image as buyuk_resim,
+									reference_image.path_thumb_image as kucuk_resim 
+									FROM reference_category,reference_text_field,reference_image 
+									WHERE reference_category.ref_category_id = reference_text_field.ref_category_id 
+									AND reference_text_field.ref_id = reference_image.ref_id');
 		return $query;																	
 	}
 	////////////////////////////////////////////
@@ -230,6 +232,17 @@ class reference_model extends CI_Model {
 		else
 			return FALSE;
 	}
+/////////////////////////////////////////////////////////////////
+
+	public function deleteRefPhotoFieldFromDB($id)
+	{
+		$query = $this->db->where('images_id',$id)->delete('reference_image');
+		if ($this->db->affected_rows()>0)
+			return TRUE;
+		else
+			return FALSE;
+	}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public function updateRefTextFieldOnDB($ref_id, $ref_date, $ref_title, $ref_detail, $ref_category_id = NULL)
 	{

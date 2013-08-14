@@ -290,5 +290,28 @@ class slider_model extends CI_Model {
 		else
 			return FALSE;
 	}
-////////////////////////////////////////////////////////////////////////////////	
+////////////////////////////////////////////////////////////////////////////////
+
+	public function update_little_slider_detail($id,$image_title,$image_date,$image_detail, $image_paths = NULL)
+	{
+		if ($image_paths == NULL) 
+		{
+			$update_data = array('image_title'=>$image_title, 'image_date'=>$image_date, 'image_detail'=>$image_detail);
+			$query = $this->db->where('id',$id)->update('little_slider',$update_data);
+			if ($this->db->affected_rows()>0)
+				return TRUE;
+			else
+				return FALSE;
+		}
+		else
+		{
+			$update_data = array('image_title'=>$image_title, 'image_date'=>$image_date, 'image_detail'=>$image_detail,
+								 'big_image_path'=>$image_paths[0], 'thumb_image_path'=>$image_paths[1]);
+			$query = $this->db->where('id',$id)->update('little_slider',$update_data);
+			if ($this->db->affected_rows()>0)
+				return TRUE;
+			else
+				return FALSE;				 			
+		}
+	}
 }

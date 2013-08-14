@@ -199,7 +199,7 @@ class news extends CI_Controller {
 		$this->parser->parse('backend_views/success_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"2; url=$return_path\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"1; url=$return_path\">";	
 	}
 
 
@@ -219,7 +219,7 @@ class news extends CI_Controller {
 		$this->parser->parse('backend_views/error_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_main_view',$this->parser_data);
 		$this->parser->parse('backend_views/admin_footer_view',$this->parser_data);
-		echo "<meta http-equiv=\"refresh\" content=\"3; url=$return_path\">";	
+		echo "<meta http-equiv=\"refresh\" content=\"1; url=$return_path\">";	
 	}
 
 	public function getNewsById($id = NULL)
